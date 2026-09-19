@@ -219,15 +219,39 @@
   },
   "50": {
    "name": "Survivor 50",
-   "subtitle": "In the Hands of the Fans"
+   "subtitle": "In the Hands of the Fans",
+   "blurb": "Twenty-four returning players, the largest cast in the show's history, on a season where the fans voted the twists.",
+   "finale": {
+    "vote": "8-3-0",
+    "over": [
+     "Jonathan Young",
+     "Joe Hunter"
+    ]
+   }
   },
   "49": {
    "name": "Survivor 49",
-   "subtitle": ""
+   "subtitle": "",
+   "blurb": "Kele collapsed early, losing four in a row. The Tres Leches alliance picked up the pieces and ran the table.",
+   "finale": {
+    "vote": "5-2-1",
+    "over": [
+     "Sophi Balerdi",
+     "Sage Ahrens-Nichols"
+    ]
+   }
   },
   "48": {
    "name": "Survivor 48",
-   "subtitle": ""
+   "subtitle": "",
+   "blurb": "A chaotic pre-merge, then a quiet two-person alliance that undermined the dominant group from the inside.",
+   "finale": {
+    "vote": "5-2-1",
+    "over": [
+     "Eva Erickson",
+     "Joe Hunter"
+    ]
+   }
   }
  }
 }

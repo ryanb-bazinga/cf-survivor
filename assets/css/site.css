@@ -769,21 +769,69 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 /* ------------------------------------------------------- past seasons --- */
 
-.season-card { display: flex; flex-direction: column; gap: 12px; }
+.season-card { display: flex; flex-direction: column; gap: 0; }
 
-.season-card__crown {
+.season-card__subtitle {
   font-family: var(--cond);
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--cyan);
+  margin: 2px 0 0;
 }
 
-.season-card__champ { font-family: var(--cond); font-size: 2rem; color: var(--sand); line-height: 1; }
+.season-card__blurb {
+  font-size: 0.87rem;
+  color: var(--sand-faint);
+  line-height: 1.5;
+  margin: 9px 0 0;
+}
+
+.season-card__block {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(42, 80, 73, 0.7);
+}
+
+.season-card__label {
+  font-family: var(--cond);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+  margin-bottom: 4px;
+}
+
+.season-card__winner {
+  font-family: var(--cond);
+  font-size: 1.6rem;
+  color: var(--gold);
+  line-height: 1.05;
+}
+
+.season-card__vote { font-size: 0.81rem; color: var(--sand-faint); margin-top: 2px; }
+
+.season-card__owned {
+  font-size: 0.81rem;
+  color: var(--cyan);
+  margin-top: 6px;
+}
+
+.season-card__champ {
+  font-family: var(--cond);
+  font-size: 1.85rem;
+  color: var(--sand);
+  line-height: 1.05;
+}
 
 .season-card__score { color: var(--orange); font-family: var(--cond); font-size: 1.1rem; }
 
-.season-card__list { font-size: 0.85rem; color: var(--sand-faint); line-height: 1.7; }
+.season-card__list {
+  font-size: 0.85rem;
+  color: var(--sand-faint);
+  line-height: 1.7;
+  margin-top: 7px;
+}
 
 /* ------------------------------------------------------------ footer ---- */
 

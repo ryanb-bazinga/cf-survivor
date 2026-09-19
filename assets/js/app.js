@@ -900,16 +900,51 @@ function renderPastSeasons() {
   }
 
   state.archives.forEach((season) => {
+    const cfg = state.config.seasons[String(season.season)] || {};
     const card = el('div', 'card season-card');
     const top = season.players.slice(0, 5);
 
     card.appendChild(el('h3', null, season.name));
-    if (season.subtitle) card.appendChild(el('p', 'panel__note', season.subtitle));
+    if (season.subtitle) {
+      card.appendChild(el('p', 'season-card__subtitle', season.subtitle));
+    }
+    if (cfg.blurb) card.appendChild(el('p', 'season-card__blurb', cfg.blurb));
+
+    // Who won the actual show, as distinct from who won our pool.
+    const soleSurvivor = season.castaways.find((castaway) => castaway.winner);
+    if (soleSurvivor) {
+      const block = el('div', 'season-card__block');
+      block.appendChild(el('div', 'season-card__label', 'Sole Survivor'));
+      block.appendChild(el('div', 'season-card__winner', soleSurvivor.name));
+
+      const finale = cfg.finale || {};
+      if (finale.vote) {
+        const over = (finale.over || []).join(' and ');
+        block.appendChild(
+          el(
+            'div',
+            'season-card__vote',
+            over ? `${finale.vote} over ${over}` : finale.vote
+          )
+        );
+      }
+      if (soleSurvivor.drafted_by && soleSurvivor.drafted_by.length) {
+        block.appendChild(
+          el(
+            'div',
+            'season-card__owned',
+            `Drafted by ${soleSurvivor.drafted_by.join(', ')}`
+          )
+        );
+      }
+      card.appendChild(block);
+    }
 
     if (top.length) {
-      card.appendChild(el('div', 'season-card__crown', 'Champion'));
-      card.appendChild(el('div', 'season-card__champ', top[0].name));
-      card.appendChild(el('div', 'season-card__score', `${top[0].total} points`));
+      const block = el('div', 'season-card__block');
+      block.appendChild(el('div', 'season-card__label', 'Pool champion'));
+      block.appendChild(el('div', 'season-card__champ', top[0].name));
+      block.appendChild(el('div', 'season-card__score', `${top[0].total} points`));
 
       const list = el('div', 'season-card__list');
       top.slice(1).forEach((player) => {
@@ -917,7 +952,8 @@ function renderPastSeasons() {
           el('div', null, `${player.rank}. ${player.name} · ${player.total}`)
         );
       });
-      card.appendChild(list);
+      block.appendChild(list);
+      card.appendChild(block);
     } else {
       card.appendChild(el('p', 'panel__note', 'No standings recorded.'));
     }
