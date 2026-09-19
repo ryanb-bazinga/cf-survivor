@@ -1,0 +1,1386 @@
+{
+ "season": 49,
+ "name": "Survivor 49",
+ "subtitle": "",
+ "status": "complete",
+ "generated": "2026-09-19",
+ "source_workbook": "Survivor Tracking Season 49.xlsx",
+ "tribes": [],
+ "castaways": [
+  {
+   "name": "Jason Treul",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Chris",
+    "Christiaan",
+    "Becky",
+    "Amy",
+    "Taylor",
+    "Jenn"
+   ]
+  },
+  {
+   "name": "Kristina Mills",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Immunity Idol Find",
+     "points": 1
+    }
+   ],
+   "drafted_by": []
+  },
+  {
+   "name": "Matt Williams",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Kaitlynn",
+    "Matt",
+    "Ryan",
+    "Giselle"
+   ]
+  },
+  {
+   "name": "MC Chukwujekwu",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Kaitlynn",
+    "Kristen",
+    "Erin",
+    "Sally",
+    "Taylor",
+    "Victoria",
+    "Kim"
+   ]
+  },
+  {
+   "name": "Sophia Segreti",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 6,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 10,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Matt",
+    "Kristen",
+    "Chelsie",
+    "Becky",
+    "Erin",
+    "Chad",
+    "Giselle"
+   ]
+  },
+  {
+   "name": "Steven Ramm",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 7,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 9,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 11,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 11,
+     "label": "Win Journey Advantage",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chelsie",
+    "Chad",
+    "Chelsea",
+    "Kristina"
+   ]
+  },
+  {
+   "name": "Alex Moore",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Christiaan",
+    "Erin",
+    "Shauna",
+    "Kim"
+   ]
+  },
+  {
+   "name": "Annie Davis",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Jake Latimer",
+   "tribe": "Lagi",
+   "status": "OUT",
+   "points": -2,
+   "out_episode": 3,
+   "out_reason": "Med Visit EVAC",
+   "winner": false,
+   "events": [
+    {
+     "episode": 3,
+     "label": "Med Visit EVAC",
+     "points": -2
+    }
+   ],
+   "drafted_by": [
+    "Chelsie",
+    "Allison",
+    "Sally"
+   ]
+  },
+  {
+   "name": "Jeremiah Ing",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Nicole Mazullo",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Sophi Balerdi",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 6,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Win Journey Advantage",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Win Journey Advantage",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Becky",
+    "Chelsea",
+    "Jenn"
+   ]
+  },
+  {
+   "name": "Jawan Pitts",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Win Journey Advantage",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Chad"
+   ]
+  },
+  {
+   "name": "Nate Moore",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Chris",
+    "Matt",
+    "Allison",
+    "Ryan",
+    "Amy",
+    "Victoria",
+    "Shauna",
+    "Kristina"
+   ]
+  },
+  {
+   "name": "Rizo Velovic",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 4,
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Christiaan"
+   ]
+  },
+  {
+   "name": "Sage Ahrens-Nichols",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Win Journey Advantage",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Chelsea"
+   ]
+  },
+  {
+   "name": "Savannah Louie",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 19,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": true,
+   "events": [
+    {
+     "episode": 7,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Win Journey Advantage",
+     "points": 1
+    },
+    {
+     "episode": 9,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 12,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 12,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Win Fire Challenge",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Win Survivor",
+     "points": 6
+    }
+   ],
+   "drafted_by": [
+    "Allison",
+    "Sally",
+    "Ryan",
+    "Amy",
+    "Taylor",
+    "Victoria",
+    "Shauna",
+    "Kim",
+    "Jenn",
+    "Giselle",
+    "Kristina"
+   ]
+  },
+  {
+   "name": "Shannon Fairweather",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Chris",
+    "Kaitlynn",
+    "Kristen"
+   ]
+  }
+ ],
+ "players": [
+  {
+   "name": "Kristina",
+   "picks": [
+    "Nate Moore",
+    "Steven Ramm",
+    "Savannah Louie"
+   ],
+   "total": 28,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 6,
+    "E8": 3,
+    "E9": 4,
+    "E10": 0,
+    "E11": 3,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 1,
+   "previous_rank": 1,
+   "movement": 0
+  },
+  {
+   "name": "Giselle",
+   "picks": [
+    "Matt Williams",
+    "Sophia Segreti",
+    "Savannah Louie"
+   ],
+   "total": 25,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 6,
+    "E8": 3,
+    "E9": 2,
+    "E10": 2,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 2,
+   "previous_rank": 3,
+   "movement": 1
+  },
+  {
+   "name": "Jenn",
+   "picks": [
+    "Savannah Louie",
+    "Jason Treul",
+    "Sophi Balerdi"
+   ],
+   "total": 25,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 1,
+    "E7": 4,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 12
+   },
+   "rank": 2,
+   "previous_rank": 8,
+   "movement": 6
+  },
+  {
+   "name": "Kim",
+   "picks": [
+    "Alex Moore",
+    "Savannah Louie",
+    "MC Chukwujekwu"
+   ],
+   "total": 25,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 7,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 2,
+   "previous_rank": 4,
+   "movement": 2
+  },
+  {
+   "name": "Shauna",
+   "picks": [
+    "Alex Moore",
+    "Nate Moore",
+    "Savannah Louie"
+   ],
+   "total": 24,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 6,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 5,
+   "previous_rank": 5,
+   "movement": 0
+  },
+  {
+   "name": "Victoria",
+   "picks": [
+    "MC Chukwujekwu",
+    "Nate Moore",
+    "Savannah Louie"
+   ],
+   "total": 24,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 7,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 5,
+   "previous_rank": 6,
+   "movement": 1
+  },
+  {
+   "name": "Taylor",
+   "picks": [
+    "Savannah Louie",
+    "MC Chukwujekwu",
+    "Jason Treul"
+   ],
+   "total": 22,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 5,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 7,
+   "previous_rank": 9,
+   "movement": 2
+  },
+  {
+   "name": "Amy",
+   "picks": [
+    "Savannah Louie",
+    "Nate Moore",
+    "Jason Treul"
+   ],
+   "total": 21,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 4,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 8,
+   "previous_rank": 10,
+   "movement": 2
+  },
+  {
+   "name": "Ryan",
+   "picks": [
+    "Matt Williams",
+    "Nate Moore",
+    "Savannah Louie"
+   ],
+   "total": 21,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 4,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 8,
+   "previous_rank": 12,
+   "movement": 4
+  },
+  {
+   "name": "Sally",
+   "picks": [
+    "Jake Latimer",
+    "Savannah Louie",
+    "MC Chukwujekwu"
+   ],
+   "total": 20,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": -2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 5,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 10,
+   "previous_rank": 14,
+   "movement": 4
+  },
+  {
+   "name": "Allison",
+   "picks": [
+    "Jake Latimer",
+    "Nate Moore",
+    "Savannah Louie"
+   ],
+   "total": 19,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": -2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 4,
+    "E8": 3,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 3,
+    "E13": 9
+   },
+   "rank": 11,
+   "previous_rank": 15,
+   "movement": 4
+  },
+  {
+   "name": "Chad",
+   "picks": [
+    "Steven Ramm",
+    "Sophia Segreti",
+    "Jawan Pitts"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 8,
+    "E8": 0,
+    "E9": 2,
+    "E10": 2,
+    "E11": 3,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 12,
+   "previous_rank": 2,
+   "movement": -10
+  },
+  {
+   "name": "Chelsea",
+   "picks": [
+    "Steven Ramm",
+    "Sage Ahrens-Nichols",
+    "Sophi Balerdi"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 1,
+    "E7": 7,
+    "E8": 0,
+    "E9": 2,
+    "E10": 0,
+    "E11": 3,
+    "E12": 0,
+    "E13": 3
+   },
+   "rank": 12,
+   "previous_rank": 7,
+   "movement": -5
+  },
+  {
+   "name": "Becky",
+   "picks": [
+    "Sophia Segreti",
+    "Jason Treul",
+    "Sophi Balerdi"
+   ],
+   "total": 12,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 1,
+    "E7": 6,
+    "E8": 0,
+    "E9": 0,
+    "E10": 2,
+    "E11": 0,
+    "E12": 0,
+    "E13": 3
+   },
+   "rank": 14,
+   "previous_rank": 16,
+   "movement": 2
+  },
+  {
+   "name": "Erin",
+   "picks": [
+    "Alex Moore",
+    "Sophia Segreti",
+    "MC Chukwujekwu"
+   ],
+   "total": 12,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 9,
+    "E8": 0,
+    "E9": 0,
+    "E10": 2,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 14,
+   "previous_rank": 11,
+   "movement": -3
+  },
+  {
+   "name": "Chelsie",
+   "picks": [
+    "Steven Ramm",
+    "Jake Latimer",
+    "Sophia Segreti"
+   ],
+   "total": 11,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": -2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 6,
+    "E8": 0,
+    "E9": 2,
+    "E10": 2,
+    "E11": 3,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 16,
+   "previous_rank": 13,
+   "movement": -3
+  },
+  {
+   "name": "Kristen",
+   "picks": [
+    "Sophia Segreti",
+    "MC Chukwujekwu",
+    "Shannon Fairweather"
+   ],
+   "total": 9,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 7,
+    "E8": 0,
+    "E9": 0,
+    "E10": 2,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 17,
+   "previous_rank": 17,
+   "movement": 0
+  },
+  {
+   "name": "Matt",
+   "picks": [
+    "Sophia Segreti",
+    "Nate Moore",
+    "Matt Williams"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 6,
+    "E8": 0,
+    "E9": 0,
+    "E10": 2,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 18,
+   "previous_rank": 18,
+   "movement": 0
+  },
+  {
+   "name": "Christiaan",
+   "picks": [
+    "Alex Moore",
+    "Jason Treul",
+    "Rizo Velovic"
+   ],
+   "total": 6,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 1,
+    "E5": 0,
+    "E6": 0,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 19,
+   "previous_rank": 19,
+   "movement": 0
+  },
+  {
+   "name": "Kaitlynn",
+   "picks": [
+    "Matt Williams",
+    "MC Chukwujekwu",
+    "Shannon Fairweather"
+   ],
+   "total": 3,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 3,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 20,
+   "previous_rank": 20,
+   "movement": 0
+  },
+  {
+   "name": "Chris",
+   "picks": [
+    "Jason Treul",
+    "Nate Moore",
+    "Shannon Fairweather"
+   ],
+   "total": 2,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 2,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 21,
+   "previous_rank": 21,
+   "movement": 0
+  }
+ ],
+ "episodes": [
+  {
+   "number": 1,
+   "label": "E1",
+   "title": "",
+   "airs": null,
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 2,
+   "label": "E2",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Alex Moore",
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "castaway": "Jawan Pitts",
+     "label": "Win Journey Advantage",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "label": "E3",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Jake Latimer",
+     "label": "Med Visit EVAC",
+     "points": -2
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "label": "E4",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Rizo Velovic",
+     "label": "Immunity Idol Find",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "label": "E5",
+   "title": "",
+   "airs": null,
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 6,
+   "label": "E6",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Sophi Balerdi",
+     "label": "Win Journey Advantage",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "label": "E7",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kristina Mills",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "MC Chukwujekwu",
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "castaway": "MC Chukwujekwu",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Sophia Segreti",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Sophia Segreti",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Steven Ramm",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Alex Moore",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Sophi Balerdi",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Jawan Pitts",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Nate Moore",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Rizo Velovic",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Sage Ahrens-Nichols",
+     "label": "Win Journey Advantage",
+     "points": 1
+    },
+    {
+     "castaway": "Sage Ahrens-Nichols",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Make Merge",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "label": "E8",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kristina Mills",
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Win Journey Advantage",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "label": "E9",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Steven Ramm",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "label": "E10",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Sophia Segreti",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "label": "E11",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Steven Ramm",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Steven Ramm",
+     "label": "Win Journey Advantage",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "label": "E12",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Savannah Louie",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "label": "E13",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Sophi Balerdi",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Sophi Balerdi",
+     "label": "Win Journey Advantage",
+     "points": 1
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Win Fire Challenge",
+     "points": 1
+    },
+    {
+     "castaway": "Savannah Louie",
+     "label": "Win Survivor",
+     "points": 6
+    }
+   ]
+  }
+ ],
+ "scoring": {
+  "positive": [
+   {
+    "label": "Immunity Idol Find",
+    "points": 1
+   },
+   {
+    "label": "Effective FAKE Idol",
+    "points": 1
+   },
+   {
+    "label": "Effective REAL Idol",
+    "points": 2
+   },
+   {
+    "label": "Immunity Challenge Win",
+    "points": 2
+   },
+   {
+    "label": "Reward Challenge Win",
+    "points": 1
+   },
+   {
+    "label": "Win Journey Advantage",
+    "points": 1
+   },
+   {
+    "label": "Shot in the Dark SUCCESS",
+    "points": 2
+   },
+   {
+    "label": "Make Merge",
+    "points": 2
+   },
+   {
+    "label": "Win Fire Challenge",
+    "points": 1
+   },
+   {
+    "label": "Win Survivor",
+    "points": 6
+   }
+  ],
+  "negative": [
+   {
+    "label": "Voted Out WITH Idol",
+    "points": -2
+   },
+   {
+    "label": "Med Visit NO PULL",
+    "points": -1
+   },
+   {
+    "label": "Med Visit EVAC",
+    "points": -2
+   },
+   {
+    "label": "Quite Game",
+    "points": -4
+   }
+  ]
+ }
+}

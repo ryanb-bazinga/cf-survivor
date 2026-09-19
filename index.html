@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CF Survivor League</title>
+<meta name="description" content="Standings, draft board and cast tracker for the Cornerstone Fellowship staff and family Survivor fantasy pool.">
+<meta property="og:title" content="CF Survivor League">
+<meta property="og:description" content="Live standings for the Cornerstone Fellowship Survivor fantasy pool.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="hero__org" id="hero-org">Cornerstone Fellowship</span>
+    <img class="hero__logo" id="hero-logo" src="assets/img/season-logo.png" alt="">
+    <h1 class="hero__title" id="hero-title">Survivor League</h1>
+    <p class="hero__sub" id="hero-sub"></p>
+
+    <div class="countdown" id="countdown">
+      <span class="countdown__label" id="countdown-label"></span>
+      <div id="countdown-units" style="display:contents">
+        <span class="countdown__unit"><span class="countdown__num" id="cd-days">00</span><span>Days</span></span>
+        <span class="countdown__unit"><span class="countdown__num" id="cd-hours">00</span><span>Hrs</span></span>
+        <span class="countdown__unit"><span class="countdown__num" id="cd-mins">00</span><span>Min</span></span>
+        <span class="countdown__unit"><span class="countdown__num" id="cd-secs">00</span><span>Sec</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" role="tablist" aria-label="League sections">
+  <div class="wrap">
+    <div class="nav__inner" id="nav-inner"></div>
+  </div>
+</nav>
+
+<main>
+
+  <section class="panel" id="panel-standings" role="tabpanel">
+    <div class="wrap">
+      <div class="panel__head">
+        <h2>Standings</h2>
+        <span class="panel__note" id="standings-note"></span>
+      </div>
+      <div id="standings-empty"></div>
+      <div class="table-scroll" id="standings-table-wrap">
+        <table>
+          <caption class="visually-hidden">League standings, sortable by column</caption>
+          <thead id="standings-head"></thead>
+          <tbody id="standings-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-draft" role="tabpanel">
+    <div class="wrap">
+      <div class="panel__head">
+        <h2>Draft Board</h2>
+        <span class="panel__note">Every roster, and who is on the most teams.</span>
+      </div>
+      <div class="panel__body"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-cast" role="tabpanel">
+    <div class="wrap">
+      <div class="panel__head">
+        <h2>Cast</h2>
+        <span class="panel__note" id="cast-note"></span>
+      </div>
+      <div class="grid" id="cast-grid"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-rules" role="tabpanel">
+    <div class="wrap">
+      <div class="panel__head">
+        <h2>Scoring</h2>
+        <span class="panel__note">Your three castaways, added together, every episode.</span>
+      </div>
+      <div class="rules" id="rules-grid"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-history" role="tabpanel">
+    <div class="wrap">
+      <div class="panel__head">
+        <h2>Past Seasons</h2>
+        <span class="panel__note">Champions and top five from previous years.</span>
+      </div>
+      <div class="grid" id="history-grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr))"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p id="footer-org"></p>
+    <p id="footer-meta"></p>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

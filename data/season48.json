@@ -1,0 +1,1731 @@
+{
+ "season": 48,
+ "name": "Survivor 48",
+ "subtitle": "",
+ "status": "complete",
+ "generated": "2026-09-19",
+ "source_workbook": "Survivor Tracking Season 48.xlsx",
+ "tribes": [],
+ "castaways": [
+  {
+   "name": "Charity Nelms",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Chad",
+    "Joe",
+    "Jordan",
+    "Sally"
+   ]
+  },
+  {
+   "name": "Chrissy Sarnowsky",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Jordan",
+    "Matt L.",
+    "Ryan / Boys",
+    "Shauna"
+   ]
+  },
+  {
+   "name": "David Kinne",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 6,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chris",
+    "Garrett"
+   ]
+  },
+  {
+   "name": "Kamilla Karthigesu",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 9,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 3,
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "episode": 11,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 11,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Becky",
+    "Chelsie",
+    "Chris",
+    "Debbie",
+    "Jenn",
+    "Joe",
+    "Kelly",
+    "Victoria"
+   ]
+  },
+  {
+   "name": "Kyle Fraser",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 15,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": true,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "episode": 4,
+     "label": "Effective REAL Idol",
+     "points": 2
+    },
+    {
+     "episode": 6,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 10,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Final Three",
+     "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Win Survivor",
+     "points": 5
+    }
+   ],
+   "drafted_by": [
+    "Chad",
+    "Howard N.",
+    "Kim"
+   ]
+  },
+  {
+   "name": "Mitch Guerra",
+   "tribe": "Civa",
+   "status": "IN",
+   "points": 5,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chad",
+    "Christiaan",
+    "Erin",
+    "Kaitlynn",
+    "Kelly",
+    "Matt L."
+   ]
+  },
+  {
+   "name": "Bianca Roses",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 1,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 3,
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chris",
+    "Debbie",
+    "Erin"
+   ]
+  },
+  {
+   "name": "Eva Erickson",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 9,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 5,
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 11,
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Win Fire Challenge",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Final Three",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Amy",
+    "Christiaan",
+    "Gelly/Aliz",
+    "Howard N.",
+    "Kristina",
+    "Matt L.",
+    "Ryan / Boys"
+   ]
+  },
+  {
+   "name": "Joe Hunter",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 10,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 9,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 9,
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 10,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 12,
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Final Three",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Amy",
+    "Becky",
+    "Chelsie",
+    "Debbie",
+    "Gelly/Aliz",
+    "Kim",
+    "Kristina",
+    "Ryan / Boys",
+    "Shauna",
+    "Victoria"
+   ]
+  },
+  {
+   "name": "Shauhin Davari",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 5,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "episode": 12,
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Amy",
+    "Erin",
+    "Howard N.",
+    "Joe",
+    "Kelly",
+    "Sally",
+    "Victoria"
+   ]
+  },
+  {
+   "name": "Star Toomey",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 4,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Gelly/Aliz",
+    "Jordan"
+   ]
+  },
+  {
+   "name": "Thomas Krottinger",
+   "tribe": "Lagi",
+   "status": "IN",
+   "points": 1,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Christiaan",
+    "Garrett",
+    "Jenn",
+    "Kaitlynn"
+   ]
+  },
+  {
+   "name": "Cedrek McFadden",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    }
+   ],
+   "drafted_by": []
+  },
+  {
+   "name": "Justin Pioppi",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 1,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 3,
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chelsie"
+   ]
+  },
+  {
+   "name": "Kevin Leung",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Kaitlynn",
+    "Shauna"
+   ]
+  },
+  {
+   "name": "Mary Zheng",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 6,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "episode": 3,
+     "label": "Shot in the Dark SUCCESS",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "episode": 8,
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Becky",
+    "Garrett",
+    "Jenn",
+    "Kim",
+    "Kristina"
+   ]
+  },
+  {
+   "name": "Saiounia \u201cSai\u201d Hughley",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 1,
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Merge",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Sally"
+   ]
+  },
+  {
+   "name": "Stephanie Berger",
+   "tribe": "Vula",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  }
+ ],
+ "players": [
+  {
+   "name": "Kim",
+   "picks": [
+    "Joe Hunter",
+    "Kyle Fraser",
+    "Mary Zheng"
+   ],
+   "total": 31,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 1,
+    "E4": 2,
+    "E5": 0,
+    "E6": 7,
+    "E7": 2,
+    "E8": 2,
+    "E9": 2,
+    "E10": 2,
+    "E11": 0,
+    "E12": 1,
+    "E13": 10
+   },
+   "rank": 1,
+   "previous_rank": 2,
+   "movement": 1
+  },
+  {
+   "name": "Howard N.",
+   "picks": [
+    "Kyle Fraser",
+    "Eva Erickson",
+    "Shauhin Davari"
+   ],
+   "total": 29,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 2,
+    "E5": 1,
+    "E6": 7,
+    "E7": 1,
+    "E8": 3,
+    "E9": 0,
+    "E10": 1,
+    "E11": 1,
+    "E12": 1,
+    "E13": 11
+   },
+   "rank": 2,
+   "previous_rank": 7,
+   "movement": 5
+  },
+  {
+   "name": "Becky",
+   "picks": [
+    "Joe Hunter",
+    "Mary Zheng",
+    "Kamilla Karthigesu"
+   ],
+   "total": 25,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 3,
+    "E8": 3,
+    "E9": 2,
+    "E10": 1,
+    "E11": 2,
+    "E12": 1,
+    "E13": 4
+   },
+   "rank": 3,
+   "previous_rank": 1,
+   "movement": -2
+  },
+  {
+   "name": "Kristina",
+   "picks": [
+    "Joe Hunter",
+    "Mary Zheng",
+    "Eva Erickson"
+   ],
+   "total": 25,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 1,
+    "E4": 0,
+    "E5": 1,
+    "E6": 6,
+    "E7": 2,
+    "E8": 4,
+    "E9": 2,
+    "E10": 1,
+    "E11": 1,
+    "E12": 1,
+    "E13": 5
+   },
+   "rank": 3,
+   "previous_rank": 3,
+   "movement": 0
+  },
+  {
+   "name": "Amy",
+   "picks": [
+    "Shauhin Davari",
+    "Eva Erickson",
+    "Joe Hunter"
+   ],
+   "total": 24,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 1,
+    "E6": 6,
+    "E7": 2,
+    "E8": 4,
+    "E9": 2,
+    "E10": 1,
+    "E11": 1,
+    "E12": 2,
+    "E13": 5
+   },
+   "rank": 5,
+   "previous_rank": 5,
+   "movement": 0
+  },
+  {
+   "name": "Victoria",
+   "picks": [
+    "Joe Hunter",
+    "Kamilla Karthigesu",
+    "Shauhin Davari"
+   ],
+   "total": 24,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 1,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 3,
+    "E8": 3,
+    "E9": 2,
+    "E10": 1,
+    "E11": 2,
+    "E12": 2,
+    "E13": 4
+   },
+   "rank": 5,
+   "previous_rank": 4,
+   "movement": -1
+  },
+  {
+   "name": "Gelly/Aliz",
+   "picks": [
+    "Joe Hunter",
+    "Eva Erickson",
+    "Star Toomey"
+   ],
+   "total": 23,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 1,
+    "E6": 6,
+    "E7": 2,
+    "E8": 4,
+    "E9": 2,
+    "E10": 1,
+    "E11": 1,
+    "E12": 1,
+    "E13": 5
+   },
+   "rank": 7,
+   "previous_rank": 6,
+   "movement": -1
+  },
+  {
+   "name": "Ryan / Boys",
+   "picks": [
+    "Chrissy Sarnowsky",
+    "Eva Erickson",
+    "Joe Hunter"
+   ],
+   "total": 22,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 1,
+    "E6": 6,
+    "E7": 2,
+    "E8": 3,
+    "E9": 2,
+    "E10": 1,
+    "E11": 1,
+    "E12": 1,
+    "E13": 5
+   },
+   "rank": 8,
+   "previous_rank": 9,
+   "movement": 1
+  },
+  {
+   "name": "Chad",
+   "picks": [
+    "Kyle Fraser",
+    "Mitch Guerra",
+    "Charity Nelms"
+   ],
+   "total": 20,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 5,
+    "E7": 1,
+    "E8": 1,
+    "E9": 0,
+    "E10": 1,
+    "E11": 0,
+    "E12": 0,
+    "E13": 8
+   },
+   "rank": 9,
+   "previous_rank": 16,
+   "movement": 7
+  },
+  {
+   "name": "Chelsie",
+   "picks": [
+    "Joe Hunter",
+    "Kamilla Karthigesu",
+    "Justin Pioppi"
+   ],
+   "total": 20,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 2,
+    "E9": 2,
+    "E10": 1,
+    "E11": 2,
+    "E12": 1,
+    "E13": 4
+   },
+   "rank": 9,
+   "previous_rank": 10,
+   "movement": 1
+  },
+  {
+   "name": "Debbie",
+   "picks": [
+    "Joe Hunter",
+    "Bianca Roses",
+    "Kamilla Karthigesu"
+   ],
+   "total": 20,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 2,
+    "E9": 2,
+    "E10": 1,
+    "E11": 2,
+    "E12": 1,
+    "E13": 4
+   },
+   "rank": 9,
+   "previous_rank": 11,
+   "movement": 2
+  },
+  {
+   "name": "Kelly",
+   "picks": [
+    "Kamilla Karthigesu",
+    "Shauhin Davari",
+    "Mitch Guerra"
+   ],
+   "total": 19,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 1,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 3,
+    "E8": 3,
+    "E9": 0,
+    "E10": 0,
+    "E11": 2,
+    "E12": 1,
+    "E13": 2
+   },
+   "rank": 12,
+   "previous_rank": 8,
+   "movement": -4
+  },
+  {
+   "name": "Matt L.",
+   "picks": [
+    "Eva Erickson",
+    "Mitch Guerra",
+    "Chrissy Sarnowsky"
+   ],
+   "total": 17,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 0,
+    "E4": 0,
+    "E5": 1,
+    "E6": 6,
+    "E7": 2,
+    "E8": 3,
+    "E9": 0,
+    "E10": 0,
+    "E11": 1,
+    "E12": 0,
+    "E13": 3
+   },
+   "rank": 13,
+   "previous_rank": 14,
+   "movement": 1
+  },
+  {
+   "name": "Chris",
+   "picks": [
+    "Bianca Roses",
+    "Kamilla Karthigesu",
+    "David Kinne"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 4,
+    "E8": 2,
+    "E9": 0,
+    "E10": 0,
+    "E11": 2,
+    "E12": 0,
+    "E13": 2
+   },
+   "rank": 14,
+   "previous_rank": 12,
+   "movement": -2
+  },
+  {
+   "name": "Jenn",
+   "picks": [
+    "Thomas Krottinger",
+    "Mary Zheng",
+    "Kamilla Karthigesu"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 2,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 2,
+    "E9": 0,
+    "E10": 0,
+    "E11": 2,
+    "E12": 0,
+    "E13": 2
+   },
+   "rank": 14,
+   "previous_rank": 13,
+   "movement": -1
+  },
+  {
+   "name": "Christiaan",
+   "picks": [
+    "Mitch Guerra",
+    "Thomas Krottinger",
+    "Eva Erickson"
+   ],
+   "total": 15,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 1,
+    "E6": 4,
+    "E7": 1,
+    "E8": 3,
+    "E9": 0,
+    "E10": 0,
+    "E11": 1,
+    "E12": 0,
+    "E13": 3
+   },
+   "rank": 16,
+   "previous_rank": 17,
+   "movement": 1
+  },
+  {
+   "name": "Joe",
+   "picks": [
+    "Charity Nelms",
+    "Kamilla Karthigesu",
+    "Shauhin Davari"
+   ],
+   "total": 14,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 1,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 2,
+    "E9": 0,
+    "E10": 0,
+    "E11": 2,
+    "E12": 1,
+    "E13": 2
+   },
+   "rank": 17,
+   "previous_rank": 18,
+   "movement": 1
+  },
+  {
+   "name": "Garrett",
+   "picks": [
+    "David Kinne",
+    "Thomas Krottinger",
+    "Mary Zheng"
+   ],
+   "total": 13,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 1,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 4,
+    "E8": 2,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 18,
+   "previous_rank": 15,
+   "movement": -3
+  },
+  {
+   "name": "Shauna",
+   "picks": [
+    "Kevin Leung",
+    "Chrissy Sarnowsky",
+    "Joe Hunter"
+   ],
+   "total": 13,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 1,
+    "E9": 2,
+    "E10": 1,
+    "E11": 0,
+    "E12": 1,
+    "E13": 2
+   },
+   "rank": 18,
+   "previous_rank": 20,
+   "movement": 2
+  },
+  {
+   "name": "Erin",
+   "picks": [
+    "Mitch Guerra",
+    "Bianca Roses",
+    "Shauhin Davari"
+   ],
+   "total": 11,
+   "episodes": {
+    "E1": 0,
+    "E2": 1,
+    "E3": 1,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 2,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 1,
+    "E13": 0
+   },
+   "rank": 20,
+   "previous_rank": 19,
+   "movement": -1
+  },
+  {
+   "name": "Sally",
+   "picks": [
+    "Saiounia \u201cSai\u201d Hughley",
+    "Shauhin Davari",
+    "Charity Nelms"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 1,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 1,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 1,
+    "E13": 0
+   },
+   "rank": 21,
+   "previous_rank": 21,
+   "movement": 0
+  },
+  {
+   "name": "Jordan",
+   "picks": [
+    "Chrissy Sarnowsky",
+    "Charity Nelms",
+    "Star Toomey"
+   ],
+   "total": 7,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 2,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 22,
+   "previous_rank": 22,
+   "movement": 0
+  },
+  {
+   "name": "Kaitlynn",
+   "picks": [
+    "Kevin Leung",
+    "Mitch Guerra",
+    "Thomas Krottinger"
+   ],
+   "total": 6,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 2,
+    "E7": 1,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 23,
+   "previous_rank": 23,
+   "movement": 0
+  }
+ ],
+ "episodes": [
+  {
+   "number": 1,
+   "label": "E1",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Saiounia \u201cSai\u201d Hughley",
+     "label": "Immunity Idol Find",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "label": "E2",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Immunity Idol Find",
+     "points": 1
+    },
+    {
+     "castaway": "Mitch Guerra",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Thomas Krottinger",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Mary Zheng",
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "label": "E3",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Bianca Roses",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Justin Pioppi",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Mary Zheng",
+     "label": "Shot in the Dark SUCCESS",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "label": "E4",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Effective REAL Idol",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "label": "E5",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Eva Erickson",
+     "label": "Immunity Idol Find",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "label": "E6",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Chrissy Sarnowsky",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "David Kinne",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Mitch Guerra",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Eva Erickson",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Shauhin Davari",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Star Toomey",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Cedrek McFadden",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Mary Zheng",
+     "label": "Make Merge",
+     "points": 2
+    },
+    {
+     "castaway": "Saiounia \u201cSai\u201d Hughley",
+     "label": "Make Merge",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "label": "E7",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Chrissy Sarnowsky",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "David Kinne",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "David Kinne",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "David Kinne",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "Mitch Guerra",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Shauhin Davari",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "Star Toomey",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "Cedrek McFadden",
+     "label": "Make Jury",
+     "points": 1
+    },
+    {
+     "castaway": "Mary Zheng",
+     "label": "Make Jury",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "label": "E8",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "David Kinne",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Mitch Guerra",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Eva Erickson",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Eva Erickson",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Shauhin Davari",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Star Toomey",
+     "label": "Go On Journey",
+     "points": 1
+    },
+    {
+     "castaway": "Mary Zheng",
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "label": "E9",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "label": "E10",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "label": "E11",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Eva Erickson",
+     "label": "Go On Journey",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "label": "E12",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Shauhin Davari",
+     "label": "Reward Challenge Win",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "label": "E13",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Kamilla Karthigesu",
+     "label": "Reward Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Immunity Challenge Win",
+     "points": 1
+    },
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Final Three",
+     "points": 2
+    },
+    {
+     "castaway": "Kyle Fraser",
+     "label": "Win Survivor",
+     "points": 5
+    },
+    {
+     "castaway": "Eva Erickson",
+     "label": "Win Fire Challenge",
+     "points": 1
+    },
+    {
+     "castaway": "Eva Erickson",
+     "label": "Final Three",
+     "points": 2
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Final Three",
+     "points": 2
+    }
+   ]
+  }
+ ],
+ "scoring": {
+  "positive": [
+   {
+    "label": "Immunity Idol Find",
+    "points": 1
+   },
+   {
+    "label": "Effective FAKE Idol",
+    "points": 1
+   },
+   {
+    "label": "Effective REAL Idol",
+    "points": 2
+   },
+   {
+    "label": "Immunity Challenge Win",
+    "points": 1
+   },
+   {
+    "label": "Reward Challenge Win",
+    "points": 1
+   },
+   {
+    "label": "Go On Journey",
+    "points": 1
+   },
+   {
+    "label": "Shot in the Dark SUCCESS",
+    "points": 1
+   },
+   {
+    "label": "Make Merge",
+    "points": 2
+   },
+   {
+    "label": "Make Jury",
+    "points": 2
+   },
+   {
+    "label": "Win Fire Challenge",
+    "points": 1
+   },
+   {
+    "label": "Final Three",
+    "points": 2
+   },
+   {
+    "label": "Win Survivor",
+    "points": 5
+   }
+  ],
+  "negative": [
+   {
+    "label": "Voted Out WITH Idol",
+    "points": -2
+   },
+   {
+    "label": "Med Visit NO PULL",
+    "points": -1
+   },
+   {
+    "label": "Med Visit EVAC",
+    "points": -2
+   },
+   {
+    "label": "Quite Game",
+    "points": -4
+   }
+  ]
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "site": {
+  "title": "CF Survivor League",
+  "org": "Cornerstone Fellowship",
+  "tagline": "Staff and family fantasy draft"
+ },
+ "currentSeason": 51,
+ "archiveSeasons": [50, 49, 48],
+ "features": {
+  "standings": true,
+  "draftBoard": true,
+  "castTracker": true,
+  "scoringRules": true,
+  "pastSeasons": true,
+  "countdown": true,
+  "myTeam": true,
+  "headToHead": true,
+  "scoreChart": true,
+  "weeklyAwards": true,
+  "bootOrder": true,
+  "episodeRecaps": true,
+  "castPhotos": false
+ },
+ "seasons": {
+  "51": {
+   "name": "Survivor 51",
+   "subtitle": "Outwit. Outplay. Outlast.",
+   "tribes": [
+    { "name": "Savu", "color": "#32B9DB" },
+    { "name": "Toka", "color": "#CDD943" }
+   ],
+   "draftNote": "Draft closes after Episode 1. Picks are due by the time Episode 2 airs.",
+   "episodes": {
+    "1": { "airs": "2026-09-23", "title": "Premiere" },
+    "2": { "airs": "2026-09-30" },
+    "3": { "airs": "2026-10-07" },
+    "4": { "airs": "2026-10-14" },
+    "5": { "airs": "2026-10-21" },
+    "6": { "airs": "2026-10-28" },
+    "7": { "airs": "2026-11-04" },
+    "8": { "airs": "2026-11-11" },
+    "9": { "airs": "2026-11-18" },
+    "10": { "airs": "2026-11-25" },
+    "11": { "airs": "2026-12-02" },
+    "12": { "airs": "2026-12-09" },
+    "13": { "airs": "2026-12-16", "title": "Finale" }
+   }
+  },
+  "50": {
+   "name": "Survivor 50",
+   "subtitle": "In the Hands of the Fans"
+  },
+  "49": {
+   "name": "Survivor 49",
+   "subtitle": ""
+  },
+  "48": {
+   "name": "Survivor 48",
+   "subtitle": ""
+  }
+ }
+}

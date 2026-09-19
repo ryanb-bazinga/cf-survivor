@@ -1,0 +1,1620 @@
+{
+ "season": 50,
+ "name": "Survivor 50",
+ "subtitle": "In the Hands of the Fans",
+ "status": "in_progress",
+ "generated": "2026-09-19",
+ "source_workbook": "Survivor Tracking Season 50.xlsx",
+ "tribes": [],
+ "castaways": [
+  {
+   "name": "Angelina Keeley",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Kristina VandenHeuvel"
+   ]
+  },
+  {
+   "name": "Aubry Bracco",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Kim Kennedy",
+    "Amy Sargent",
+    "Erin McGrath",
+    "Kelli Hoff",
+    "Erin Gorham",
+    "Christiaan VandenHeuvel"
+   ]
+  },
+  {
+   "name": "Colby Donaldson",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Howard Newby",
+    "Kaitlynn Newby"
+   ]
+  },
+  {
+   "name": "Genevieve Mushaluk",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 4,
+     "label": "Immunity Idol Find",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Dan Hatfield",
+    "Chelsea Whitley",
+    "Erin Gorham",
+    "Shauna Stockhaus",
+    "Kennedy Bicker",
+    "Garrett Bicker"
+   ]
+  },
+  {
+   "name": "Kyle Fraser",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Q Burdette",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Kaitlynn Newby"
+   ]
+  },
+  {
+   "name": "Rizo Velovic",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": []
+  },
+  {
+   "name": "Stephenie LaGrossa Kendrick",
+   "tribe": "Vatu",
+   "status": "IN",
+   "points": 5,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Win  Advantage",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Taylor McAllister"
+   ]
+  },
+  {
+   "name": "Benjamin \"Coach\" Wade",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Jenn Valley"
+   ]
+  },
+  {
+   "name": "Charlie Davis",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Taylor McAllister",
+    "Matt Langseth",
+    "Christiaan VandenHeuvel",
+    "Chris Stockhaus",
+    "Ryan Bicker",
+    "Garrett Bicker",
+    "Chad Anderson",
+    "Kaitlynn Newby"
+   ]
+  },
+  {
+   "name": "Chrissy Hofbeck",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Shauna Stockhaus"
+   ]
+  },
+  {
+   "name": "Dee Valladares",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 4,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Chelsie Anderson",
+    "Amy Sargent",
+    "Erin McGrath",
+    "Matt Langseth",
+    "Chelsea Whitley",
+    "Erin Gorham",
+    "Chris Stockhaus",
+    "Ryan Bicker",
+    "Chad Anderson"
+   ]
+  },
+  {
+   "name": "Jonathan Young",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 5,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 11,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 11,
+     "label": "Win  Advantage",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Jackson Bicker",
+    "Kennedy Bicker"
+   ]
+  },
+  {
+   "name": "Kamilla Karthigesu",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Becky Fitch",
+    "Victoria Langseth",
+    "Sally Faddis",
+    "Kristina VandenHeuvel"
+   ]
+  },
+  {
+   "name": "Mike White",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Jordan Ambuehl",
+    "Giselle Davis"
+   ]
+  },
+  {
+   "name": "Tiffany Ervin",
+   "tribe": "Kalo",
+   "status": "IN",
+   "points": 6,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 10,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Howard Newby"
+   ]
+  },
+  {
+   "name": "Christian Hubicki",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 6,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 2,
+     "label": "Immunity Idol Find",
+     "points": 2
+    },
+    {
+     "episode": 6,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Kim Kennedy",
+    "Chelsie Anderson",
+    "Howard Newby",
+    "Taylor McAllister",
+    "Jackson Bicker",
+    "Matt Langseth",
+    "Christiaan VandenHeuvel",
+    "Jordan Ambuehl",
+    "Giselle Davis"
+   ]
+  },
+  {
+   "name": "Cirie Fields",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Win  Advantage",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chelsie Anderson",
+    "Jenn Valley",
+    "Ryan Bicker",
+    "Becky Fitch"
+   ]
+  },
+  {
+   "name": "Emily Flippen",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 2,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Jordan Ambuehl"
+   ]
+  },
+  {
+   "name": "Jenna Lewis-Dougherty",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Joe Hunter",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 8,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 8,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 9,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 12,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ],
+   "drafted_by": [
+    "Kim Kennedy",
+    "Amy Sargent",
+    "Erin McGrath",
+    "Dan Hatfield",
+    "Kelli Hoff",
+    "Victoria Langseth"
+   ]
+  },
+  {
+   "name": "Ozzy Lusth",
+   "tribe": "Cila",
+   "status": "OUT",
+   "points": 3,
+   "out_episode": 11,
+   "out_reason": "Voted Out WITH Idol",
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Win  Advantage",
+     "points": 1
+    },
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 11,
+     "label": "Voted Out WITH Idol",
+     "points": -2
+    }
+   ],
+   "drafted_by": [
+    "Dan Hatfield",
+    "Kelli Hoff",
+    "Jenn Valley",
+    "Chris Stockhaus",
+    "Becky Fitch",
+    "Garrett Bicker",
+    "Sally Faddis"
+   ]
+  },
+  {
+   "name": "Rick Devens",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 3,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [
+    {
+     "episode": 6,
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "episode": 10,
+     "label": "Win  Advantage",
+     "points": 1
+    }
+   ],
+   "drafted_by": [
+    "Chelsea Whitley",
+    "Shauna Stockhaus",
+    "Kristina VandenHeuvel"
+   ]
+  },
+  {
+   "name": "Savannah Louie",
+   "tribe": "Cila",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": [
+    "Jackson Bicker",
+    "Kennedy Bicker",
+    "Giselle Davis",
+    "Victoria Langseth",
+    "Chad Anderson",
+    "Sally Faddis"
+   ]
+  }
+ ],
+ "players": [
+  {
+   "name": "Kim Kennedy",
+   "picks": [
+    "Joe Hunter",
+    "Aubry Bracco",
+    "Christian Hubicki"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 8,
+    "E7": 0,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 1,
+   "previous_rank": 1,
+   "movement": 0
+  },
+  {
+   "name": "Amy Sargent",
+   "picks": [
+    "Dee Valladares",
+    "Aubry Bracco",
+    "Joe Hunter"
+   ],
+   "total": 14,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 8,
+    "E7": 0,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 2,
+   "previous_rank": 3,
+   "movement": 1
+  },
+  {
+   "name": "Erin McGrath",
+   "picks": [
+    "Joe Hunter",
+    "Aubry Bracco",
+    "Dee Valladares"
+   ],
+   "total": 14,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 8,
+    "E7": 0,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 2,
+   "previous_rank": 4,
+   "movement": 2
+  },
+  {
+   "name": "Chelsie Anderson",
+   "picks": [
+    "Dee Valladares",
+    "Christian Hubicki",
+    "Cirie Fields"
+   ],
+   "total": 13,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 10,
+    "E7": 0,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 4,
+   "previous_rank": 2,
+   "movement": -2
+  },
+  {
+   "name": "Dan Hatfield",
+   "picks": [
+    "Joe Hunter",
+    "Genevieve Mushaluk",
+    "Ozzy Lusth"
+   ],
+   "total": 13,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 5,
+    "E7": 2,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": -2,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 4,
+   "previous_rank": 6,
+   "movement": 2
+  },
+  {
+   "name": "Kelli Hoff",
+   "picks": [
+    "Joe Hunter",
+    "Aubry Bracco",
+    "Ozzy Lusth"
+   ],
+   "total": 13,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 7,
+    "E7": 2,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": -2,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 4,
+   "previous_rank": 8,
+   "movement": 4
+  },
+  {
+   "name": "Howard Newby",
+   "picks": [
+    "Colby Donaldson",
+    "Tiffany Ervin",
+    "Christian Hubicki"
+   ],
+   "total": 12,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 2,
+    "E9": 0,
+    "E10": 2,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 7,
+   "previous_rank": 5,
+   "movement": -2
+  },
+  {
+   "name": "Jackson Bicker",
+   "picks": [
+    "Christian Hubicki",
+    "Jonathan Young",
+    "Savannah Louie"
+   ],
+   "total": 11,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 3,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 8,
+   "previous_rank": 7,
+   "movement": -1
+  },
+  {
+   "name": "Taylor McAllister",
+   "picks": [
+    "Stephenie LaGrossa Kendrick",
+    "Charlie Davis",
+    "Christian Hubicki"
+   ],
+   "total": 11,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 8,
+    "E7": 1,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 8,
+   "previous_rank": 9,
+   "movement": 1
+  },
+  {
+   "name": "Matt Langseth",
+   "picks": [
+    "Christian Hubicki",
+    "Dee Valladares",
+    "Charlie Davis"
+   ],
+   "total": 10,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 8,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 10,
+   "previous_rank": 10,
+   "movement": 0
+  },
+  {
+   "name": "Chelsea Whitley",
+   "picks": [
+    "Dee Valladares",
+    "Rick Devens",
+    "Genevieve Mushaluk"
+   ],
+   "total": 9,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 1,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 11,
+   "previous_rank": 11,
+   "movement": 0
+  },
+  {
+   "name": "Christiaan VandenHeuvel",
+   "picks": [
+    "Aubry Bracco",
+    "Christian Hubicki",
+    "Charlie Davis"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 12,
+   "previous_rank": 12,
+   "movement": 0
+  },
+  {
+   "name": "Erin Gorham",
+   "picks": [
+    "Dee Valladares",
+    "Genevieve Mushaluk",
+    "Aubry Bracco"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 12,
+   "previous_rank": 13,
+   "movement": 1
+  },
+  {
+   "name": "Jenn Valley",
+   "picks": [
+    "Ozzy Lusth",
+    "Benjamin \"Coach\" Wade",
+    "Cirie Fields"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 7,
+    "E7": 2,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": -2,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 12,
+   "previous_rank": 14,
+   "movement": 2
+  },
+  {
+   "name": "Jordan Ambuehl",
+   "picks": [
+    "Mike White",
+    "Christian Hubicki",
+    "Emily Flippen"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 12,
+   "previous_rank": 15,
+   "movement": 3
+  },
+  {
+   "name": "Victoria Langseth",
+   "picks": [
+    "Joe Hunter",
+    "Kamilla Karthigesu",
+    "Savannah Louie"
+   ],
+   "total": 8,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 2,
+    "E7": 0,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": 0,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 12,
+   "previous_rank": 22,
+   "movement": 10
+  },
+  {
+   "name": "Chris Stockhaus",
+   "picks": [
+    "Charlie Davis",
+    "Ozzy Lusth",
+    "Dee Valladares"
+   ],
+   "total": 7,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 7,
+    "E7": 2,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": -2,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 17,
+   "previous_rank": 16,
+   "movement": -1
+  },
+  {
+   "name": "Kennedy Bicker",
+   "picks": [
+    "Jonathan Young",
+    "Savannah Louie",
+    "Genevieve Mushaluk"
+   ],
+   "total": 7,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 2,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 3,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 17,
+   "previous_rank": 17,
+   "movement": 0
+  },
+  {
+   "name": "Ryan Bicker",
+   "picks": [
+    "Cirie Fields",
+    "Charlie Davis",
+    "Dee Valladares"
+   ],
+   "total": 7,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 17,
+   "previous_rank": 18,
+   "movement": 1
+  },
+  {
+   "name": "Shauna Stockhaus",
+   "picks": [
+    "Chrissy Hofbeck",
+    "Rick Devens",
+    "Genevieve Mushaluk"
+   ],
+   "total": 7,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 4,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 1,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 17,
+   "previous_rank": 19,
+   "movement": 2
+  },
+  {
+   "name": "Becky Fitch",
+   "picks": [
+    "Cirie Fields",
+    "Ozzy Lusth",
+    "Kamilla Karthigesu"
+   ],
+   "total": 6,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 5,
+    "E7": 2,
+    "E8": 1,
+    "E9": 0,
+    "E10": 0,
+    "E11": -2,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 21,
+   "previous_rank": 20,
+   "movement": -1
+  },
+  {
+   "name": "Giselle Davis",
+   "picks": [
+    "Mike White",
+    "Christian Hubicki",
+    "Savannah Louie"
+   ],
+   "total": 6,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 21,
+   "previous_rank": 21,
+   "movement": 0
+  },
+  {
+   "name": "Garrett Bicker",
+   "picks": [
+    "Ozzy Lusth",
+    "Charlie Davis",
+    "Genevieve Mushaluk"
+   ],
+   "total": 5,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 3,
+    "E7": 2,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": -2,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 23,
+   "previous_rank": 23,
+   "movement": 0
+  },
+  {
+   "name": "Chad Anderson",
+   "picks": [
+    "Charlie Davis",
+    "Dee Valladares",
+    "Savannah Louie"
+   ],
+   "total": 4,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 4,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 24,
+   "previous_rank": 24,
+   "movement": 0
+  },
+  {
+   "name": "Kristina VandenHeuvel",
+   "picks": [
+    "Angelina Keeley",
+    "Kamilla Karthigesu",
+    "Rick Devens"
+   ],
+   "total": 3,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 2,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 1,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 25,
+   "previous_rank": 25,
+   "movement": 0
+  },
+  {
+   "name": "Sally Faddis",
+   "picks": [
+    "Savannah Louie",
+    "Ozzy Lusth",
+    "Kamilla Karthigesu"
+   ],
+   "total": 3,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 3,
+    "E7": 2,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": -2,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 25,
+   "previous_rank": 26,
+   "movement": 1
+  },
+  {
+   "name": "Kaitlynn Newby",
+   "picks": [
+    "Q Burdette",
+    "Charlie Davis",
+    "Colby Donaldson"
+   ],
+   "total": 0,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 0,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 27,
+   "previous_rank": 27,
+   "movement": 0
+  }
+ ],
+ "episodes": [
+  {
+   "number": 1,
+   "label": "E1",
+   "title": "",
+   "airs": null,
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 2,
+   "label": "E2",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Christian Hubicki",
+     "label": "Immunity Idol Find",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "label": "E3",
+   "title": "",
+   "airs": null,
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 4,
+   "label": "E4",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Genevieve Mushaluk",
+     "label": "Immunity Idol Find",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "label": "E5",
+   "title": "",
+   "airs": null,
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 6,
+   "label": "E6",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Aubry Bracco",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Rizo Velovic",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Stephenie LaGrossa Kendrick",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Stephenie LaGrossa Kendrick",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Benjamin \"Coach\" Wade",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Chrissy Hofbeck",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Dee Valladares",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Dee Valladares",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Jonathan Young",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Tiffany Ervin",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Christian Hubicki",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Christian Hubicki",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Cirie Fields",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Emily Flippen",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Ozzy Lusth",
+     "label": "Win  Advantage",
+     "points": 1
+    },
+    {
+     "castaway": "Ozzy Lusth",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Rick Devens",
+     "label": "Make Jury",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "label": "E7",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Stephenie LaGrossa Kendrick",
+     "label": "Win  Advantage",
+     "points": 1
+    },
+    {
+     "castaway": "Ozzy Lusth",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "label": "E8",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Tiffany Ervin",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Cirie Fields",
+     "label": "Win  Advantage",
+     "points": 1
+    },
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "label": "E9",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "label": "E10",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Tiffany Ervin",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Rick Devens",
+     "label": "Win  Advantage",
+     "points": 1
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "label": "E11",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Jonathan Young",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Jonathan Young",
+     "label": "Win  Advantage",
+     "points": 1
+    },
+    {
+     "castaway": "Ozzy Lusth",
+     "label": "Voted Out WITH Idol",
+     "points": -2
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "label": "E12",
+   "title": "",
+   "airs": null,
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Joe Hunter",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "label": "E13",
+   "title": "",
+   "airs": null,
+   "scored": false,
+   "events": []
+  }
+ ],
+ "scoring": {
+  "positive": [
+   {
+    "label": "Immunity Idol Find",
+    "points": 2
+   },
+   {
+    "label": "Effective FAKE Idol",
+    "points": 1
+   },
+   {
+    "label": "Effective REAL Idol",
+    "points": 2
+   },
+   {
+    "label": "Immunity Challenge Win",
+    "points": 2
+   },
+   {
+    "label": "Reward Challenge Win",
+    "points": 1
+   },
+   {
+    "label": "Win  Advantage",
+    "points": 1
+   },
+   {
+    "label": "Shot in the Dark SUCCESS",
+    "points": 2
+   },
+   {
+    "label": "Make Jury",
+    "points": 2
+   },
+   {
+    "label": "Win Fire Challenge",
+    "points": 1
+   },
+   {
+    "label": "Win Survivor",
+    "points": 6
+   }
+  ],
+  "negative": [
+   {
+    "label": "Voted Out WITH Idol",
+    "points": -2
+   },
+   {
+    "label": "Lose Vote",
+    "points": -1
+   },
+   {
+    "label": "Med Visit EVAC",
+    "points": -2
+   },
+   {
+    "label": "Quite Game",
+    "points": -4
+   }
+  ]
+ }
+}

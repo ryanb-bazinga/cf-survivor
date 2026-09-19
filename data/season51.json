@@ -1,0 +1,420 @@
+{
+ "season": 51,
+ "name": "Survivor 51",
+ "subtitle": "Outwit. Outplay. Outlast.",
+ "status": "pre_draft",
+ "generated": "2026-09-19",
+ "source_workbook": "Survivor Tracking Season 51.xlsx",
+ "tribes": [
+  {
+   "name": "Savu",
+   "color": "#32B9DB"
+  },
+  {
+   "name": "Toka",
+   "color": "#CDD943"
+  }
+ ],
+ "castaways": [
+  {
+   "name": "Alexis Levine",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Ana Sani",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Carter Krull",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Cristian Chavez",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Eric Macksoud",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Kristin Flickinger",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Linnea Capobianco",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Ori Jean-Charles",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Rob Antonson",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Sharonda Cox",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Aaliyah Puglia",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "An \"Thien An\" Nguyen",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Angelica \"Jelly\" Loblack",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Brady Booker",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Danny \"Kilby\" Kilby",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Devin Way",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Jenna Doore",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Lewis Kelly",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Maggie Nestor",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Mike Pinsky",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  },
+  {
+   "name": "Patt Cannaday",
+   "tribe": "",
+   "status": "IN",
+   "points": 0,
+   "out_episode": null,
+   "out_reason": null,
+   "winner": false,
+   "events": [],
+   "drafted_by": []
+  }
+ ],
+ "players": [],
+ "episodes": [
+  {
+   "number": 1,
+   "label": "E1",
+   "title": "Premiere",
+   "airs": "2026-09-23",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 2,
+   "label": "E2",
+   "title": "",
+   "airs": "2026-09-30",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 3,
+   "label": "E3",
+   "title": "",
+   "airs": "2026-10-07",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 4,
+   "label": "E4",
+   "title": "",
+   "airs": "2026-10-14",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 5,
+   "label": "E5",
+   "title": "",
+   "airs": "2026-10-21",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 6,
+   "label": "E6",
+   "title": "",
+   "airs": "2026-10-28",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 7,
+   "label": "E7",
+   "title": "",
+   "airs": "2026-11-04",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 8,
+   "label": "E8",
+   "title": "",
+   "airs": "2026-11-11",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 9,
+   "label": "E9",
+   "title": "",
+   "airs": "2026-11-18",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 10,
+   "label": "E10",
+   "title": "",
+   "airs": "2026-11-25",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 11,
+   "label": "E11",
+   "title": "",
+   "airs": "2026-12-02",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 12,
+   "label": "E12",
+   "title": "",
+   "airs": "2026-12-09",
+   "scored": false,
+   "events": []
+  },
+  {
+   "number": 13,
+   "label": "E13",
+   "title": "Finale",
+   "airs": "2026-12-16",
+   "scored": false,
+   "events": []
+  }
+ ],
+ "scoring": {
+  "positive": [
+   {
+    "label": "Immunity Idol Find",
+    "points": 2
+   },
+   {
+    "label": "Effective FAKE Idol",
+    "points": 1
+   },
+   {
+    "label": "Effective REAL Idol",
+    "points": 2
+   },
+   {
+    "label": "Immunity Challenge Win",
+    "points": 2
+   },
+   {
+    "label": "Reward Challenge Win",
+    "points": 1
+   },
+   {
+    "label": "Win Advantage",
+    "points": 1
+   },
+   {
+    "label": "Shot in the Dark SUCCESS",
+    "points": 2
+   },
+   {
+    "label": "Make Jury",
+    "points": 2
+   },
+   {
+    "label": "Win Fire Challenge",
+    "points": 1
+   },
+   {
+    "label": "Win Survivor",
+    "points": 6
+   }
+  ],
+  "negative": [
+   {
+    "label": "Voted Out WITH Idol",
+    "points": -2
+   },
+   {
+    "label": "Lose Vote",
+    "points": -1
+   },
+   {
+    "label": "Med Visit EVAC",
+    "points": -2
+   },
+   {
+    "label": "Quit Game",
+    "points": -4
+   }
+  ]
+ }
+}
