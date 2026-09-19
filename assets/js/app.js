@@ -322,7 +322,7 @@ function startCountdown() {
 
 const PANELS = [
   { id: 'standings', label: 'Standings', flag: 'standings' },
-  { id: 'recaps', label: 'Recaps', flag: 'episodeRecaps' },
+  { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'draft', label: 'Draft Board', flag: 'draftBoard' },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
   { id: 'rules', label: 'Scoring', flag: 'scoringRules' },
@@ -780,15 +780,274 @@ function buildRecapNav(entries) {
   });
 }
 
+/**
+ * One entry per episode, combining the written recap with the scoring
+ * detail pulled from the workbook. An episode shows up here once it has
+ * either a recap or scored events, so the tab is never padded with
+ * empty weeks.
+ */
+function episodeEntries() {
+  const recaps = state.recaps.episodes || {};
+  const byNumber = new Map();
+
+  state.season.episodes.forEach((episode) => {
+    if (!episode.scored) return;
+    byNumber.set(episode.number, { number: episode.number, episode });
+  });
+
+  Object.entries(recaps).forEach(([key, recap]) => {
+    const number = Number(key);
+    const existing = byNumber.get(number) || { number };
+    byNumber.set(number, { ...existing, ...recap, number, recap });
+  });
+
+  return [...byNumber.values()].sort((a, b) => b.number - a.number);
+}
+
+/** Scoring events for one episode, collapsed to one row per castaway. */
+function eventsByCastaway(episode) {
+  const grouped = new Map();
+  (episode.events || []).forEach((event) => {
+    if (!grouped.has(event.castaway)) {
+      grouped.set(event.castaway, { name: event.castaway, total: 0, labels: [] });
+    }
+    const row = grouped.get(event.castaway);
+    row.total += event.points;
+    row.labels.push({ label: event.label, points: event.points });
+  });
+  return [...grouped.values()].sort(
+    (a, b) => b.total - a.total || a.name.localeCompare(b.name)
+  );
+}
+
+/**
+ * A one-line description of an episode, built from the scoring events.
+ * Every scored episode gets one for free, so no week is ever a bare
+ * number. A written headline in the recap file takes priority.
+ */
+function autoSummary(episode) {
+  const events = episode.events || [];
+  if (!events.length) return '';
+
+  const pick = (label) => events.filter((e) => e.label === label).map((e) => e.castaway);
+  const unique = (names) => [...new Set(names)];
+  const list = (names) => {
+    if (names.length === 1) return names[0];
+    if (names.length === 2) return `${names[0]} and ${names[1]}`;
+    return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+  };
+
+  const clauses = [];
+
+  const champion = unique(pick('Win Survivor'));
+  if (champion.length) clauses.push(`${list(champion)} won the season`);
+
+  const bootedWithIdol = unique(pick('Voted Out WITH Idol'));
+  const booted = unique(pick('Lose Vote')).filter((n) => !bootedWithIdol.includes(n));
+  const medical = unique([...pick('Med Visit EVAC'), ...pick('Med Visit NO PULL')]);
+  const quit = unique([...pick('Quit Game'), ...pick('Quite Game')]);
+
+  if (bootedWithIdol.length) {
+    clauses.push(`${list(bootedWithIdol)} went out with an idol still in hand`);
+  }
+  if (booted.length) clauses.push(`${list(booted)} voted out`);
+  if (medical.length) clauses.push(`${list(medical)} pulled from the game`);
+  if (quit.length) clauses.push(`${list(quit)} quit`);
+
+  // Good news is grouped by castaway so somebody who wins immunity and
+  // an advantage reads as one clause, not their name twice.
+  const WON = {
+    'Immunity Challenge Win': 'immunity',
+    'Reward Challenge Win': 'reward',
+    'Win Advantage': 'an advantage',
+    'Win  Advantage': 'an advantage',
+    'Win Fire Challenge': 'fire-making',
+  };
+  const FOUND = { 'Immunity Idol Find': 'an idol' };
+  const OTHER = {
+    'Shot in the Dark SUCCESS': 'survived a Shot in the Dark',
+    'Effective REAL Idol': 'played an idol that worked',
+    'Effective FAKE Idol': 'got someone to play a fake idol',
+  };
+
+  const wins = new Map();
+  events.forEach((event) => {
+    if (event.points <= 0) return;
+    if (champion.includes(event.castaway)) return; // already covered above
+    if (!wins.has(event.castaway)) {
+      wins.set(event.castaway, { won: [], found: [], other: [] });
+    }
+    const row = wins.get(event.castaway);
+    if (WON[event.label] && !row.won.includes(WON[event.label])) row.won.push(WON[event.label]);
+    if (FOUND[event.label] && !row.found.includes(FOUND[event.label])) row.found.push(FOUND[event.label]);
+    if (OTHER[event.label] && !row.other.includes(OTHER[event.label])) row.other.push(OTHER[event.label]);
+  });
+
+  // Castaways who did exactly the same thing share a clause, so three
+  // immunity winners read as one sentence rather than three.
+  const byAchievement = new Map();
+  wins.forEach((row, name) => {
+    const parts = [];
+    if (row.won.length) parts.push(`won ${list(row.won)}`);
+    if (row.found.length) parts.push(`found ${list(row.found)}`);
+    row.other.forEach((phrase) => parts.push(phrase));
+    if (!parts.length) return;
+    const phrase = list(parts);
+    if (!byAchievement.has(phrase)) byAchievement.set(phrase, []);
+    byAchievement.get(phrase).push(name);
+  });
+
+  byAchievement.forEach((names, phrase) => {
+    clauses.push(`${list(names)} ${phrase}`);
+  });
+
+  if (!clauses.length) return '';
+
+  const sentence = clauses.slice(0, 3).join('. ');
+  return `${sentence.charAt(0).toUpperCase()}${sentence.slice(1)}.`;
+}
+
+function signed(points) {
+  return points > 0 ? `+${points}` : String(points);
+}
+
+function pointsClass(points) {
+  if (points > 0) return 'pos';
+  if (points < 0) return 'neg';
+  return 'zero';
+}
+
+function renderWhatScored(episode) {
+  const section = el('section', 'ep-section');
+  section.appendChild(el('h4', 'ep-section__title', 'What scored'));
+
+  const rows = eventsByCastaway(episode);
+  if (!rows.length) {
+    section.appendChild(el('p', 'ep-empty', 'Nobody scored this episode.'));
+    return section;
+  }
+
+  const list = el('div', 'ep-scored');
+  rows.forEach((row) => {
+    const item = el('div', 'ep-scored__row');
+
+    const left = el('div', 'ep-scored__who');
+    left.appendChild(el('span', 'ep-scored__name', row.name));
+    left.appendChild(
+      el('span', 'ep-scored__what', row.labels.map((l) => l.label).join(' · '))
+    );
+    item.appendChild(left);
+
+    item.appendChild(
+      el('span', `ep-scored__pts ep-scored__pts--${pointsClass(row.total)}`,
+        signed(row.total))
+    );
+    list.appendChild(item);
+  });
+
+  section.appendChild(list);
+  return section;
+}
+
+function renderPlayerResults(episode) {
+  const label = episode.label;
+  const players = state.season.players;
+  if (!players.length) return null;
+
+  const section = el('section', 'ep-section');
+  const head = el('div', 'ep-section__head');
+  head.appendChild(el('h4', 'ep-section__title', 'Player results'));
+
+  const scores = players.map((p) => p.episodes[label] || 0);
+  const best = Math.max(...scores);
+  const average = scores.reduce((a, b) => a + b, 0) / scores.length;
+  head.appendChild(
+    el('span', 'ep-section__meta',
+      `${players.length} players · average ${average.toFixed(1)}`)
+  );
+  section.appendChild(head);
+
+  const ranked = [...players].sort(
+    (a, b) => (b.episodes[label] || 0) - (a.episodes[label] || 0)
+      || a.name.localeCompare(b.name)
+  );
+
+  // Most weeks the majority of players score nothing. Those get tucked
+  // behind one line so the list stays readable on a phone.
+  const movers = ranked.filter((p) => (p.episodes[label] || 0) !== 0);
+  const flat = ranked.filter((p) => (p.episodes[label] || 0) === 0);
+
+  const list = el('div', 'ep-players');
+  movers.forEach((player, index) => {
+    const score = player.episodes[label] || 0;
+
+    const row = document.createElement('details');
+    row.className = 'ep-player';
+    if (score === best && best > 0) row.classList.add('ep-player--best');
+
+    const summary = document.createElement('summary');
+    summary.className = 'ep-player__summary';
+    summary.appendChild(el('span', 'ep-player__rank', String(index + 1)));
+    summary.appendChild(el('span', 'ep-player__name', player.name));
+    summary.appendChild(
+      el('span', `ep-player__pts ep-player__pts--${pointsClass(score)}`, signed(score))
+    );
+    row.appendChild(summary);
+
+    const detail = el('div', 'ep-player__detail');
+    player.picks.forEach((pick) => {
+      const earned = (episode.events || [])
+        .filter((event) => event.castaway === pick)
+        .reduce((sum, event) => sum + event.points, 0);
+
+      const line = el('div', 'ep-player__pick');
+      line.appendChild(el('span', 'ep-player__pick-name', pick));
+      line.appendChild(
+        el('span', `ep-player__pick-pts ep-player__pick-pts--${pointsClass(earned)}`,
+          earned === 0 ? '0' : signed(earned))
+      );
+      detail.appendChild(line);
+    });
+    row.appendChild(detail);
+
+    list.appendChild(row);
+  });
+
+  if (!movers.length) {
+    list.appendChild(el('p', 'ep-empty', 'Nobody gained or lost points this episode.'));
+  }
+
+  if (flat.length) {
+    const rest = document.createElement('details');
+    rest.className = 'ep-player ep-player--rest';
+
+    const summary = document.createElement('summary');
+    summary.className = 'ep-player__summary';
+    summary.appendChild(
+      el('span', 'ep-player__name ep-player__name--muted',
+        `${flat.length} ${flat.length === 1 ? 'player' : 'players'} scored nothing`)
+    );
+    summary.appendChild(el('span', 'ep-player__pts ep-player__pts--zero', '0'));
+    rest.appendChild(summary);
+
+    rest.appendChild(
+      el('div', 'ep-player__detail ep-player__rest-names',
+        flat.map((p) => p.name).join(', '))
+    );
+    list.appendChild(rest);
+  }
+
+  section.appendChild(list);
+  return section;
+}
+
 function renderRecaps() {
   const panel = $('#panel-recaps');
   if (!panel) return;
   const body = $('#recaps-body', panel);
   body.replaceChildren();
 
-  const entries = Object.entries(state.recaps.episodes || {})
-    .map(([number, recap]) => ({ number: Number(number), ...recap }))
-    .sort((a, b) => b.number - a.number);
+  const entries = episodeEntries();
 
   if (!entries.length) {
     $('#recaps-nav').hidden = true;
@@ -813,25 +1072,43 @@ function renderRecaps() {
     // `label` lets a non-episode entry (a season preview, a finale
     // wrap-up) sit in the same stream without being called "Episode 0".
     head.appendChild(el('span', 'recap__ep', recap.label || `Episode ${recap.number}`));
-    if (recap.posted) {
-      head.appendChild(el('span', 'recap__date', prettyDate(recap.posted)));
-    }
+
+    const airs = recap.episode && recap.episode.airs;
+    const when = airs ? prettyDate(airs) : (recap.posted ? prettyDate(recap.posted) : '');
+    if (when) head.appendChild(el('span', 'recap__date', when));
     article.appendChild(head);
 
-    if (recap.title) article.appendChild(el('h3', 'recap__title', recap.title));
-    if (recap.headline) article.appendChild(el('p', 'recap__lede', recap.headline));
+    const title = recap.title || (recap.episode && recap.episode.title);
+    if (title) article.appendChild(el('h3', 'recap__title', title));
+
+    // Written headline wins; otherwise describe the episode from its events.
+    const lede = recap.headline || (recap.episode ? autoSummary(recap.episode) : '');
+    if (lede) {
+      const node = el('p', 'recap__lede', lede);
+      if (!recap.headline) node.classList.add('recap__lede--auto');
+      article.appendChild(node);
+    }
 
     (recap.paragraphs || []).forEach((text) => {
       article.appendChild(el('p', 'recap__body', text));
     });
+
+    // Scoring detail, for entries that correspond to a scored episode.
+    if (recap.episode && recap.episode.scored) {
+      article.appendChild(renderWhatScored(recap.episode));
+      const results = renderPlayerResults(recap.episode);
+      if (results) article.appendChild(results);
+    }
 
     body.appendChild(article);
   });
 
   buildRecapNav(entries);
 
-  $('#recaps-note').textContent =
-    `${entries.length} ${entries.length === 1 ? 'recap' : 'recaps'} · newest first`;
+  const scoredCount = entries.filter((e) => e.episode && e.episode.scored).length;
+  $('#recaps-note').textContent = scoredCount
+    ? `${scoredCount} ${scoredCount === 1 ? 'episode' : 'episodes'} scored · newest first`
+    : `${entries.length} ${entries.length === 1 ? 'entry' : 'entries'} · newest first`;
 }
 
 /* --------------------------------------------------------------- rules --- */

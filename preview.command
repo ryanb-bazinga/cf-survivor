@@ -58,6 +58,14 @@ if [ ${#SERVER[@]} -eq 0 ]; then
   pause_and_exit 1
 fi
 
+# The Mac's address on the local network, so a phone on the same wifi
+# can load the preview too.
+LAN_IP=""
+for IFACE in en0 en1 en2; do
+  CANDIDATE="$(ipconfig getifaddr "$IFACE" 2>/dev/null)"
+  if [ -n "$CANDIDATE" ]; then LAN_IP="$CANDIDATE"; break; fi
+done
+
 echo
 echo "  CF Survivor League, local preview"
 echo "  Serving: $(pwd)"
@@ -92,6 +100,14 @@ if [ -z "$READY" ]; then
 fi
 
 echo "  Ready at $URL"
+if [ -n "$LAN_IP" ]; then
+  echo
+  echo "  ON YOUR PHONE, same wifi, open:"
+  echo "      http://$LAN_IP:$PORT/"
+  echo
+  echo "  (If it doesn't load, macOS may be blocking incoming"
+  echo "   connections. System Settings > Network > Firewall.)"
+fi
 echo
 echo "  Refresh your browser to pick up changes."
 echo "  Press Ctrl+C, or close this window, when you're done."

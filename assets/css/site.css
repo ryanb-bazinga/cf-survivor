@@ -424,6 +424,10 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   align-items: start;
 }
 
+/* Grid and flex children default to min-width:auto, which refuses to
+   shrink below their content. Everything in here should clamp instead. */
+.recaps-layout > * { min-width: 0; }
+
 .recaps-nav {
   position: sticky;
   top: 64px;
@@ -525,6 +529,11 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   line-height: 1.5;
 }
 
+.recap__lede--auto {
+  color: var(--sand-dim);
+  font-size: 1rem;
+}
+
 .recap__body {
   margin: 0 0 11px;
   color: var(--sand-dim);
@@ -533,12 +542,158 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .recap__body:last-child { margin-bottom: 0; }
 
+/* ----------------------------------------------- episode scoring detail --- */
+
+.ep-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(42, 80, 73, 0.7);
+}
+
+.ep-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ep-section__title {
+  font-family: var(--cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+  margin: 0 0 10px;
+}
+
+.ep-section__head .ep-section__title { margin-bottom: 10px; }
+
+.ep-section__meta { font-size: 0.78rem; color: var(--sand-faint); }
+
+.ep-empty { color: var(--sand-faint); font-size: 0.9rem; margin: 0; }
+
+/* what scored */
+
+.ep-scored__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(42, 80, 73, 0.45);
+}
+
+.ep-scored__row:last-child { border-bottom: 0; }
+
+.ep-scored__who { min-width: 0; overflow-wrap: anywhere; }
+
+.ep-scored__name {
+  display: block;
+  color: var(--sand);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.ep-scored__what {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--sand-faint);
+  margin-top: 1px;
+}
+
+.ep-scored__pts {
+  flex: 0 0 auto;
+  font-family: var(--cond);
+  font-size: 1.28rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ep-scored__pts--pos  { color: var(--lime); }
+.ep-scored__pts--neg  { color: var(--red); }
+.ep-scored__pts--zero { color: var(--sand-faint); }
+
+/* player results */
+
+.ep-player {
+  border-bottom: 1px solid rgba(42, 80, 73, 0.45);
+}
+
+.ep-player:last-child { border-bottom: 0; }
+
+.ep-player__summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 4px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-sm);
+}
+
+.ep-player__summary::-webkit-details-marker { display: none; }
+.ep-player__summary:hover { background: rgba(255, 255, 255, 0.035); }
+
+.ep-player__rank {
+  flex: 0 0 24px;
+  font-family: var(--cond);
+  font-size: 0.95rem;
+  color: var(--sand-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.ep-player__name { flex: 1 1 auto; color: var(--sand); font-size: 0.95rem; }
+
+.ep-player__pts {
+  flex: 0 0 auto;
+  font-family: var(--cond);
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.ep-player__pts--pos  { color: var(--orange); }
+.ep-player__pts--neg  { color: var(--red); }
+.ep-player__pts--zero { color: var(--sand-faint); }
+
+.ep-player--best .ep-player__name { font-weight: 700; }
+.ep-player--best .ep-player__rank { color: var(--gold); }
+
+.ep-player__detail {
+  padding: 4px 4px 12px 40px;
+}
+
+.ep-player__pick {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  font-size: 0.85rem;
+}
+
+.ep-player__pick-name { color: var(--sand-dim); }
+
+.ep-player__pick-pts { font-variant-numeric: tabular-nums; }
+.ep-player__pick-pts--pos  { color: var(--lime); }
+.ep-player__pick-pts--neg  { color: var(--red); }
+.ep-player__pick-pts--zero { color: var(--sand-faint); }
+
+.ep-player__name--muted { color: var(--sand-faint); font-style: italic; }
+
+.ep-player--rest .ep-player__summary { padding-left: 4px; }
+
+.ep-player__rest-names {
+  padding-left: 4px;
+  font-size: 0.84rem;
+  color: var(--sand-faint);
+  line-height: 1.6;
+}
+
 /* --------------------------------------------------------------- grid --- */
 
 .grid {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(215px, 100%), 1fr));
 }
 
 .card {
@@ -689,7 +844,7 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 /* --------------------------------------------------------- draft board --- */
 
-.draft-grid { grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); }
+.draft-grid { grid-template-columns: repeat(auto-fill, minmax(min(255px, 100%), 1fr)); }
 
 .draft-card__name {
   font-family: var(--cond);
@@ -728,7 +883,13 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 /* ------------------------------------------------------------- rules ---- */
 
-.rules { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); }
+/* min(310px, 100%) so the track can fall below its preferred width on a
+   narrow phone instead of forcing the page to scroll sideways. */
+.rules {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
+}
 
 .rules__col { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 
@@ -754,7 +915,12 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 }
 
 .rules__row:last-child { border-bottom: 0; }
-.rules__row span:first-child { color: var(--sand-dim); font-size: 0.93rem; }
+.rules__row span:first-child {
+  color: var(--sand-dim);
+  font-size: 0.93rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 
 .rules__pts {
   font-family: var(--cond);
@@ -850,7 +1016,10 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 @media (max-width: 860px) {
   /* The jump list moves above the recaps and scrolls sideways,
      since a right rail has nowhere to live on a phone. */
-  .recaps-layout { grid-template-columns: 1fr; gap: 16px; }
+  /* minmax(0, 1fr), not 1fr: a bare 1fr track is allowed to grow to its
+     content's min-content width, which pushes the page wider than the
+     phone and clips the points column. */
+  .recaps-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 
   .recaps-nav {
     position: static;
@@ -887,6 +1056,10 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 @media (max-width: 720px) {
   .wrap { width: calc(100% - 32px); }
+
+  /* A long castaway name ("Stephenie LaGrossa Kendrick") is wider than a
+     phone once it can't wrap, which pushes the whole page sideways. */
+  .pick { white-space: normal; max-width: 100%; }
   thead th, tbody td { padding: 10px 9px; }
   .rank { width: 46px; font-size: 1.1rem; }
   .score { font-size: 1.2rem; }
