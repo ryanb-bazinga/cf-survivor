@@ -17,6 +17,7 @@ The workbook is the source of truth. Nothing here writes back to it.
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import date
 
@@ -72,10 +73,39 @@ def find_workbook(season, root=None):
     )
 
 
+PHOTO_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
+
+
 def cell_text(value):
     if value is None:
         return ""
     return str(value).strip()
+
+
+def slugify(name):
+    """Castaway name -> the filename its photo is looked up under."""
+    cleaned = name.lower().replace("&", "and")
+    cleaned = re.sub(r"[‘’“”'\"]", "", cleaned)
+    cleaned = re.sub(r"[^a-z0-9]+", "-", cleaned)
+    return cleaned.strip("-")
+
+
+def find_photo(season, name):
+    """
+    Look for assets/img/cast/<season>/<slug>.<ext>. Returns a web path
+    relative to index.html, or None when no photo has been added yet.
+    The site falls back to a lettered card whenever this is None, so
+    photos can be dropped in a few at a time.
+    """
+    folder = os.path.join(HERE, "assets", "img", "cast", str(season))
+    if not os.path.isdir(folder):
+        return None
+    slug = slugify(name)
+    for extension in PHOTO_EXTENSIONS:
+        candidate = os.path.join(folder, slug + extension)
+        if os.path.exists(candidate):
+            return f"assets/img/cast/{season}/{slug}{extension}"
+    return None
 
 
 def is_checked(value):
@@ -154,13 +184,16 @@ def build_season(season, workbook_path, config):
 
     roster = read_castaways(wb, values)
     by_name = {c["name"]: c for c in roster}
+    bios = season_cfg.get("castBios", {})
     for castaway in roster:
+        castaway.update(bios.get(castaway["name"], {}))
         castaway.update({
             "status": "IN",
             "points": 0,
             "out_episode": None,
             "out_reason": None,
             "winner": False,
+            "photo": find_photo(season, castaway["name"]),
             "events": [],
             "drafted_by": [],
         })
@@ -174,6 +207,12 @@ def build_season(season, workbook_path, config):
         if scoring_table is None and columns:
             scoring_table = columns
 
+        meta = episodes_meta.get(number, {})
+        # An episode can be marked as not counting (a premiere that airs
+        # before the draft, say). Boxes ticked on that tab are ignored
+        # everywhere rather than quietly moving the standings.
+        counts = meta.get("counts", True)
+
         scored = False
         episode_events = []
 
@@ -184,6 +223,8 @@ def build_season(season, workbook_path, config):
             castaway = by_name[name]
             for column in columns:
                 if not is_checked(ws.cell(row=row, column=column["col"]).value):
+                    continue
+                if not counts:
                     continue
                 scored = True
                 castaway["points"] += column["points"]
@@ -204,12 +245,13 @@ def build_season(season, workbook_path, config):
                 if column["label"] == WINNER_LABEL:
                     castaway["winner"] = True
 
-        meta = episodes_meta.get(number, {})
         episodes.append({
             "number": number,
             "label": f"E{number}",
             "title": meta.get("title", ""),
             "airs": meta.get("airs"),
+            "counts": counts,
+            "note": meta.get("note", ""),
             "scored": scored,
             "events": episode_events,
         })

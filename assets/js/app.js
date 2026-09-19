@@ -9,6 +9,7 @@ const state = {
   config: null,
   season: null,
   archives: [],
+  recaps: { episodes: {} },
   sort: { key: 'rank', dir: 1 },
 };
 
@@ -56,10 +57,105 @@ async function loadJSON(path) {
   return response.json();
 }
 
+/* ---------------------------------------------------------- time travel --- */
+
+/**
+ * Rewinds a season to the end of a given episode: totals, ranks, movement,
+ * castaway status and points are all recomputed from the stored events.
+ * Used by the ?through= preview so a mid-season week can be inspected
+ * without touching any data files.
+ */
+function rewindSeason(season, through) {
+  season.episodes = season.episodes.filter((episode) => episode.number <= through);
+  const labels = season.episodes.map((episode) => episode.label);
+
+  season.castaways.forEach((castaway) => {
+    const events = (castaway.events || []).filter((e) => e.episode <= through);
+    castaway.events = events;
+    castaway.points = events.reduce((sum, e) => sum + e.points, 0);
+    castaway.winner = events.some((e) => e.label === 'Win Survivor');
+    const isOut = castaway.out_episode !== null && castaway.out_episode <= through;
+    castaway.status = isOut ? 'OUT' : 'IN';
+    if (!isOut) {
+      castaway.out_episode = null;
+      castaway.out_reason = null;
+    }
+  });
+
+  season.players.forEach((player) => {
+    const per = {};
+    labels.forEach((label) => { per[label] = player.episodes[label] || 0; });
+    player.episodes = per;
+    player.total = labels.reduce((sum, label) => sum + per[label], 0);
+  });
+
+  const rank = (totalFor) => {
+    const ordered = [...season.players].sort(
+      (a, b) => totalFor(b) - totalFor(a) || a.name.localeCompare(b.name)
+    );
+    const out = {};
+    let lastTotal = null;
+    let lastRank = 0;
+    ordered.forEach((player, index) => {
+      const total = totalFor(player);
+      if (total !== lastTotal) { lastRank = index + 1; lastTotal = total; }
+      out[player.name] = lastRank;
+    });
+    return out;
+  };
+
+  const scored = season.episodes.filter((e) => e.scored).map((e) => e.label);
+  const now = rank((p) => p.total);
+  const before = rank((p) =>
+    scored.slice(0, -1).reduce((sum, label) => sum + (p.episodes[label] || 0), 0)
+  );
+
+  season.players.forEach((player) => {
+    player.rank = now[player.name];
+    player.previous_rank = before[player.name];
+    player.movement = before[player.name] - now[player.name];
+  });
+
+  season.players.sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name));
+  season.status = 'in_progress';
+  return season;
+}
+
+function showPreviewBanner(seasonNumber, through) {
+  const banner = el('div', 'preview-banner');
+  banner.appendChild(el('strong', null, 'Preview mode. '));
+  banner.appendChild(
+    document.createTextNode(
+      `Showing Season ${seasonNumber}` +
+      (through ? ` as of Episode ${through}` : '') +
+      '. This is not the live season.'
+    )
+  );
+  document.body.prepend(banner);
+}
+
 async function boot() {
+  const params = new URLSearchParams(location.search);
+  const wantSeason = params.get('season');
+  const through = params.get('through') ? Number(params.get('through')) : null;
+
   try {
     state.config = await loadJSON('data/config.json');
+    if (wantSeason) state.config.currentSeason = Number(wantSeason);
     state.season = await loadJSON(`data/season${state.config.currentSeason}.json`);
+    if (through) rewindSeason(state.season, through);
+    if (wantSeason || through) {
+      state.config.archiveSeasons = (state.config.archiveSeasons || []).filter(
+        (id) => id !== state.config.currentSeason
+      );
+      showPreviewBanner(state.config.currentSeason, through);
+    }
+
+    // Recaps live in their own file so rebuilding standings from the
+    // workbook never overwrites written content. Missing file is fine.
+    state.recaps = await loadJSON(
+      `data/recaps${state.config.currentSeason}.json`
+    ).catch(() => ({ episodes: {} }));
 
     const archiveIds = state.config.archiveSeasons || [];
     const archives = await Promise.all(
@@ -80,6 +176,7 @@ async function boot() {
   renderHero();
   renderNav();
   renderStandings();
+  renderRecaps();
   renderDraftBoard();
   renderCast();
   renderRules();
@@ -118,6 +215,59 @@ function nextEpisode() {
     .find((episode) => episode.airs.getTime() + 60 * 60 * 1000 > now.getTime());
 
   return upcoming || null;
+}
+
+/* ------------------------------------------------------- draft window --- */
+
+const HOUR_WORDS = { 1: 'one', 2: 'two', 3: 'three', 6: 'six', 12: 'twelve', 24: 'a day' };
+
+/**
+ * The draft deadline is derived from the episode schedule rather than
+ * typed out, so moving an air date in config.json moves the deadline too.
+ */
+function draftDeadlineText() {
+  const cfg = state.config.seasons[String(state.season.season)] || {};
+  const draft = cfg.draft;
+  if (!draft) return cfg.draftNote || '';
+
+  const episode = (cfg.episodes || {})[String(draft.closesBeforeEpisode)];
+  if (!episode || !episode.airs) return cfg.draftNote || '';
+
+  const hours = draft.hoursBefore || 0;
+  const airs = new Date(`${episode.airs}T20:00:00-07:00`);
+  const due = new Date(airs.getTime() - hours * 3600 * 1000);
+
+  const day = due.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles',
+  });
+  const time = due
+    .toLocaleTimeString('en-US', {
+      hour: 'numeric', minute: '2-digit', timeZone: 'America/Los_Angeles',
+    })
+    .replace('AM', 'a.m.')
+    .replace('PM', 'p.m.');
+
+  const lead = HOUR_WORDS[hours] || `${hours}`;
+  const unit = hours === 1 ? 'hour' : 'hours';
+  const before = hours === 24 ? 'a day before' : `${lead} ${unit} before`;
+
+  return `Picks are due by ${time} Pacific on ${day}, ${before} Episode ${draft.closesBeforeEpisode} airs.`;
+}
+
+/** First episode that actually earns points. */
+function firstScoringEpisode() {
+  return state.season.episodes.find((episode) => episode.counts !== false) || null;
+}
+
+function firstStandingsText() {
+  const first = firstScoringEpisode();
+  if (!first) return 'Standings appear once the first episode is scored.';
+  return `Standings appear after Episode ${first.number}, the first episode that earns points.`;
+}
+
+/** Episodes explicitly marked as not counting, with their reason. */
+function nonScoringNotes() {
+  return state.season.episodes.filter((episode) => episode.counts === false && episode.note);
 }
 
 function startCountdown() {
@@ -172,6 +322,7 @@ function startCountdown() {
 
 const PANELS = [
   { id: 'standings', label: 'Standings', flag: 'standings' },
+  { id: 'recaps', label: 'Recaps', flag: 'episodeRecaps' },
   { id: 'draft', label: 'Draft Board', flag: 'draftBoard' },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
   { id: 'rules', label: 'Scoring', flag: 'scoringRules' },
@@ -247,13 +398,9 @@ function renderStandings() {
     const empty = el('div', 'empty');
     empty.appendChild(el('h3', null, 'Draft is still open'));
     empty.appendChild(
-      el(
-        'p',
-        null,
-        cfg.draftNote ||
-          'Standings appear here once picks are locked in.'
-      )
+      el('p', null, draftDeadlineText() || 'Standings appear here once picks are locked in.')
     );
+    empty.appendChild(el('p', 'empty__aside', firstStandingsText()));
     $('#standings-empty').replaceChildren(empty);
     return;
   }
@@ -396,9 +543,12 @@ function renderDraftBoard() {
     panel.querySelector('.panel__body').replaceChildren(
       (() => {
         const empty = el('div', 'empty');
-        empty.appendChild(el('h3', null, 'No picks yet'));
+        empty.appendChild(el('h3', null, 'Draft is still open'));
         empty.appendChild(
-          el('p', null, cfg.draftNote || 'The draft board fills in once picks are locked.')
+          el('p', null, draftDeadlineText() || 'The draft board fills in once picks are locked.')
+        );
+        empty.appendChild(
+          el('p', 'empty__aside', 'Every roster shows up here once the draft closes.')
         );
         return empty;
       })()
@@ -472,13 +622,43 @@ function renderCast() {
     const card = el('div', 'card castaway');
     if (castaway.status === 'OUT') card.classList.add('castaway--out');
 
-    const avatar = el('div', 'castaway__avatar', initials(castaway.name));
     const color = tribeColor(castaway.tribe);
-    avatar.style.background = color || `hsl(${hueFor(castaway.name)} 34% 62%)`;
+    let avatar;
+
+    if (state.config.features.castPhotos && castaway.photo) {
+      avatar = el('div', 'castaway__avatar castaway__avatar--photo');
+      const img = document.createElement('img');
+      img.src = castaway.photo;
+      img.alt = '';
+      img.loading = 'lazy';
+      // A missing or broken file falls back to the lettered card rather
+      // than leaving a hole in the grid.
+      img.addEventListener('error', () => {
+        avatar.classList.remove('castaway__avatar--photo');
+        avatar.textContent = initials(castaway.name);
+        avatar.style.background = color || `hsl(${hueFor(castaway.name)} 34% 62%)`;
+      });
+      avatar.appendChild(img);
+      if (color) avatar.style.borderColor = color;
+    } else {
+      avatar = el('div', 'castaway__avatar', initials(castaway.name));
+      avatar.style.background = color || `hsl(${hueFor(castaway.name)} 34% 62%)`;
+    }
+
     card.appendChild(avatar);
 
-    card.appendChild(el('div', 'castaway__pts', String(castaway.points)));
+    const points = el('div', 'castaway__pts');
+    points.appendChild(el('span', 'castaway__pts-num', String(castaway.points)));
+    points.appendChild(el('span', 'castaway__pts-label', 'pts'));
+    card.appendChild(points);
+
     card.appendChild(el('h3', 'castaway__name', castaway.name));
+
+    if (castaway.occupation) {
+      card.appendChild(el('div', 'castaway__job', castaway.occupation));
+    }
+    const where = [castaway.age, castaway.residence].filter(Boolean).join(' · ');
+    if (where) card.appendChild(el('div', 'castaway__where', where));
 
     const meta = el('div', 'castaway__meta');
     if (castaway.tribe) {
@@ -495,14 +675,21 @@ function renderCast() {
     }
     card.appendChild(meta);
 
-    if (castaway.drafted_by.length) {
-      card.appendChild(
+    const owners = castaway.drafted_by;
+    if (owners.length) {
+      const block = el('div', 'castaway__owners');
+      block.appendChild(
         el(
-          'div',
-          'castaway__owners',
-          `Drafted by ${castaway.drafted_by.join(', ')}`
+          'span',
+          'castaway__owners-count',
+          `On ${owners.length} ${owners.length === 1 ? 'team' : 'teams'}`
         )
       );
+      block.appendChild(document.createTextNode(owners.join(', ')));
+      card.appendChild(block);
+    } else if (state.season.players.length) {
+      // Draft is done and nobody took them.
+      card.appendChild(el('div', 'castaway__owners castaway__owners--none', 'Undrafted'));
     }
 
     grid.appendChild(card);
@@ -510,6 +697,141 @@ function renderCast() {
 
   const remaining = cast.filter((c) => c.status === 'IN').length;
   $('#cast-note').textContent = `${remaining} of ${cast.length} still in the game`;
+}
+
+/* -------------------------------------------------------------- recaps --- */
+
+function prettyDate(iso) {
+  if (!iso) return '';
+  return new Date(`${iso}T12:00:00-07:00`).toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric',
+    timeZone: 'America/Los_Angeles',
+  });
+}
+
+/** The day after an episode airs, which is when its recap goes up. */
+function recapDueDate(episodeNumber) {
+  const cfg = state.config.seasons[String(state.season.season)] || {};
+  const episode = (cfg.episodes || {})[String(episodeNumber)];
+  if (!episode || !episode.airs) return '';
+  const airs = new Date(`${episode.airs}T20:00:00-07:00`);
+  airs.setDate(airs.getDate() + 1);
+  return airs.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric',
+    timeZone: 'America/Los_Angeles',
+  });
+}
+
+function recapId(recap) {
+  return `recap-${recap.number}`;
+}
+
+function recapShortLabel(recap) {
+  return recap.label || `Episode ${recap.number}`;
+}
+
+/** Sidebar of jump links, with the one you're reading highlighted. */
+function buildRecapNav(entries) {
+  const nav = $('#recaps-nav');
+  nav.replaceChildren();
+
+  if (entries.length < 2) {
+    nav.hidden = true;
+    return;
+  }
+  nav.hidden = false;
+
+  nav.appendChild(el('div', 'recaps-nav__title', 'Jump to'));
+  const list = el('div', 'recaps-nav__list');
+
+  entries.forEach((recap) => {
+    const link = el('a', 'recaps-nav__link');
+    link.href = `#${recapId(recap)}`;
+    link.dataset.target = recapId(recap);
+    link.appendChild(el('span', 'recaps-nav__label', recapShortLabel(recap)));
+    if (recap.title) link.appendChild(el('span', 'recaps-nav__sub', recap.title));
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+
+  // Highlight whichever recap is currently in view.
+  const links = $$('.recaps-nav__link', nav);
+  const setActive = (id) => {
+    links.forEach((link) => {
+      link.classList.toggle('is-active', link.dataset.target === id);
+    });
+  };
+  setActive(entries[0] && recapId(entries[0]));
+
+  const observer = new IntersectionObserver(
+    (records) => {
+      const visible = records
+        .filter((record) => record.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (visible) setActive(visible.target.id);
+    },
+    { rootMargin: '-80px 0px -60% 0px', threshold: 0 }
+  );
+
+  entries.forEach((recap) => {
+    const node = document.getElementById(recapId(recap));
+    if (node) observer.observe(node);
+  });
+}
+
+function renderRecaps() {
+  const panel = $('#panel-recaps');
+  if (!panel) return;
+  const body = $('#recaps-body', panel);
+  body.replaceChildren();
+
+  const entries = Object.entries(state.recaps.episodes || {})
+    .map(([number, recap]) => ({ number: Number(number), ...recap }))
+    .sort((a, b) => b.number - a.number);
+
+  if (!entries.length) {
+    $('#recaps-nav').hidden = true;
+    const empty = el('div', 'empty');
+    empty.appendChild(el('h3', null, 'No recaps yet'));
+    empty.appendChild(
+      el('p', null, `First one posts ${recapDueDate(1) || 'the morning after the premiere'}.`)
+    );
+    empty.appendChild(
+      el('p', 'empty__aside', 'A short read each week: who scored, who went home, what it did to the standings.')
+    );
+    body.appendChild(empty);
+    $('#recaps-note').textContent = '';
+    return;
+  }
+
+  entries.forEach((recap) => {
+    const article = el('article', 'recap');
+    article.id = recapId(recap);
+
+    const head = el('div', 'recap__head');
+    // `label` lets a non-episode entry (a season preview, a finale
+    // wrap-up) sit in the same stream without being called "Episode 0".
+    head.appendChild(el('span', 'recap__ep', recap.label || `Episode ${recap.number}`));
+    if (recap.posted) {
+      head.appendChild(el('span', 'recap__date', prettyDate(recap.posted)));
+    }
+    article.appendChild(head);
+
+    if (recap.title) article.appendChild(el('h3', 'recap__title', recap.title));
+    if (recap.headline) article.appendChild(el('p', 'recap__lede', recap.headline));
+
+    (recap.paragraphs || []).forEach((text) => {
+      article.appendChild(el('p', 'recap__body', text));
+    });
+
+    body.appendChild(article);
+  });
+
+  buildRecapNav(entries);
+
+  $('#recaps-note').textContent =
+    `${entries.length} ${entries.length === 1 ? 'recap' : 'recaps'} · newest first`;
 }
 
 /* --------------------------------------------------------------- rules --- */
@@ -546,6 +868,16 @@ function renderRules() {
   wrap.replaceChildren();
   wrap.appendChild(build(state.season.scoring.positive, 'pos'));
   wrap.appendChild(build(state.season.scoring.negative, 'neg'));
+
+  const notes = $('#rules-notes');
+  notes.replaceChildren();
+  nonScoringNotes().forEach((episode) => {
+    const notice = el('div', 'notice');
+    const label = el('strong', null, `Episode ${episode.number} does not count. `);
+    notice.appendChild(label);
+    notice.appendChild(document.createTextNode(episode.note));
+    notes.appendChild(notice);
+  });
 }
 
 /* -------------------------------------------------------- past seasons --- */

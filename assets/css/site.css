@@ -68,6 +68,19 @@ h1, h2, h3 {
   white-space: nowrap; border: 0;
 }
 
+/* ------------------------------------------------------ preview banner --- */
+
+.preview-banner {
+  position: relative;
+  z-index: 40;
+  background: var(--orange);
+  color: var(--ink);
+  text-align: center;
+  padding: 9px 16px;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+}
+
 /* --------------------------------------------------------------- hero --- */
 
 .hero {
@@ -282,6 +295,15 @@ h1, h2, h3 {
 
 .empty h3 { color: var(--sand-dim); font-size: 1.4rem; margin-bottom: 8px; }
 
+.empty p { margin: 6px 0; color: var(--sand-dim); }
+
+.empty p:first-of-type {
+  font-size: 1.05rem;
+  color: var(--orange);
+}
+
+.empty__aside { font-size: 0.88rem; color: var(--sand-faint) !important; }
+
 /* ---------------------------------------------------------- standings --- */
 
 .table-scroll {
@@ -393,6 +415,124 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .ep-cell--pos { color: var(--sand); }
 .ep-cell--neg { color: var(--red); }
 
+/* -------------------------------------------------------------- recaps --- */
+
+.recaps-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 232px;
+  gap: 32px;
+  align-items: start;
+}
+
+.recaps-nav {
+  position: sticky;
+  top: 64px;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+
+.recaps-nav[hidden] { display: none; }
+
+.recaps-nav__title {
+  font-family: var(--cond);
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+  margin-bottom: 10px;
+}
+
+.recaps-nav__list { display: flex; flex-direction: column; gap: 2px; }
+
+.recaps-nav__link {
+  display: block;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--sand-dim);
+  border-left: 2px solid transparent;
+  transition: background 0.14s, color 0.14s, border-color 0.14s;
+}
+
+.recaps-nav__link:hover { background: rgba(255, 255, 255, 0.04); color: var(--sand); }
+
+.recaps-nav__link.is-active {
+  border-left-color: var(--orange);
+  background: rgba(254, 135, 48, 0.09);
+  color: var(--sand);
+}
+
+.recaps-nav__label {
+  display: block;
+  font-family: var(--cond);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.recaps-nav__sub {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--sand-faint);
+  margin-top: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recaps-nav__link.is-active .recaps-nav__sub { color: var(--sand-dim); }
+
+.recap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 26px 24px;
+  margin-bottom: 16px;
+  scroll-margin-top: 72px;
+}
+
+.recap:first-child { border-left: 3px solid var(--orange); }
+
+.recap__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.recap__ep {
+  font-family: var(--cond);
+  font-size: 0.84rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.recap__date { font-size: 0.78rem; color: var(--sand-faint); }
+
+.recap__title {
+  font-size: 1.7rem;
+  color: var(--sand);
+  margin-bottom: 10px;
+}
+
+.recap__lede {
+  font-size: 1.08rem;
+  color: var(--sand);
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.recap__body {
+  margin: 0 0 11px;
+  color: var(--sand-dim);
+  line-height: 1.62;
+}
+
+.recap__body:last-child { margin-bottom: 0; }
+
 /* --------------------------------------------------------------- grid --- */
 
 .grid {
@@ -431,7 +571,37 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   background: var(--sand-dim);
 }
 
+.castaway__avatar--photo {
+  width: 78px;
+  height: 78px;
+  padding: 0;
+  background: var(--ink-2);
+  border: 2px solid var(--line);
+  overflow: hidden;
+}
+
+.castaway__avatar--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 .castaway__name { font-size: 1.1rem; line-height: 1.12; }
+
+.castaway__job {
+  margin-top: 5px;
+  font-size: 0.84rem;
+  color: var(--cyan);
+  line-height: 1.25;
+}
+
+.castaway__where {
+  font-size: 0.78rem;
+  color: var(--sand-faint);
+  margin-top: 2px;
+}
 
 .castaway__meta {
   display: flex;
@@ -469,11 +639,27 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .castaway__pts {
   position: absolute;
-  top: 14px; right: 15px;
+  top: 12px; right: 15px;
+  text-align: right;
+  line-height: 1;
+}
+
+.castaway__pts-num {
+  display: block;
   font-family: var(--cond);
   font-size: 1.5rem;
   color: var(--orange);
   font-variant-numeric: tabular-nums;
+}
+
+.castaway__pts-label {
+  display: block;
+  font-family: var(--cond);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+  margin-top: 1px;
 }
 
 .castaway__owners {
@@ -482,7 +668,23 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   border-top: 1px solid rgba(42, 80, 73, 0.6);
   font-size: 0.78rem;
   color: var(--sand-faint);
-  line-height: 1.4;
+  line-height: 1.45;
+}
+
+.castaway__owners-count {
+  display: block;
+  font-family: var(--cond);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 2px;
+}
+
+.castaway__owners--none {
+  color: var(--sand-faint);
+  font-style: italic;
+  opacity: 0.75;
 }
 
 /* --------------------------------------------------------- draft board --- */
@@ -596,6 +798,44 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .footer p { margin: 4px 0; }
 
 /* ------------------------------------------------------------ mobile ---- */
+
+@media (max-width: 860px) {
+  /* The jump list moves above the recaps and scrolls sideways,
+     since a right rail has nowhere to live on a phone. */
+  .recaps-layout { grid-template-columns: 1fr; gap: 16px; }
+
+  .recaps-nav {
+    position: static;
+    border-left: 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    order: -1;
+  }
+
+  .recaps-nav__list {
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 6px;
+  }
+
+  .recaps-nav__list::-webkit-scrollbar { display: none; }
+
+  .recaps-nav__link {
+    flex: 0 0 auto;
+    border-left: 0;
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+  }
+
+  .recaps-nav__link.is-active {
+    border-color: var(--orange);
+    background: rgba(254, 135, 48, 0.12);
+  }
+
+  .recaps-nav__sub { display: none; }
+}
 
 @media (max-width: 720px) {
   .wrap { width: calc(100% - 32px); }

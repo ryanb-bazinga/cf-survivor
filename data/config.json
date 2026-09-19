@@ -5,7 +5,11 @@
   "tagline": "Staff and family fantasy draft"
  },
  "currentSeason": 51,
- "archiveSeasons": [50, 49, 48],
+ "archiveSeasons": [
+  50,
+  49,
+  48
+ ],
  "features": {
   "standings": true,
   "draftBoard": true,
@@ -19,31 +23,198 @@
   "weeklyAwards": true,
   "bootOrder": true,
   "episodeRecaps": true,
-  "castPhotos": false
+  "castPhotos": true
  },
  "seasons": {
   "51": {
    "name": "Survivor 51",
    "subtitle": "Outwit. Outplay. Outlast.",
    "tribes": [
-    { "name": "Savu", "color": "#32B9DB" },
-    { "name": "Toka", "color": "#CDD943" }
+    {
+     "name": "Savu",
+     "color": "#32B9DB"
+    },
+    {
+     "name": "Toka",
+     "color": "#CDD943"
+    }
    ],
-   "draftNote": "Draft closes after Episode 1. Picks are due by the time Episode 2 airs.",
+   "draft": {
+    "closesBeforeEpisode": 2,
+    "hoursBefore": 1
+   },
    "episodes": {
-    "1": { "airs": "2026-09-23", "title": "Premiere" },
-    "2": { "airs": "2026-09-30" },
-    "3": { "airs": "2026-10-07" },
-    "4": { "airs": "2026-10-14" },
-    "5": { "airs": "2026-10-21" },
-    "6": { "airs": "2026-10-28" },
-    "7": { "airs": "2026-11-04" },
-    "8": { "airs": "2026-11-11" },
-    "9": { "airs": "2026-11-18" },
-    "10": { "airs": "2026-11-25" },
-    "11": { "airs": "2026-12-02" },
-    "12": { "airs": "2026-12-09" },
-    "13": { "airs": "2026-12-16", "title": "Finale" }
+    "1": {
+     "airs": "2026-09-23",
+     "title": "Premiere",
+     "counts": false,
+     "note": "Scouting episode. Airs before the draft, so it earns no points."
+    },
+    "2": {
+     "airs": "2026-09-30"
+    },
+    "3": {
+     "airs": "2026-10-07"
+    },
+    "4": {
+     "airs": "2026-10-14"
+    },
+    "5": {
+     "airs": "2026-10-21"
+    },
+    "6": {
+     "airs": "2026-10-28"
+    },
+    "7": {
+     "airs": "2026-11-04"
+    },
+    "8": {
+     "airs": "2026-11-11"
+    },
+    "9": {
+     "airs": "2026-11-18"
+    },
+    "10": {
+     "airs": "2026-11-25"
+    },
+    "11": {
+     "airs": "2026-12-02"
+    },
+    "12": {
+     "airs": "2026-12-09"
+    },
+    "13": {
+     "airs": "2026-12-16",
+     "title": "Finale"
+    }
+   },
+   "castBios": {
+    "Aaliyah Puglia": {
+     "age": 24,
+     "hometown": "Gloucester City, N.J.",
+     "residence": "Providence, R.I.",
+     "occupation": "Chef"
+    },
+    "Alexis Levine": {
+     "age": 34,
+     "hometown": "Atlanta, Ga.",
+     "residence": "Atlanta, Ga.",
+     "occupation": "Criminal defense attorney"
+    },
+    "An \"Thien An\" Nguyen": {
+     "age": 24,
+     "hometown": "Fort Worth, Texas",
+     "residence": "Fort Worth, Texas",
+     "occupation": "Medical student"
+    },
+    "Ana Sani": {
+     "age": 34,
+     "hometown": "Richmond Hill, Ontario",
+     "residence": "Toronto, Ontario",
+     "occupation": "Voice actress"
+    },
+    "Angelica \"Jelly\" Loblack": {
+     "age": 29,
+     "hometown": "Garland, Texas",
+     "residence": "Bloomington, Ind.",
+     "occupation": "Sociology professor"
+    },
+    "Brady Booker": {
+     "age": 27,
+     "hometown": "La Salle, Ill.",
+     "residence": "Knoxville, Tenn.",
+     "occupation": "Pro wrestler"
+    },
+    "Carter Krull": {
+     "age": 24,
+     "hometown": "Rock Rapids, Iowa",
+     "residence": "Sioux Falls, S.D.",
+     "occupation": "Livestock farmer"
+    },
+    "Cristian Chavez": {
+     "age": 26,
+     "hometown": "Salt Lake City, Utah",
+     "residence": "Salt Lake City, Utah",
+     "occupation": "Head of HR"
+    },
+    "Danny \"Kilby\" Kilby": {
+     "age": 30,
+     "hometown": "Mount Forest, Ontario",
+     "residence": "London, Ontario",
+     "occupation": "Game designer"
+    },
+    "Devin Way": {
+     "age": 33,
+     "hometown": "Lufkin, Texas",
+     "residence": "Los Angeles, Calif.",
+     "occupation": "Actor"
+    },
+    "Eric Macksoud": {
+     "age": 34,
+     "hometown": "Lincoln, R.I.",
+     "residence": "Windsor Locks, Conn.",
+     "occupation": "Mental health counselor"
+    },
+    "Jenna Doore": {
+     "age": 30,
+     "hometown": "Perrysburg, Ohio",
+     "residence": "Toledo, Ohio",
+     "occupation": "Wedding photographer"
+    },
+    "Kristin Flickinger": {
+     "age": 49,
+     "hometown": "Ketchum, Idaho",
+     "residence": "Santa Barbara, Calif.",
+     "occupation": "Crisis management"
+    },
+    "Lewis Kelly": {
+     "age": 28,
+     "hometown": "Dublin, Ireland",
+     "residence": "Puerto Rico",
+     "occupation": "Farmer"
+    },
+    "Linnea Capobianco": {
+     "age": 25,
+     "hometown": "Kearny, N.J.",
+     "residence": "Jersey City, N.J.",
+     "occupation": "Entrepreneur"
+    },
+    "Maggie Nestor": {
+     "age": 40,
+     "hometown": "Middleway, W.Va.",
+     "residence": "Charlestown, W.Va.",
+     "occupation": "Farmer"
+    },
+    "Mike Pinsky": {
+     "age": 32,
+     "hometown": "New York City, N.Y.",
+     "residence": "New York City, N.Y.",
+     "occupation": "Baseball executive"
+    },
+    "Ori Jean-Charles": {
+     "age": 27,
+     "hometown": "Spring Valley, N.Y.",
+     "residence": "Spring Valley, N.Y.",
+     "occupation": "Personal trainer"
+    },
+    "Patt Cannaday": {
+     "age": 33,
+     "hometown": "Tampa, Fla.",
+     "residence": "Washington, D.C.",
+     "occupation": "Federal prosecutor"
+    },
+    "Rob Antonson": {
+     "age": 40,
+     "hometown": "Johnston, R.I.",
+     "residence": "Cumberland, R.I.",
+     "occupation": "Airline gate agent"
+    },
+    "Sharonda Cox": {
+     "age": 34,
+     "hometown": "Pompano Beach, Fla.",
+     "residence": "Richmond, Ky.",
+     "occupation": "Resident, OBGYN"
+    }
    }
   },
   "50": {
