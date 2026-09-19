@@ -10,6 +10,7 @@ const state = {
   season: null,
   archives: [],
   recaps: { episodes: {} },
+  bios: null,
   sort: { key: 'rank', dir: 1 },
 };
 
@@ -156,6 +157,11 @@ async function boot() {
     state.recaps = await loadJSON(
       `data/recaps${state.config.currentSeason}.json`
     ).catch(() => ({ episodes: {} }));
+
+    // Cast bios are optional; a season without them just shows short cards.
+    state.bios = await loadJSON(
+      `data/bios${state.config.currentSeason}.json`
+    ).catch(() => null);
 
     const archiveIds = state.config.archiveSeasons || [];
     const archives = await Promise.all(
@@ -606,6 +612,38 @@ function renderDraftBoard() {
 
 /* ---------------------------------------------------------------- cast --- */
 
+/** The expanded half of a cast card: their own answers, verbatim. */
+function buildBio(castaway, bio, labels) {
+  const panel = el('div', 'castaway__bio');
+
+  if (bio.words) {
+    const words = el('div', 'bio-words');
+    words.appendChild(el('span', 'bio-words__label', 'Three words'));
+    words.appendChild(el('span', 'bio-words__text', bio.words));
+    panel.appendChild(words);
+  }
+
+  (bio.answers || []).forEach((answer) => {
+    const block = el('div', 'bio-qa');
+    block.appendChild(el('div', 'bio-qa__q', labels[answer.key] || answer.key));
+    block.appendChild(el('p', 'bio-qa__a', answer.text));
+    panel.appendChild(block);
+  });
+
+  (bio.trivia || []).forEach((line) => {
+    const block = el('div', 'bio-qa bio-qa--trivia');
+    block.appendChild(el('div', 'bio-qa__q', 'Of note'));
+    block.appendChild(el('p', 'bio-qa__a', line));
+    panel.appendChild(block);
+  });
+
+  if (state.bios && state.bios.source) {
+    panel.appendChild(el('p', 'bio-source', state.bios.source));
+  }
+
+  return panel;
+}
+
 function renderCast() {
   const panel = $('#panel-cast');
   if (!panel) return;
@@ -618,9 +656,24 @@ function renderCast() {
     return a.name.localeCompare(b.name);
   });
 
+  const bios = (state.bios && state.bios.castaways) || {};
+  const labels = {};
+  ((state.bios && state.bios.questions) || []).forEach((q) => { labels[q.key] = q.label; });
+
   cast.forEach((castaway) => {
-    const card = el('div', 'card castaway');
+    const bio = bios[castaway.name];
+
+    // With a bio the card becomes expandable; without one it stays a
+    // plain card, so a season with no bio file still renders.
+    const card = bio
+      ? document.createElement('details')
+      : document.createElement('div');
+    card.className = 'card castaway';
+    if (bio) card.classList.add('castaway--expandable');
     if (castaway.status === 'OUT') card.classList.add('castaway--out');
+
+    const head = bio ? document.createElement('summary') : card;
+    if (bio) head.className = 'castaway__summary';
 
     const color = tribeColor(castaway.tribe);
     let avatar;
@@ -645,20 +698,20 @@ function renderCast() {
       avatar.style.background = color || `hsl(${hueFor(castaway.name)} 34% 62%)`;
     }
 
-    card.appendChild(avatar);
+    head.appendChild(avatar);
 
     const points = el('div', 'castaway__pts');
     points.appendChild(el('span', 'castaway__pts-num', String(castaway.points)));
     points.appendChild(el('span', 'castaway__pts-label', 'pts'));
-    card.appendChild(points);
+    head.appendChild(points);
 
-    card.appendChild(el('h3', 'castaway__name', castaway.name));
+    head.appendChild(el('h3', 'castaway__name', castaway.name));
 
     if (castaway.occupation) {
-      card.appendChild(el('div', 'castaway__job', castaway.occupation));
+      head.appendChild(el('div', 'castaway__job', castaway.occupation));
     }
-    const where = [castaway.age, castaway.residence].filter(Boolean).join(' · ');
-    if (where) card.appendChild(el('div', 'castaway__where', where));
+    const where = [castaway.age, castaway.residence].filter(Boolean).join(' \u00b7 ');
+    if (where) head.appendChild(el('div', 'castaway__where', where));
 
     const meta = el('div', 'castaway__meta');
     if (castaway.tribe) {
@@ -673,7 +726,7 @@ function renderCast() {
     } else {
       meta.appendChild(el('span', 'chip chip--in', 'Still in'));
     }
-    card.appendChild(meta);
+    head.appendChild(meta);
 
     const owners = castaway.drafted_by;
     if (owners.length) {
@@ -686,10 +739,16 @@ function renderCast() {
         )
       );
       block.appendChild(document.createTextNode(owners.join(', ')));
-      card.appendChild(block);
+      head.appendChild(block);
     } else if (state.season.players.length) {
       // Draft is done and nobody took them.
-      card.appendChild(el('div', 'castaway__owners castaway__owners--none', 'Undrafted'));
+      head.appendChild(el('div', 'castaway__owners castaway__owners--none', 'Undrafted'));
+    }
+
+    if (bio) {
+      head.appendChild(el('span', 'castaway__more', 'Read their bio'));
+      card.appendChild(head);
+      card.appendChild(buildBio(castaway, bio, labels));
     }
 
     grid.appendChild(card);

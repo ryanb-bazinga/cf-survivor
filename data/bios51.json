@@ -1,0 +1,987 @@
+{
+ "season": 51,
+ "source": "Cast bios published by EW.com at the Survivor 51 cast reveal, via the Survivor Wiki.",
+ "sourceUrl": "https://survivor.fandom.com/wiki/Survivor_51",
+ "questions": [
+  {
+   "key": "why",
+   "label": "Why Survivor?"
+  },
+  {
+   "key": "prepared",
+   "label": "What prepared them"
+  },
+  {
+   "key": "playlike",
+   "label": "Who they'll play like"
+  },
+  {
+   "key": "ally",
+   "label": "In an alliance partner"
+  },
+  {
+   "key": "hobbies",
+   "label": "Hobbies"
+  },
+  {
+   "key": "peeves",
+   "label": "Pet peeves"
+  },
+  {
+   "key": "proud",
+   "label": "Proudest of"
+  },
+  {
+   "key": "surprise",
+   "label": "You'd never guess"
+  },
+  {
+   "key": "inspiration",
+   "label": "Biggest inspiration"
+  },
+  {
+   "key": "win",
+   "label": "Why they'll win"
+  }
+ ],
+ "castaways": {
+  "Aaliyah Puglia": {
+   "words": "Confident, wise, sporadic",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Survivor is a show where the impossible happens and it gives everyday people the opportunity to be themselves entrapped in a twisted, chaotic and thrilling game of strategy and who can do the most with what they are given. It's a huge accomplishment to win and I want the title."
+    },
+    {
+     "key": "prepared",
+     "text": "My constant pursuit for change has prepared me to win from living in a small town in Jersey to then moving to Miami at 13 with little warning, then moving to R.I. for college not knowing a soul to solo traveling in different work environments to places I've never been with people I don't know. I'm used to being adaptable, flexible and for things to change without notice."
+    },
+    {
+     "key": "playlike",
+     "text": "I identify the most with Yam Yam, someone who makes jokes naturally can be loud back but calculated, always tries to find a way in. I think I will play the most like Cirie, calm, outside appearance, working multiple angles, considers all options and goes to bat for her allies."
+    }
+   ],
+   "trivia": [
+    "Aaliyah is the first known contestant to be raised by same-sex parents."
+   ]
+  },
+  "Alexis Levine": {
+   "words": "Outgoing, thoughtful, determined",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Survivor represents the best of the human spirit, physical endurance, mental toughness and social awareness."
+    },
+    {
+     "key": "prepared",
+     "text": "Being a criminal defense attorney, defending the little guy from the all-powerful government means constantly being “on the bottom” and how to think creatively."
+    },
+    {
+     "key": "playlike",
+     "text": "I identify most with Kyle Fraser. Most like him with a touch of Rachel, and, of course, Parvati!"
+    },
+    {
+     "key": "ally",
+     "text": "Someone who thinks and plays differently than me, diversity is the best asset."
+    },
+    {
+     "key": "hobbies",
+     "text": "Gardening, reading, going on long walks with my husband, and daughter and our two poodles."
+    },
+    {
+     "key": "peeves",
+     "text": "People who are ruled by their emotions and misogyny."
+    },
+    {
+     "key": "proud",
+     "text": "10 years of sobriety from drugs and alcohol."
+    },
+    {
+     "key": "surprise",
+     "text": "I am Iranian, my dad came here when he was 18 and never went back. I hope to visit one day!"
+    },
+    {
+     "key": "inspiration",
+     "text": "My daughter, Lyla, inspires me every day to be better, push harder, and have fun!"
+    },
+    {
+     "key": "win",
+     "text": "Every lesson I've learned in my life brings me to this moment and I plan on capitalizing on that momentum and grit to outwit, outplay and outlast!"
+    }
+   ]
+  },
+  "Ana Sani": {
+   "words": "Goofy, ambitious, chaotic",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Survivor is the perfect opportunity to lock into my competitive side. I love games and who doesn't want to lie and deceive in a setting where it's totally acceptable to do so?"
+    },
+    {
+     "key": "prepared",
+     "text": "Being an actor means you need to have really thick skin. I've had extremely down moments, but I've always picked myself up. I've created a career I'm really proud of and that's thanks to never giving up and always finding an alternative route. That's what I intend to do on Survivor."
+    },
+    {
+     "key": "playlike",
+     "text": "I identify with Tony 'cause he's chaotic like me; never know what to expect. I would love to play most like Ricard who is severely underrated. That player is a strategy mastermind!"
+    },
+    {
+     "key": "ally",
+     "text": "If an alliance partner is willing to divulge others' secrets to me, I feel like they have put their trust in me. Which is quite unfortunate for them, 'cause trusting me might be a mistake."
+    },
+    {
+     "key": "hobbies",
+     "text": "I enjoy playing video games (league, anyone?), exploring new coffee shops, playing the piano and have recently become a gym rat!"
+    },
+    {
+     "key": "peeves",
+     "text": "Transition lenses (they're weird and aesthetically, it's a no for me). People who enter the subway and don't go all the way into the train (move, please!). Cheaters (both in relationships and games!)"
+    },
+    {
+     "key": "proud",
+     "text": "I'm most proud of the career I've built in voice over. I worked my butt off to get to where I am and can proudly say I've done voices for over 60 animated shows and a ton of commercials, audiobooks and video games!"
+    },
+    {
+     "key": "surprise",
+     "text": "That I have an honors degree in Political Science (specifically Political Theory). I enjoy reading about the dynamics of power and why people in positions of power do what they do."
+    },
+    {
+     "key": "inspiration",
+     "text": "My mom. She fought cancer for 18 years and she was the most positive and optimistic person, despite the pain that she was enduring. She unfortunately passed in 2020. I'm also playing for her! She was a huge Survivor fan too."
+    },
+    {
+     "key": "win",
+     "text": "Because I'm hopefully not going to be afraid to take some creative liberties to either build more trust or cause some chaos. High risk, high reward, right?"
+    }
+   ]
+  },
+  "Brady Booker": {
+   "words": "Enthusiastic, intense, fun",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Growing up my family loved watching the show together. I love adventure in the outdoors. I love competition. I love being pushed to my limit to show what I am truly capable of doing."
+    },
+    {
+     "key": "prepared",
+     "text": "My job experience has prepared me to play because it involves long days, minimal sleep and food, along with being able to politick your own social game."
+    },
+    {
+     "key": "playlike",
+     "text": "I identify most with Jonathan. From our size, ability, and our loyal vibe, I believe we are two peas in a pod. I hope to model my game after him as the laid-back provider, until it is time to STRIKE!"
+    },
+    {
+     "key": "ally",
+     "text": "The biggest value I look for in an alliance is trust."
+    },
+    {
+     "key": "hobbies",
+     "text": "Fun in the outdoors (hunting, fishing, hiking, camping), working out (weightlifting, trail runs, jujitsu)"
+    },
+    {
+     "key": "peeves",
+     "text": "Overly judgmental, lying, bad hygiene, bad manners"
+    },
+    {
+     "key": "proud",
+     "text": "I am most proud of where I have gotten in my career. Although it's just started, I have made a place for myself in professional wrestling."
+    },
+    {
+     "key": "surprise",
+     "text": "I did gymnastics throughout my years of youth sports."
+    },
+    {
+     "key": "inspiration",
+     "text": "My parents are my biggest inspiration because of the life they gave me with what little they started with in the beginning. The sacrifices and effort they put forth out of love is why I am here today."
+    },
+    {
+     "key": "win",
+     "text": "I will be the Sole Survivor because I am comfortable being uncomfortable. I am used to falling on my face and coming back stronger."
+    }
+   ],
+   "trivia": [
+    "Brady wrestles professionally under the name Bodhi Hayward."
+   ]
+  },
+  "Carter Krull": {
+   "words": "Adventurous, competitive, determined",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Survivor has been on my bucket list. You never know when your last day will be, so better get rollin' on the list!"
+    },
+    {
+     "key": "prepared",
+     "text": "Opened a snow cone truck, kind of put me in a tropical mood."
+    },
+    {
+     "key": "playlike",
+     "text": "I enjoy the thrill of Tony. One of the greats to ever do it. It's a toss-up who I'll play like, the game is so situational. I'm going a cross between Rob, Ozzy, Tony, Sam Phalen."
+    },
+    {
+     "key": "ally",
+     "text": "I'll value communication. I've got your back if you've got mine. The bottom layer of flooring in this game is trust. Let's keep each other in the loop."
+    },
+    {
+     "key": "hobbies",
+     "text": "I've always had a passion for woodworking. My Grandpa Shaffer built his own house, so that's why. My high school shop teacher Grant Engel showed me how to work with epoxy. I love making epoxy river/resin tables!"
+    },
+    {
+     "key": "peeves",
+     "text": "If you chew with your mouth open, you just as well pack your bags and head home, life's too short for that."
+    },
+    {
+     "key": "proud",
+     "text": "One of my buddies and I started a moving company from scratch. Started by doing some pretty small, odds and ends moving, and now are helping people relocate all across the U.S. We spent most of our time in the name department... it's called MOVE MOVE MOVE!"
+    },
+    {
+     "key": "surprise",
+     "text": "I can make a really weird whistling noise with the back of my throat, not sure why?"
+    },
+    {
+     "key": "inspiration",
+     "text": "My mom and dad, and it's not up for debate. They've each taught me from a young age how to work hard, chase your dreams, and never to stop."
+    },
+    {
+     "key": "win",
+     "text": "It's gotta be one of us roundheads... Why not me?"
+    }
+   ],
+   "trivia": [
+    "Carter is the youngest man competing on Season 51."
+   ]
+  },
+  "Cristian Chavez": {
+   "words": "Fun, chaotic, loud",
+   "answers": [
+    {
+     "key": "why",
+     "text": "I LOVE competition! I also want to test my limits in this game and be pushed past my breaking point just to experience it."
+    },
+    {
+     "key": "prepared",
+     "text": "Definitely practicing small challenges with my dad growing up. He would put together little activities just like smaller Survivor challenges and it was always so fun."
+    },
+    {
+     "key": "playlike",
+     "text": "I identify the most with Tai. I want to play as a weird mix of Tai, Cirie, Tony and Carolyn."
+    },
+    {
+     "key": "ally",
+     "text": "Someone who thinks differently than me, but can also hear my side. Predictability, I want to be able to predict their motivation."
+    },
+    {
+     "key": "hobbies",
+     "text": "Baking; being with family; philosophy; playing with my son; feeding ducks"
+    },
+    {
+     "key": "peeves",
+     "text": "Being mean to animals, logical inconsistencies, people getting upset/mad at someone crying or showing emotion"
+    },
+    {
+     "key": "proud",
+     "text": "Getting my master's degree at 21 yrs old."
+    },
+    {
+     "key": "surprise",
+     "text": "I'm a dad, I can be cutthroat when I need to be. I have a very LOUD laugh. I have a very strong aversion to worms."
+    },
+    {
+     "key": "inspiration",
+     "text": "My mom 1,000,000%. She inspires me every. single. day. She has given us so much and always chose her kids over everything. She's an incredibly hard worker and so intelligent. She always knows what's happening and I love her so much."
+    },
+    {
+     "key": "win",
+     "text": "Because not only am I willing to do anything to win, but if I'm not winning, I'll do whatever it takes to make everyone else lose."
+    }
+   ],
+   "trivia": [
+    "Cristian was an alternate for Season 47."
+   ]
+  },
+  "Danny \"Kilby\" Kilby": {
+   "words": "Wacky, chaotic, playful",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Biggest dream of my whole life. When I was a kid, Survivor was my fave show and still is today. Survivor has given me so much already, I met my girlfriend playing a fan-made Survivor game. She lives in Florida, we'd never have met if not for Survivor. I am an adventure chaser, and this is the best adventure. All my best friends I met through being a Survivor fan."
+    },
+    {
+     "key": "prepared",
+     "text": "Student government really taught me to delegate tasks, manage a bunch of different groups and egos. All my weird hobbies, honestly prepared me to think quickly, connect with people and be confident. Board games (the nerdy/strategic ones) taught me to execute complex plans fast. My whole life has been training for today."
+    },
+    {
+     "key": "playlike",
+     "text": "Most identify with Todd Herzog or Ben Katzman. I'm a good vibes guy, and when 46 aired I got 9000 messages of people telling me I remind them of Ben. I'll play the most like David Wright. Aggressive, bold, moves built on empathetic, deep bonds."
+    },
+    {
+     "key": "ally",
+     "text": "I look for someone I have fun playing with. I want to know someone's “real laugh” before I lock in, so I know when they're lying in the future. Fun, loyal, smart, and connects with the people I don't. Someone I can emotionally manipulate if I need to (sorry!)"
+    },
+    {
+     "key": "hobbies",
+     "text": "Video games, volleyball, soccer, filmmaking/watching films, WWE events, online reality games, Blood on the Clocktower, board games, karaoke, dancing, performing improv, Lego, puzzles, kayaking, dodgeball."
+    },
+    {
+     "key": "peeves",
+     "text": "When people say an obvious thing but act like it's brilliant. Rich people who want to act like they've had a hard life. When people tell you “wrestling is fake.” Complainers, why can't we just make the most of it?"
+    },
+    {
+     "key": "proud",
+     "text": "I'm the first in my family to graduate high school and go to university. I got straight A's, and my mom graduated and got a degree after I did. Her success is my proudest accomplishment. She didn't go because she was a teen mom and had to raise me. She gave the biggest sacrifices so I could be the happiest, goofy kid. Also, I won a cool filmmaking competition and got a sick trophy."
+    },
+    {
+     "key": "surprise",
+     "text": "I come off as a happy go lucky, oddball hippie, and that's true but I've suffered a lot. There's a lot more to me than meets the eye (like a transformer)."
+    },
+    {
+     "key": "inspiration",
+     "text": "My stepdad Bruce. No one I've ever met has always been so positive, friendly, funny. Anywhere we go he meets a new friend, and he worked my whole childhood to take care of me and my mom. It's not often your dad gets to CHOOSE you, and mine did. While we didn't have the most, I think I had the best childhood ever because my parents were silly, loving and curious about everything."
+    },
+    {
+     "key": "win",
+     "text": "I can make anyone love me and feel like the most special person in the world. My social game is bomb. I have grit like no one else and I'll never stop smiling. I'm a strategic crazy mad scientist, and I'll always think my way out of any problem."
+    }
+   ],
+   "trivia": [
+    "Before Survivor, Kilby competed on the second real-life season of Sequester, finishing 18th."
+   ]
+  },
+  "Devin Way": {
+   "words": "Charming, playful, loyal",
+   "answers": [
+    {
+     "key": "why",
+     "text": "There is nothing else like this in the world. It's a once-in-a-lifetime opportunity to play one of the best games in existence! I can not wait!"
+    },
+    {
+     "key": "prepared",
+     "text": "I play Dungeons & Dragons every week and the game teaches you to roll the dice and no matter what happens (with the help of your team) you can figure it out!"
+    },
+    {
+     "key": "playlike",
+     "text": "Rick Devens is who I want to play like, his joy, smile and love for the game is what excites me. I identify with Joe a lot though. His integrity and love for his family mixed with the grief of losing a sibling tragically."
+    },
+    {
+     "key": "ally",
+     "text": "Loyalty and honesty will keep me. The second I find out you lied or betrayed me in some way I'll be looking for a new alliance."
+    },
+    {
+     "key": "hobbies",
+     "text": "Line dancing, Dungeons & Dragons, spoken word, game nights with friends, karaoke, reading comics, going to the gym, sitting in the park."
+    },
+    {
+     "key": "peeves",
+     "text": "People who look down on others or treat people less than."
+    },
+    {
+     "key": "proud",
+     "text": "In this moment I am the proudest of making it on Survivor 51!! Truly can't believe I'm here."
+    },
+    {
+     "key": "surprise",
+     "text": "That I have 12 brothers and sisters. I'm number 7 in the group."
+    },
+    {
+     "key": "inspiration",
+     "text": "My MoeMoe (Grandma). She's the strongest, most loyal, loving, fighter of a woman that I've ever met."
+    },
+    {
+     "key": "win",
+     "text": "Because “Ways Always Win”"
+    }
+   ]
+  },
+  "Eric Macksoud": {
+   "words": "Animated, charismatic, empathic",
+   "answers": [
+    {
+     "key": "why",
+     "text": "As someone who loves people and learning about what makes people tick, Survivor is the ultimate celebration of the human experience. It's a game that breaks people down to build them back up into stronger people, and it's the ultimate adventure for those looking to grow and test themselves to see who they truly are. For a guy like me who's always willing to step outside their comfort zone and face themselves to evolve, I just want to be a part of that adventure and celebration regardless of the outcome."
+    },
+    {
+     "key": "prepared",
+     "text": "Being involved in community theater has definitely prepared me for Survivor. In each show I'm in, I'm thrown into a new group of people that are all different ages, backgrounds, and skill sets. It leads us to form strong bonds very quickly which helps us in being able to work effectively and successfully in putting on a phenomenal show. I often leave each show with a new, close friendship, and I feel this will translate perfectly once I'm dropped off in a new tribe where I'll have to make quick bonds with a diverse group of strangers."
+    },
+    {
+     "key": "playlike",
+     "text": "When I saw Domenick Abbate on Ghost Island, it felt like I was looking into a mirror and seeing where I'll be in a few years. He's a charming, slightly sassy East Coast Italian American like me, and his game is definitely forming a strong bond with a pal that got him to the end and almost the win. He was also honest and upfront with his feelings, which I also plan on being with others as I go far in the game. Like Dom, I also plan on taking calculated risks that will advance me and get me to where I need to go."
+    },
+    {
+     "key": "ally",
+     "text": "Someone that will display with continuous trust and loyalty, that I can joke and laugh with, that will be open-minded and non-judgmental, and that I can confide in and talk to if/when I'm feeling down. Ultimately, I value an alliance-mate that can also be a confidant and best friend in-and-out of the game."
+    },
+    {
+     "key": "hobbies",
+     "text": "Community theater, jamming on the electric guitar, going on adventures with my fiancé, watching horror movies, swimming, playing board games with friends, and petting my cats."
+    },
+    {
+     "key": "peeves",
+     "text": "People with low emotional intelligence/maturity, people who take themselves too seriously, super machismo type guys, reckless drivers, and bad grammar."
+    },
+    {
+     "key": "proud",
+     "text": "Aside from meeting and becoming engaged to the love of my life? In that case, I'd say passing my licensing exam is something I take a lot of pride in. The LMHC exam is no joke, and it was something I had to continuously study for over and over again since it notoriously takes multiple attempts to pass. Despite my frustrations and doubt, I didn't give up and kept trying until I passed on my 4th attempt. Whenever I find myself doubting my skills, I remind myself of that accomplishment so that I can be mindful that I can overcome tough things."
+    },
+    {
+     "key": "surprise",
+     "text": "You probably couldn't guess that I'm trained in Muay Thai kickboxing, and that I used to be a competitive swimmer from age 8 up until my senior year of college. I don't present as the athletic type, so it does throw some people off when they learn about my athletic history."
+    },
+    {
+     "key": "inspiration",
+     "text": "My fiancé, Gina DeVito, continually inspires me every day to work hard, grow, and be there for myself and for our relationship. She's a self-starter that had to work extremely hard to overcome her own adversities to be the successful, strong woman she is today, and does so with class, bravery, and unconditional love. She's always there for me in the highest highs and lowest lows, and her love inspires me to show up and work just as hard not only because she deserves it, but I deserve it too. She's the epitome of a soulmate, and I'm always in awe of how much we've accomplished since the first day I met her."
+    },
+    {
+     "key": "win",
+     "text": "I'm an emotionally intelligent person who can form close bonds in a short amount of time and will adapt to whatever a person needs in order to maintain trust. I'm able to read people successfully and convince others to shift their perspectives as needed, all while having enough self-awareness and control to know when to lead or when to follow. I can also be in touch with my own feelings and self-regulate so that the stress and anxiety I face will not hold me back from making tough game decisions."
+    }
+   ]
+  },
+  "Angelica \"Jelly\" Loblack": {
+   "words": "Curious, multifaceted, and passionate",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Survivor has been a part of my family and life for as long as I can remember. It was my first exposure to the sociological questions and experiments that would later lead to an entire career. I want to play and win Survivor and experience it with the loved ones who introduced it to me while they're still here."
+    },
+    {
+     "key": "prepared",
+     "text": "My journey to the PhD in Sociology has undoubtedly prepared me to win this game. From my interview and ethnographic observation training, to my critical thinking and analysis skills, my sociology background is my greatest weapon. As a young, Black woman in this field, I've already made a name for myself and will do the same in Survivor."
+    },
+    {
+     "key": "playlike",
+     "text": "The player I identify most with is Katurah Topps and the player I think I'll play most like is Shan (S41), for better or worse."
+    },
+    {
+     "key": "ally",
+     "text": "In an ally, I will value transparency and innovation. I want a ride or die who's not afraid to brainstorm and risk-take, creatively, of course. Someone less ego-driven than myself with a good bit of sarcastic humor and Y.O.L.O energy BUT loyal like no other."
+    },
+    {
+     "key": "hobbies",
+     "text": "Volleyball, running, writing, binge watching dystopian sci-fi series, debating, and rapping to myself in the mirror Issa Rae style."
+    },
+    {
+     "key": "peeves",
+     "text": "I can't stand overly boastful people, people who can brag about themselves all day, every day. I also can't stand people with black and white thinking, who never question the norm or entertain alternative ideas/theories. People who don't care to think outside of the box. I also don't like loud eaters!"
+    },
+    {
+     "key": "proud",
+     "text": "I'm most proud of earning my PhD under the age of 30 and writing a dissertation I can be proud of and share with everyone in my community."
+    },
+    {
+     "key": "surprise",
+     "text": "I once won most comedic mascot at mascot camp (yes, it's a thing). I was Webber the Bear!"
+    },
+    {
+     "key": "inspiration",
+     "text": "My grandma, hands down! We're talking about a woman who was queer in a time where you could be imprisoned, hospitalized, and even have your kids taken from you for loving who you love. A two-time breast cancer survivor and widow, who has dealt with every negative life can throw, but still leads with love and pours into every human she comes in to contact with. I would not be me without her."
+    },
+    {
+     "key": "win",
+     "text": "Because I'm a driven, passionate, brainiac in an unsuspecting, beautifully wrapped package. Being a sociologist, I'm not only an expert on all things social but I'm literally trained to immerse myself in any environment and social dynamic, take what I need, and put it to good use. There's nobody better equipped to win a social experiment that is Survivor than the sociologists who create them."
+    }
+   ],
+   "trivia": [
+    "Jelly is of Afro-Caribbean and Choctaw descent, one of five castaways in Survivor history with Native American ancestry."
+   ]
+  },
+  "Jenna Doore": {
+   "words": "Empathetic. Determined. And energetic. (my family's nickname for me is NENERGY)",
+   "answers": [
+    {
+     "key": "why",
+     "text": "WHERE TO BEGIN? For starters, it's my lifelong dream. I've watched with my fam since I was 7 years old. I was the kid begging my parents to let me stay up to watch the finale past my bedtime (literally negotiated by making up my own immunity challenge, a 1 min, long handstand, that I finally accomplished after hours of trying). But more than that, Survivor is all about putting yourself outside your comfort zone and seeing who you become when you do. That is why I want to play this game."
+    },
+    {
+     "key": "prepared",
+     "text": "Being a wedding photographer! I have the best job ever, but it's easy to write me off as “the cute little wedding photographer” when in reality what I do takes grit, stamina, and mental toughness. When it comes to wedding days, the name of the game is ADAPTABILITY. It's about being able to perform and create when the stakes are high and the pressure is on... just like Survivor."
+    },
+    {
+     "key": "playlike",
+     "text": "I honestly hope to be a combo of Charlie and Kenzie (both players I look up to!) Kenzie for her social skills and ability to be everyone's buddy. Charlie, for his intentional game play focused on keeping options open and letting himself be underestimated by others, when really, he had his finger on the pulse of the game."
+    },
+    {
+     "key": "ally",
+     "text": "Honestly, vibes. I want to work with people I genuinely connect with on a human level. Also, green flags if they are a safe space to chat through various strategic options before deciding on the right course of action."
+    },
+    {
+     "key": "hobbies",
+     "text": "I love writing! Mostly I write poetry, and love reading poetry as well. I also love to run and I'm always down for an adventurous hike."
+    },
+    {
+     "key": "peeves",
+     "text": "Can't think of many, but catch me after 26 days on the island and I'm sure I'll have a few."
+    },
+    {
+     "key": "proud",
+     "text": "Building my business! I'm honestly living out my dream and frequently pinch myself getting to do this job. When I was 15 years old, I saved up all my babysitting money and bought my first camera. At 18 someone took a chance on me and I photographed my first wedding. I have put so many hours of BELIEF into my photography dream, and I feel so proud of the way 15-year-old Jenna followed her passion to start it all."
+    },
+    {
+     "key": "surprise",
+     "text": "I think I give off “sweet, bubbly, artistic girl”... but I've got a savvy strategic side to me! In fact: in all the wedding contracts I've sent out over the last 5 years, I've included a ‘Survivor Clause’ because I did, in fact, know this was my destiny."
+    },
+    {
+     "key": "inspiration",
+     "text": "Gotta be my mom and my dad. My dad because he reminds me, anything is possible. He is constantly finding adventures in everyday life and can seemingly troubleshoot any obstacle through creative thinking and hard work. My mom because for all the ways I want to reach into the world and accomplish things, she reminds me that there is nothing I need to prove."
+    },
+    {
+     "key": "win",
+     "text": "I gave away 154 poems in exchange for people telling me their dream. I will be the Sole Survivor because I have an army of people who are believing in it with me. I'm playing for them."
+    }
+   ]
+  },
+  "Kristin Flickinger": {
+   "words": "Determined, joyful",
+   "answers": [
+    {
+     "key": "why",
+     "text": "I have been applying for Survivor since the middle of season 1. It has become the lens through which I view and navigate the world, however dysfunctional that may be. I am excited for the adventure, competition, and challenge. And excited to play big, fully, and propulsively to the end."
+    },
+    {
+     "key": "prepared",
+     "text": "My entire existence has prepared me for the game. Growing up in the mountains of Idaho, navigating the world as a queer woman leading teams, finding and sometimes making community, and turning my traumas into a career serving LGBTQ+ community especially in moments of crisis."
+    },
+    {
+     "key": "playlike",
+     "text": "I identify with Rachel LaMont. She's the first player who played the way I think about the game. She was quirky, likable, smart, innovative, and lucky."
+    },
+    {
+     "key": "ally",
+     "text": "My dream alliance partner is someone I can know in my bones wants to go to the end with me and has the ability to think innovatively through complex situations quickly. Also, someone who wants to get up to mischief together. Papaya bandits, anyone?"
+    },
+    {
+     "key": "hobbies",
+     "text": "Road cycling, training my husky dog to talk with buttons, applying for Survivor (I'm on the hunt for a new hobby...)."
+    },
+    {
+     "key": "peeves",
+     "text": "I really dislike the term “pet peeve.” Like, what even is that? Sounds like a poltergeist dog. Crumbs on the kitchen counter, really any surface, send me."
+    },
+    {
+     "key": "proud",
+     "text": "Creating an intergenerational culinary arts program for LGBTQ+ youth and seniors. Thousands of people have had their lives touched by that program."
+    },
+    {
+     "key": "surprise",
+     "text": "I carry rocks in my bra usually for protection, but it changes based on my mood, and any particular meetings I have that day."
+    },
+    {
+     "key": "inspiration",
+     "text": "Honestly, a long time ago, I decided to be my own inspiration. I draw strength from nature, family, friends, ancestors and the connection we all have."
+    },
+    {
+     "key": "win",
+     "text": "The stars are literally aligned for an Aries, for the next 26 days. Like for real. The sun, planets, everything. And the moon phases form my Scorpio rising and Scorpio moon, too!"
+    }
+   ],
+   "trivia": [
+    "Kristin is the oldest contestant competing on Season 51."
+   ]
+  },
+  "Lewis Kelly": {
+   "words": "Cheeky, devilish, charming",
+   "answers": [
+    {
+     "key": "why",
+     "text": "I love the show. Once I became a US citizen, I owed it to myself to apply, to take this new opportunity and really live and be an example of my American dream. You miss 100% of the shots you don't take and even if I don't have a notion of what's going on, I'll always put myself forward and give it a go."
+    },
+    {
+     "key": "prepared",
+     "text": "My trip a few months ago to North Korea. At times we were isolated, unable to leave our rooms, no communication with the outside world, no phones, uncomfortable rock hard beds, never knowing what's coming the following day, not knowing if one wrong move is going to get you... voted out!"
+    },
+    {
+     "key": "playlike",
+     "text": "I identify with Venus. She's just out here trying to represent and handle the chaos as best she can. She's funny and not afraid to say what's on her mind and stands 10 toes down. I also feeling like I'm a better, cooler, version of Tyson."
+    },
+    {
+     "key": "ally",
+     "text": "Someone that's there to cause chaos and have fun. Someone that won't rat me out. Snitches get their torches snuffed."
+    },
+    {
+     "key": "hobbies",
+     "text": "Lying! What do you mean I can go on a show where it's okay to deceive people?! I also love traveling and charting the unknown. I've always wanted to live a remote life as my wife and I traveled the US renovating a school bus that we now call our beautiful home."
+    },
+    {
+     "key": "proud",
+     "text": "I've been to 40+ countries, I've seen the good, bad and ugly and I have appreciation for it all. I love travel so much I live in a school bus!"
+    },
+    {
+     "key": "surprise",
+     "text": "I feel I'm more intelligent than people take me for. I might sound a bit rough around the edges but on Survivor, every blunder, every mistake I make publicly is probably very thought out and deliberately executed move."
+    },
+    {
+     "key": "inspiration",
+     "text": "My beautiful wife Andrea. She's a partner that is just as bold and daring as me. She keeps me on my toes and makes my life so spontaneous and magical. She's the only reason I'd even be half decent at Survivor. She has and continues to teach me so much about life. I love her with all my heart."
+    },
+    {
+     "key": "win",
+     "text": "I probably won't be the Sole Survivor. If these players have any notion about them they'll make sure I don't get to Final Tribal Council. But if I do, the game is as good as won."
+    }
+   ],
+   "trivia": [
+    "Lewis is the first Irish castaway to compete on Survivor."
+   ]
+  },
+  "Linnea Capobianco": {
+   "words": "Rational, outgoing, and optimistic.",
+   "answers": [
+    {
+     "key": "why",
+     "text": "This life, this limited time on earth, is all I am certain of. With that, I seek to experience as much as possible, saying yes to a challenge, to be uncomforted, to grow. Survivor provides all those things and more. It's the ultimate challenge and opportunity of a lifetime that I am so ready for."
+    },
+    {
+     "key": "prepared",
+     "text": "Studying and working in Washington, D.C., where networking is imperative to your success, helped prepare me for the complex social politics of Survivor. Fostering relationships with people in power and people who have different views than you is essential in the nation's capital and in Survivor."
+    },
+    {
+     "key": "playlike",
+     "text": "Kyle F, due to his ability to build strong relationships and lead votes without being the over leader. He's also extremely well rounded (athletic and social strengths)."
+    },
+    {
+     "key": "ally",
+     "text": "True friendship, positive attitude, doesn't freak out / get overly paranoid, rational (most important)."
+    },
+    {
+     "key": "hobbies",
+     "text": "Street photography, Lagree, attending jazz shows."
+    },
+    {
+     "key": "peeves",
+     "text": "When people ask me my zodiac sign, when people exclude others in convo, e.g. standing in a circle that doesn't make everyone feel a part of it."
+    },
+    {
+     "key": "proud",
+     "text": "Being a successful business owner in NYC!"
+    },
+    {
+     "key": "surprise",
+     "text": "I have a laughing problem. I've had countless uncontrollable laughing attacks (funerals, church, class, during a presentation, etc). They happen when I know I shouldn't be laughing."
+    },
+    {
+     "key": "inspiration",
+     "text": "Lynsey Addario (conflict/war photographer). Risks her life to be the voice of the voiceless and follows her true passion."
+    },
+    {
+     "key": "win",
+     "text": "I'm highly skilled at reading people, persuading people, and being a leader that doesn't come off as threatening. In addition to my grit, determination, and athletic abilities."
+    }
+   ]
+  },
+  "Maggie Nestor": {
+   "words": "Joyful, intentional, redneck",
+   "answers": [
+    {
+     "key": "why",
+     "text": "I've loved Survivor since I was 15. I've been watching for 25 years and waiting for this opportunity of a lifetime."
+    },
+    {
+     "key": "prepared",
+     "text": "Growing up in West Virginia."
+    },
+    {
+     "key": "playlike",
+     "text": "I most identify with Parvati! I don't know who I'm going to play most like. We'll see throughout the season."
+    },
+    {
+     "key": "ally",
+     "text": "Someone who is creative, open, happy, and willing to make bold moves."
+    },
+    {
+     "key": "hobbies",
+     "text": "Farming, gardening, fishing, hunting, exploring, running, lifting, pole vaulting, reading, teaching, singing, cooking, playing guitar"
+    },
+    {
+     "key": "proud",
+     "text": "The life my husband and I created."
+    },
+    {
+     "key": "surprise",
+     "text": "I'm a mom of three AMAZING MARVELOUS children who merit me more love than I deserve."
+    },
+    {
+     "key": "inspiration",
+     "text": "Jesus because He saved me."
+    },
+    {
+     "key": "win",
+     "text": "I truly believe my entire life has prepared me to outwit, outlast, and outplay. I'm determined to be Season 51's Sole Survivor."
+    }
+   ],
+   "trivia": [
+    "Maggie is the first contestant to reside in West Virginia during filming."
+   ]
+  },
+  "Mike Pinsky": {
+   "words": "Enthusiastic, strategic, driven",
+   "answers": [
+    {
+     "key": "why",
+     "text": "When I was 8, I used to play Survivor with my friends in our New York City apartments. When I was 18, my college friends and I would drop everything for our sacred Wednesday night viewings. When I was 28, my marriage proposal to my wife Becky incorporated a Probst catchphrase. Getting to actually live this dream for real is a one-of-one life experience, and the thrill of this type of adventure sets my heart on fire!"
+    },
+    {
+     "key": "prepared",
+     "text": "I lost my mom to metastatic breast cancer when I was 24 (she was 61). The pain and sorrow were immeasurable, and it forged the resilience that I possess today. I've been thinking a lot about how my mom used to tell me “everyone has something to offer,” which is a pretty darn good mantra for day one of Survivor. I'll be thinking of her out there for sure."
+    },
+    {
+     "key": "playlike",
+     "text": "Kyle Fraser, Charlie Davis, and Adam Klein, all remind me a bit of myself in the similarities of our Survivor toolkits. But I ultimately hope to be this season's Rachel LaMont (the best new era winner), who had those same skills and also brought innovation how the game is played."
+    },
+    {
+     "key": "ally",
+     "text": "As in baseball front offices, when it comes to Survivor strategy, information is king. You can't really maneuver without knowing important facts. So, I want allies who can help me gather that intel: who's working with whom; who has what advantages; what was that whispered conversation at the water well all about?"
+    },
+    {
+     "key": "hobbies",
+     "text": "I'm the best home cook you'll ever meet! Also, a big fan of pickup basketball, improv comedy, tennis, and playing with my dachshund Pookie."
+    },
+    {
+     "key": "peeves",
+     "text": "Misused words, overused words, under seasoned food."
+    },
+    {
+     "key": "proud",
+     "text": "Marrying my high school crush, Becky. We met acting in school plays, and our first kiss was on stage as lovers in A Midsummer Night's Dream. Our first real kiss was at a prom after-party even though we were not each other's dates (scandalous!). The best part of getting to be me is being loved by Becky."
+    },
+    {
+     "key": "surprise",
+     "text": "Working for the Yankees, I spend tons of time assessing players from the comfort of a stadium seat or my desk chair. But inside me is a burning desire to be the one playing. I am beyond pumped to hit the beaches of Fiji as a player!"
+    },
+    {
+     "key": "inspiration",
+     "text": "My mom, who told me everyone has something to offer."
+    },
+    {
+     "key": "win",
+     "text": "I'm athletic, but at 5'8” I'm not physically imposing. I'm strategic, but I know how to downplay it when I need to. And I'm a good chat without being a charm machine who will be seen as too big a social threat. I have the right cocktail of qualities to take this thing to the end!"
+    }
+   ]
+  },
+  "Ori Jean-Charles": {
+   "words": "Consistent, never too high or too low. Anomaly, I am more than what meets the eye. Hustler, I will find a way to make it happen!",
+   "answers": [
+    {
+     "key": "why",
+     "text": "My older brother once told me “You don't owe us anything” when it looked like my NFL career wasn't going to be what I thought. But he is wrong. I owe them everything and that's why I am here. To change my families' lives. They carried me in their hearts on their minds and shoulders. They sacrificed everything for me to be here today. And right here right now is an opportunity to pay that back for all they have done."
+    },
+    {
+     "key": "prepared",
+     "text": "While in college my mom had an accident, she really hurt her back. I was finding my footing realizing some of my division 1 football dreams, but I had to transfer, I needed to be closer to home. So I transferred from the University of Louisville to the University of Maine, for the simple fact that it was close to home. Every Friday after my 5am lift, fighting sleep, I would drive 8 hours home. I did that every weekend for my first semester and a half. The amazing part was that I played some of the best football of my career. I broke an NCAA Division 1 record. That was because my family was all that I thought about. When you are tired, homesick, worried about family, hungry, when you feel all that pressure THAT'S WHEN YOU HAVE TO PERFORM!"
+    },
+    {
+     "key": "playlike",
+     "text": "Jeremy, I feel like I identify and will play like him because for the simple fact he was strategic and was playing for his family. When your “why” is greater than yourself and you have everything riding on this there is NOTHING you won't do. And nothing means more to me in this world than my family!"
+    },
+    {
+     "key": "ally",
+     "text": "I know it is cliché but loyalty first and foremost, there is no alliance without trust. People that are doers and not scared, people that will pull the trigger and make a move with me. It's like playing a game of basketball. If I make a move or get double teamed and pass you the ball, SHOOT! Don't hesitate don't get scared TAKE THE SHOT! Because if you don't, I might not pass it to you again."
+    },
+    {
+     "key": "hobbies",
+     "text": "Food, some people call themselves foodies, I LOVE TO EAT! Travel, I love to see new places. Fashion, I love to look and dress nice, I take pride in walking into a room and being the flyest dude there."
+    },
+    {
+     "key": "peeves",
+     "text": "I hate idiocy, I have no patience for people who lack common sense. My second pet peeve is someone that absolutely NEEDS attention. I know it's ironic saying that on a TV show. But the “look at me!!” people bother me, just chill!"
+    },
+    {
+     "key": "proud",
+     "text": "I am most proud of being the first in my family to get a college degree and not only did I do that I went and got my master's degree. It means so much because there was no one to help or show me how. What's even more special is now everyone in my family is a college graduate. It's like I broke a generational curse. Seeing me do it let them know they can too."
+    },
+    {
+     "key": "surprise",
+     "text": "Something you would never know by looking at me is that I used to play the violin. I was pretty good at it. Somehow, I ended up First Chair in my 6th grade orchestra."
+    },
+    {
+     "key": "inspiration",
+     "text": "My mom! My mother is not only my inspiration but my best friend. There have been so many times that she didn't eat so me and my siblings could. Didn't sleep so me and my siblings could. Winning this money and retiring her would make all my dreams come true."
+    },
+    {
+     "key": "win",
+     "text": "I am book smart, I am street smart, and I am a former pro athlete. I am literally made for Survivor. But most importantly I am here to win, there is nothing that I won't do to win Survivor."
+    }
+   ]
+  },
+  "Patt Cannaday": {
+   "words": "Goofy, loyal, intense",
+   "answers": [
+    {
+     "key": "why",
+     "text": "I love challenge and new adventures. This show is the challenge/adventure of a lifetime."
+    },
+    {
+     "key": "prepared",
+     "text": "A few years ago, in Brazil my friends and I went on a hike. It was supposed to be three hours and ended up being six. None of us spoke fluent Portuguese. The end of the hike was actually a climb. We had to stumble our way back in the dark. Essentially, I'm used to adventures I'm fully unprepared for and get by solely through the power of friendship."
+    },
+    {
+     "key": "playlike",
+     "text": "I love Amanda Kimmel and Rachel LaMont. Amanda played a loyal, resilient game with close allies, and Rachel played a scrappy, no holds barred climb to the top. Both were brilliant and flexible, and I hope to be the same."
+    },
+    {
+     "key": "ally",
+     "text": "I want someone who is willing to take risks with me and engage in shenanigans."
+    },
+    {
+     "key": "hobbies",
+     "text": "Boxing, skydiving, hiking, dramatic reading nights, really whatever I've picked up this week."
+    },
+    {
+     "key": "peeves",
+     "text": "White sunglasses, flip flops and jeans, when the least informed person is telling everyone else what to do."
+    },
+    {
+     "key": "proud",
+     "text": "My marriage to my husband."
+    },
+    {
+     "key": "inspiration",
+     "text": "My parents are my biggest inspiration. My mom is a genius, who homeschooled me and my siblings, and my dad was a 26 year Air Force officer, who (in his own words), succeeded primarily based on his good looks. In my 33 years I've never heard my parents yell at me, my siblings, or each other, although I certainly deserved it a lot."
+    },
+    {
+     "key": "win",
+     "text": "My sparkling personality, undeniable wit, and of course, my good looks."
+    }
+   ]
+  },
+  "Rob Antonson": {
+   "words": "Competitive, funny, loving",
+   "answers": [
+    {
+     "key": "why",
+     "text": "I'm a total city boy, I have never been an outdoors type. I want to show my three young kids that you can get out of your comfort zone, take chances and still succeed. I want to prove to myself that I can push myself like I never have before and come out on top."
+    },
+    {
+     "key": "prepared",
+     "text": "I think working at the airport has prepared me for the game of Survivor. At the end of the day, Survivor is a huge social game. At the airport, I socialized with people from all over the globe every day! The airport is also full of chaos, so this has kind of made me immune to it. Survivor chaos to me is just another busy Friday at the airport!"
+    },
+    {
+     "key": "playlike",
+     "text": "Boston Rob because he's from the New England area and is a Sox fan like myself. He carries himself with this swagger of not caring what others think about him which is exactly how I am! I will play with a mix of Tony and Joe. I'll play a loyal game like Joe when it comes to relationships. I'd throw some manipulation game playing like how Tony played!"
+    },
+    {
+     "key": "ally",
+     "text": "I will value someone who is an open book to me, not someone who acts shady at times. I value someone who will shoot down my name when talked about from others to vote out."
+    },
+    {
+     "key": "hobbies",
+     "text": "Coaching my sons' sports teams (baseball, football, soccer). Traveling with my family, game night with my buddies, karaoke, videoing podcasts and video editing, spending family time with my wife and kids."
+    },
+    {
+     "key": "peeves",
+     "text": "Miserable people, bad hygiene (bad breath), the pouring of soda (I have no clue why!)."
+    },
+    {
+     "key": "proud",
+     "text": "Helping to create my three children. I have always wanted kids and have always wanted to be a daddy. Being a dad is the best thing in the world and I would never change it!"
+    },
+    {
+     "key": "surprise",
+     "text": "I am a huge reality TV junkie. I watch Real Housewives, Traitors, Love Island, MTV's The Challenge. If it's reality, I've probably watched it. I guess I just like peeping into people's lives from my couch."
+    },
+    {
+     "key": "inspiration",
+     "text": "My father is my biggest inspiration because when we were little he worked 2-3 jobs to make sure me and my sister were set. He built me into the strong-minded man I am today!"
+    },
+    {
+     "key": "win",
+     "text": "I will be the Sole Survivor because I feel like I can be a social chameleon in the game. I can fit into any crowd due to my life experience."
+    }
+   ],
+   "trivia": [
+    "Rob is the oldest man competing on Season 51."
+   ]
+  },
+  "Sharonda Cox": {
+   "words": "Charismatic, resilient, reliable",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Survivor has a way of forcing people to be vulnerable, reflect and see themselves in a new light. I would love to encourage those little Black boys and girls, those in low economic areas and my family and friends what we can do despite our disadvantaged beginnings. I also want to stop going through the motions of life and meet the new, unapologetic Sharonda."
+    },
+    {
+     "key": "prepared",
+     "text": "Growing up in Pompano Beach in a single parent household taught me that you have to work hard for everything you want and to be appreciative. This game comes with ups and downs but as long as you put the work in and don't become complacent, you can make it far!"
+    },
+    {
+     "key": "playlike",
+     "text": "I identify with Cirie the most because I am shocked by the things I am able to accomplish. She is also a strong Black woman."
+    },
+    {
+     "key": "ally",
+     "text": "Loyalty but adaptability. If plans change 5 minutes before tribal, you need to be both and ready to make it happen... otherwise, you are next!"
+    },
+    {
+     "key": "hobbies",
+     "text": "Fishing, reading, and watching sports with my husband"
+    },
+    {
+     "key": "peeves",
+     "text": "Loud chewers. I cannot stand the sound of someone chewing with their mouth open."
+    },
+    {
+     "key": "proud",
+     "text": "Making my family proud! Whether that's being a doctor or just a decent human being."
+    },
+    {
+     "key": "surprise",
+     "text": "I was first chair in orchestra. I played violin at Disney. I was also a science nerd and loved NASA!"
+    },
+    {
+     "key": "inspiration",
+     "text": "My maternal grandparents are my biggest inspiration. They had to drop out of school, work the bean fields and sacrifice so much. They are loving and supportive despite their trials and tribulations. I owe everything to them."
+    },
+    {
+     "key": "win",
+     "text": "Life has trained me for this very moment! There isn't one thing this game can throw at me that I haven't already endured. I was made for this!"
+    }
+   ]
+  },
+  "An \"Thien An\" Nguyen": {
+   "words": "Quick-witted, empathetic, outgoing",
+   "answers": [
+    {
+     "key": "why",
+     "text": "Since watching, I knew I wanted to be on Survivor. Very few opportunities in life let you connect to life in such a raw and authentic way. It's everything I love! New friends and the outdoors."
+    },
+    {
+     "key": "prepared",
+     "text": "Doing Boy Scouts as a kid (yes, Boy Scouts) exposed me early on to outdoors and survival skills."
+    },
+    {
+     "key": "playlike",
+     "text": "Kenzie is a firecracker and played a social game close to her heart, yet still strategic. I hope to play similar to her."
+    },
+    {
+     "key": "ally",
+     "text": "PLEASE someone that won't stab me in the back (well, first at least!)."
+    },
+    {
+     "key": "hobbies",
+     "text": "Spending time with loved ones whatever it may be like exploring the world, running a marathon on a whim, or making insultingly low trades in Catan."
+    },
+    {
+     "key": "peeves",
+     "text": "Anything that seems unfair, fake people, yuck!, People who can't separate your versus you're."
+    },
+    {
+     "key": "proud",
+     "text": "During Covid, when everything was closed and everyone was isolating, I made a new friend who after a year wrote me, “You taught me what being happy truly means.”"
+    },
+    {
+     "key": "surprise",
+     "text": "I am a back-to-back all-around intramural champ."
+    },
+    {
+     "key": "inspiration",
+     "text": "My mom and dad! (I'm smart enough to not choose favorites!). Truly both though. No one lives life as generously as my mom and boldly like my dad, they are my rocks, role models, best friends."
+    },
+    {
+     "key": "win",
+     "text": "Coming in at 5 feet strong, I will be LURKING incognito-ly until it's time to strike."
+    }
+   ],
+   "trivia": [
+    "Thien An is the youngest contestant competing on Season 51."
+   ]
+  }
+ }
+}

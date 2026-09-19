@@ -713,6 +713,87 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .castaway { position: relative; overflow: hidden; }
 
+/* An expandable card takes the full grid width when open, so the bio has
+   room to read instead of squeezing into one narrow column. */
+.castaway--expandable { cursor: pointer; }
+.castaway--expandable[open] { grid-column: 1 / -1; cursor: default; }
+
+.castaway__summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+}
+
+.castaway__summary::-webkit-details-marker { display: none; }
+
+.castaway__more {
+  display: inline-block;
+  margin-top: 11px;
+  font-family: var(--cond);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.castaway__more::after { content: " \\203A"; }
+
+.castaway--expandable[open] .castaway__more { display: none; }
+
+.castaway__bio {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(42, 80, 73, 0.7);
+  columns: 2;
+  column-gap: 34px;
+}
+
+.bio-words {
+  break-inside: avoid;
+  margin-bottom: 14px;
+}
+
+.bio-words__label,
+.bio-qa__q {
+  display: block;
+  font-family: var(--cond);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+  margin-bottom: 3px;
+}
+
+.bio-words__text {
+  font-family: var(--cond);
+  font-size: 1.3rem;
+  color: var(--lime);
+}
+
+.bio-qa {
+  break-inside: avoid;
+  margin-bottom: 14px;
+}
+
+.bio-qa__a {
+  margin: 0;
+  color: var(--sand-dim);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.bio-qa--trivia .bio-qa__q { color: var(--cyan); }
+
+.bio-source {
+  column-span: all;
+  margin: 6px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(42, 80, 73, 0.5);
+  font-size: 0.76rem;
+  color: var(--sand-faint);
+  font-style: italic;
+}
+
 .castaway__avatar {
   width: 62px;
   height: 62px;
@@ -1060,6 +1141,9 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   /* A long castaway name ("Stephenie LaGrossa Kendrick") is wider than a
      phone once it can't wrap, which pushes the whole page sideways. */
   .pick { white-space: normal; max-width: 100%; }
+
+  /* Two columns of bio text is unreadable on a phone. */
+  .castaway__bio { columns: 1; }
   thead th, tbody td { padding: 10px 9px; }
   .rank { width: 46px; font-size: 1.1rem; }
   .score { font-size: 1.2rem; }
