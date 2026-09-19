@@ -226,13 +226,19 @@ def build_season(season, workbook_path, config):
                 for col in DASH_PICK_COLS
             ]
             picks = [p for p in picks if p]
+            # Scores are computed from the episode tabs rather than read from
+            # the Dashboard's cached formula results. Excel only refreshes
+            # those cached values when the file is opened, so anything that
+            # edits the workbook without launching Excel would otherwise
+            # produce a site showing stale numbers.
             per_episode = {}
-            for index, episode in enumerate(episodes):
-                col = 7 + index  # G onward
-                raw = ws.cell(row=row, column=col).value
-                per_episode[episode["label"]] = int(raw) if isinstance(raw, (int, float)) else 0
-            raw_total = ws.cell(row=row, column=DASH_SCORE_COL).value
-            total = int(raw_total) if isinstance(raw_total, (int, float)) else 0
+            for episode in episodes:
+                per_episode[episode["label"]] = sum(
+                    event["points"]
+                    for event in episode["events"]
+                    if event["castaway"] in picks
+                )
+            total = sum(per_episode.values())
             players.append({
                 "name": name,
                 "picks": picks,

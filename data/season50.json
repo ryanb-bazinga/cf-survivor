@@ -2,7 +2,7 @@
  "season": 50,
  "name": "Survivor 50",
  "subtitle": "In the Hands of the Fans",
- "status": "in_progress",
+ "status": "complete",
  "generated": "2026-09-19",
  "source_workbook": "Survivor Tracking Season 50.xlsx",
  "tribes": [],
@@ -24,15 +24,25 @@
    "name": "Aubry Bracco",
    "tribe": "Vatu",
    "status": "IN",
-   "points": 2,
+   "points": 10,
    "out_episode": null,
    "out_reason": null,
-   "winner": false,
+   "winner": true,
    "events": [
     {
      "episode": 6,
      "label": "Make Jury",
      "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Win Survivor",
+     "points": 6
     }
    ],
    "drafted_by": [
@@ -246,7 +256,7 @@
    "name": "Jonathan Young",
    "tribe": "Kalo",
    "status": "IN",
-   "points": 5,
+   "points": 8,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -264,6 +274,16 @@
     {
      "episode": 11,
      "label": "Win  Advantage",
+     "points": 1
+    },
+    {
+     "episode": 13,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 13,
+     "label": "Win Fire Challenge",
      "points": 1
     }
    ],
@@ -306,7 +326,7 @@
    "name": "Tiffany Ervin",
    "tribe": "Kalo",
    "status": "IN",
-   "points": 6,
+   "points": 8,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -323,6 +343,11 @@
     },
     {
      "episode": 10,
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "episode": 12,
      "label": "Immunity Challenge Win",
      "points": 2
     }
@@ -557,7 +582,7 @@
     "Aubry Bracco",
     "Christian Hubicki"
    ],
-   "total": 16,
+   "total": 24,
    "episodes": {
     "E1": 0,
     "E2": 2,
@@ -571,7 +596,7 @@
     "E10": 0,
     "E11": 0,
     "E12": 2,
-    "E13": 0
+    "E13": 8
    },
    "rank": 1,
    "previous_rank": 1,
@@ -584,7 +609,7 @@
     "Aubry Bracco",
     "Joe Hunter"
    ],
-   "total": 14,
+   "total": 22,
    "episodes": {
     "E1": 0,
     "E2": 0,
@@ -598,11 +623,11 @@
     "E10": 0,
     "E11": 0,
     "E12": 2,
-    "E13": 0
+    "E13": 8
    },
    "rank": 2,
-   "previous_rank": 3,
-   "movement": 1
+   "previous_rank": 2,
+   "movement": 0
   },
   {
    "name": "Erin McGrath",
@@ -611,7 +636,7 @@
     "Aubry Bracco",
     "Dee Valladares"
    ],
-   "total": 14,
+   "total": 22,
    "episodes": {
     "E1": 0,
     "E2": 0,
@@ -625,11 +650,146 @@
     "E10": 0,
     "E11": 0,
     "E12": 2,
-    "E13": 0
+    "E13": 8
    },
    "rank": 2,
+   "previous_rank": 3,
+   "movement": 1
+  },
+  {
+   "name": "Kelli Hoff",
+   "picks": [
+    "Joe Hunter",
+    "Aubry Bracco",
+    "Ozzy Lusth"
+   ],
+   "total": 21,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 7,
+    "E7": 2,
+    "E8": 2,
+    "E9": 2,
+    "E10": 0,
+    "E11": -2,
+    "E12": 2,
+    "E13": 8
+   },
+   "rank": 4,
+   "previous_rank": 7,
+   "movement": 3
+  },
+  {
+   "name": "Christiaan VandenHeuvel",
+   "picks": [
+    "Aubry Bracco",
+    "Christian Hubicki",
+    "Charlie Davis"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 8
+   },
+   "rank": 5,
+   "previous_rank": 12,
+   "movement": 7
+  },
+  {
+   "name": "Erin Gorham",
+   "picks": [
+    "Dee Valladares",
+    "Genevieve Mushaluk",
+    "Aubry Bracco"
+   ],
+   "total": 16,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 8
+   },
+   "rank": 5,
+   "previous_rank": 13,
+   "movement": 8
+  },
+  {
+   "name": "Howard Newby",
+   "picks": [
+    "Colby Donaldson",
+    "Tiffany Ervin",
+    "Christian Hubicki"
+   ],
+   "total": 14,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 2,
+    "E9": 0,
+    "E10": 2,
+    "E11": 0,
+    "E12": 2,
+    "E13": 0
+   },
+   "rank": 7,
    "previous_rank": 4,
-   "movement": 2
+   "movement": -3
+  },
+  {
+   "name": "Jackson Bicker",
+   "picks": [
+    "Christian Hubicki",
+    "Jonathan Young",
+    "Savannah Louie"
+   ],
+   "total": 14,
+   "episodes": {
+    "E1": 0,
+    "E2": 2,
+    "E3": 0,
+    "E4": 0,
+    "E5": 0,
+    "E6": 6,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 3,
+    "E12": 0,
+    "E13": 3
+   },
+   "rank": 7,
+   "previous_rank": 8,
+   "movement": 1
   },
   {
    "name": "Chelsie Anderson",
@@ -654,9 +814,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 4,
-   "previous_rank": 2,
-   "movement": -2
+   "rank": 9,
+   "previous_rank": 5,
+   "movement": -4
   },
   {
    "name": "Dan Hatfield",
@@ -681,90 +841,9 @@
     "E12": 2,
     "E13": 0
    },
-   "rank": 4,
+   "rank": 9,
    "previous_rank": 6,
-   "movement": 2
-  },
-  {
-   "name": "Kelli Hoff",
-   "picks": [
-    "Joe Hunter",
-    "Aubry Bracco",
-    "Ozzy Lusth"
-   ],
-   "total": 13,
-   "episodes": {
-    "E1": 0,
-    "E2": 0,
-    "E3": 0,
-    "E4": 0,
-    "E5": 0,
-    "E6": 7,
-    "E7": 2,
-    "E8": 2,
-    "E9": 2,
-    "E10": 0,
-    "E11": -2,
-    "E12": 2,
-    "E13": 0
-   },
-   "rank": 4,
-   "previous_rank": 8,
-   "movement": 4
-  },
-  {
-   "name": "Howard Newby",
-   "picks": [
-    "Colby Donaldson",
-    "Tiffany Ervin",
-    "Christian Hubicki"
-   ],
-   "total": 12,
-   "episodes": {
-    "E1": 0,
-    "E2": 2,
-    "E3": 0,
-    "E4": 0,
-    "E5": 0,
-    "E6": 6,
-    "E7": 0,
-    "E8": 2,
-    "E9": 0,
-    "E10": 2,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 7,
-   "previous_rank": 5,
-   "movement": -2
-  },
-  {
-   "name": "Jackson Bicker",
-   "picks": [
-    "Christian Hubicki",
-    "Jonathan Young",
-    "Savannah Louie"
-   ],
-   "total": 11,
-   "episodes": {
-    "E1": 0,
-    "E2": 2,
-    "E3": 0,
-    "E4": 0,
-    "E5": 0,
-    "E6": 6,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 3,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 8,
-   "previous_rank": 7,
-   "movement": -1
+   "movement": -3
   },
   {
    "name": "Taylor McAllister",
@@ -789,9 +868,36 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 8,
+   "rank": 11,
    "previous_rank": 9,
-   "movement": 1
+   "movement": -2
+  },
+  {
+   "name": "Kennedy Bicker",
+   "picks": [
+    "Jonathan Young",
+    "Savannah Louie",
+    "Genevieve Mushaluk"
+   ],
+   "total": 10,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 0,
+    "E4": 2,
+    "E5": 0,
+    "E6": 2,
+    "E7": 0,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 3,
+    "E12": 0,
+    "E13": 3
+   },
+   "rank": 12,
+   "previous_rank": 18,
+   "movement": 6
   },
   {
    "name": "Matt Langseth",
@@ -816,9 +922,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 10,
+   "rank": 12,
    "previous_rank": 10,
-   "movement": 0
+   "movement": -2
   },
   {
    "name": "Chelsea Whitley",
@@ -843,63 +949,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 11,
+   "rank": 14,
    "previous_rank": 11,
-   "movement": 0
-  },
-  {
-   "name": "Christiaan VandenHeuvel",
-   "picks": [
-    "Aubry Bracco",
-    "Christian Hubicki",
-    "Charlie Davis"
-   ],
-   "total": 8,
-   "episodes": {
-    "E1": 0,
-    "E2": 2,
-    "E3": 0,
-    "E4": 0,
-    "E5": 0,
-    "E6": 6,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 12,
-   "previous_rank": 12,
-   "movement": 0
-  },
-  {
-   "name": "Erin Gorham",
-   "picks": [
-    "Dee Valladares",
-    "Genevieve Mushaluk",
-    "Aubry Bracco"
-   ],
-   "total": 8,
-   "episodes": {
-    "E1": 0,
-    "E2": 0,
-    "E3": 0,
-    "E4": 2,
-    "E5": 0,
-    "E6": 6,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 12,
-   "previous_rank": 13,
-   "movement": 1
+   "movement": -3
   },
   {
    "name": "Jenn Valley",
@@ -924,9 +976,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 12,
+   "rank": 15,
    "previous_rank": 14,
-   "movement": 2
+   "movement": -1
   },
   {
    "name": "Jordan Ambuehl",
@@ -951,9 +1003,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 12,
+   "rank": 15,
    "previous_rank": 15,
-   "movement": 3
+   "movement": 0
   },
   {
    "name": "Victoria Langseth",
@@ -978,9 +1030,9 @@
     "E12": 2,
     "E13": 0
    },
-   "rank": 12,
-   "previous_rank": 22,
-   "movement": 10
+   "rank": 15,
+   "previous_rank": 16,
+   "movement": 1
   },
   {
    "name": "Chris Stockhaus",
@@ -1005,36 +1057,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 17,
-   "previous_rank": 16,
-   "movement": -1
-  },
-  {
-   "name": "Kennedy Bicker",
-   "picks": [
-    "Jonathan Young",
-    "Savannah Louie",
-    "Genevieve Mushaluk"
-   ],
-   "total": 7,
-   "episodes": {
-    "E1": 0,
-    "E2": 0,
-    "E3": 0,
-    "E4": 2,
-    "E5": 0,
-    "E6": 2,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 3,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 17,
+   "rank": 18,
    "previous_rank": 17,
-   "movement": 0
+   "movement": -1
   },
   {
    "name": "Ryan Bicker",
@@ -1059,8 +1084,8 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 17,
-   "previous_rank": 18,
+   "rank": 18,
+   "previous_rank": 19,
    "movement": 1
   },
   {
@@ -1086,8 +1111,8 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 17,
-   "previous_rank": 19,
+   "rank": 18,
+   "previous_rank": 20,
    "movement": 2
   },
   {
@@ -1114,8 +1139,8 @@
     "E13": 0
    },
    "rank": 21,
-   "previous_rank": 20,
-   "movement": -1
+   "previous_rank": 21,
+   "movement": 0
   },
   {
    "name": "Giselle Davis",
@@ -1141,8 +1166,8 @@
     "E13": 0
    },
    "rank": 21,
-   "previous_rank": 21,
-   "movement": 0
+   "previous_rank": 22,
+   "movement": 1
   },
   {
    "name": "Garrett Bicker",
@@ -1540,6 +1565,11 @@
    "scored": true,
    "events": [
     {
+     "castaway": "Tiffany Ervin",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
      "castaway": "Joe Hunter",
      "label": "Immunity Challenge Win",
      "points": 2
@@ -1551,8 +1581,29 @@
    "label": "E13",
    "title": "",
    "airs": null,
-   "scored": false,
-   "events": []
+   "scored": true,
+   "events": [
+    {
+     "castaway": "Aubry Bracco",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Aubry Bracco",
+     "label": "Win Survivor",
+     "points": 6
+    },
+    {
+     "castaway": "Jonathan Young",
+     "label": "Immunity Challenge Win",
+     "points": 2
+    },
+    {
+     "castaway": "Jonathan Young",
+     "label": "Win Fire Challenge",
+     "points": 1
+    }
+   ]
   }
  ],
  "scoring": {
