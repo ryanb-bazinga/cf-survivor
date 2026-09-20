@@ -326,15 +326,18 @@ function startCountdown() {
 
 /* ----------------------------------------------------------------- nav --- */
 
+/* Nav order, and the first one available is what the site opens on.
+   Make Picks leads while the draft window is open, so the site lands on the
+   thing people still owe. It is shown only while the window is open, then it
+   takes itself out of the nav, Cast inherits first place, and the Draft
+   Board does the job of showing who ended up with whom. */
 const PANELS = [
-  // Shown only while the draft window is open, then it takes itself out of
-  // the nav and the Draft Board does the job instead.
   { id: 'picks', label: 'Make Picks', flag: 'pickSubmission', when: () => picksAreOpen() },
-  { id: 'standings', label: 'Standings', flag: 'standings' },
-  { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
-  { id: 'draft', label: 'Draft Board', flag: 'draftBoard' },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
+  { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'rules', label: 'Rules', flag: 'scoringRules' },
+  { id: 'standings', label: 'Standings', flag: 'standings' },
+  { id: 'draft', label: 'Draft Board', flag: 'draftBoard' },
   { id: 'history', label: 'Past Seasons', flag: 'pastSeasons' },
 ];
 
