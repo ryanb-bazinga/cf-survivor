@@ -40,9 +40,10 @@ FALLBACK_ROOTS = [os.path.expanduser("~/mnt/Survivor")]
 SEASONS = [48, 49, 50, 51]
 
 # Scoring categories that mean a castaway left the game.
+# Losing your vote is a penalty, not an exit, so it does not belong here.
+# These are the only scoring categories that mean someone left the game.
 ELIMINATION_LABELS = {
     "Voted Out WITH Idol",
-    "Lose Vote",
     "Med Visit EVAC",
     "Quit Game",
 }

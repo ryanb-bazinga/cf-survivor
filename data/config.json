@@ -4,6 +4,62 @@
   "org": "Cornerstone Fellowship",
   "tagline": "Staff and family fantasy draft"
  },
+ "rules": {
+  "howItWorks": [
+   {
+    "title": "Draft three castaways",
+    "text": "Pick any three from the cast. Other players can take the same people you did, so do not worry about who is already gone."
+   },
+   {
+    "title": "They score every week",
+    "text": "Whatever your three earn or lose in an episode is your score for that episode. Points come off the table below and nowhere else."
+   },
+   {
+    "title": "Highest total wins",
+    "text": "Scores add up across the whole season. Standings update the day after each episode airs."
+   }
+  ],
+  "definitions": {
+   "Immunity Idol Find": "Finding a hidden immunity idol yourself. Being handed one does not count.",
+   "Effective FAKE Idol": "Playing a fake idol that actually fools the vote.",
+   "Effective REAL Idol": "Playing a real idol on a night votes were cast against you, and it saves you.",
+   "Immunity Challenge Win": "Winning individual immunity, or being on the tribe that wins it.",
+   "Reward Challenge Win": "Winning a standalone reward challenge, alone or with your tribe.",
+   "Win Advantage": "Any non-idol advantage: a journey win, extra vote, vote steal, block a vote, safety without power.",
+   "Shot in the Dark SUCCESS": "Playing the Shot in the Dark and drawing safety.",
+   "Make Jury": "Awarded once to everyone still in the game the week the jury phase begins.",
+   "Win Fire Challenge": "Winning the fire-making challenge at final four.",
+   "Win Survivor": "Sole Survivor. The jury vote decides it.",
+   "Voted Out WITH Idol": "Going home with an idol still in your pocket.",
+   "Lose Vote": "Losing your vote at tribal, from a journey gamble, a vote blocker played on you, or a penalty.",
+   "Med Visit EVAC": "Pulled from the game by medical.",
+   "Quit Game": "Walking away from the game on your own."
+  },
+  "rulings": [
+   {
+    "title": "Combined challenges count once",
+    "text": "When one challenge awards both reward and immunity, it scores as immunity only, +2. Not +3."
+   },
+   {
+    "title": "Make Jury is a one-time award",
+    "text": "Everyone still in the game gets it the week the jury phase starts. Nobody picks it up later."
+   },
+   {
+    "title": "Every advantage is worth the same",
+    "text": "+1 for any non-idol advantage, whatever the show decides to call it that week."
+   },
+   {
+    "title": "An idol has to work",
+    "text": "Playing a real idol on a night nobody voted for you is worth nothing."
+   },
+   {
+    "title": "Rosters are locked",
+    "text": "No trades and no replacements, even if one of your three quits or gets pulled by medical."
+   }
+  ],
+  "tiebreaker": "Tied on points at the end of the season? Whoever drafted the Sole Survivor takes it. If that still does not settle it, co-champions.",
+  "scorekeeping": "Ryan Bicker and Becky Fitch keep the scoring workbook, and this site is rebuilt straight from it. If a score looks wrong, say something and it gets corrected back to the episode it happened in."
+ },
  "currentSeason": 51,
  "archiveSeasons": [
   50,

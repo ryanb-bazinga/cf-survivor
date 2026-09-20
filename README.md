@@ -12,13 +12,18 @@ changes between weeks. Only the data does.
 index.html              the whole site, one page, tabbed sections
 assets/css/site.css     styling
 assets/js/app.js        rendering
-assets/img/             season logo and favicon
+assets/img/             season logo, favicon, share card, home screen icons
+site.webmanifest        name and icons for "add to home screen"
 data/config.json        current season, episode schedule, feature flags
 data/season51.json      generated from the tracking workbook
 data/season50.json      archive
 data/season49.json      archive
 data/season48.json      archive
+data/recaps51.json      written episode recaps
+data/bios51.json        cast bios
+data/boots51.json       who left the game and when (hand written, see below)
 build.py                reads a tracking workbook, writes a season JSON
+make_share_assets.py    regenerates the share card and home screen icons
 ```
 
 ## Updating after an episode
@@ -32,7 +37,8 @@ build.py                reads a tracking workbook, writes a season JSON
 
    Or `python3 build.py all` to rebuild every season.
 
-3. Commit and push. GitHub Pages redeploys on its own within a minute.
+3. Add the week's elimination to `data/boots51.json` (see below).
+4. Commit and push. GitHub Pages redeploys on its own within a minute.
 
 `build.py` looks for the workbooks in the CF OneDrive Survivor folder by
 default. Point it somewhere else with `--root` or `--workbook`.
@@ -50,10 +56,52 @@ that section disappears from the navigation without touching any code.
 | `scoringRules` | Point values |
 | `pastSeasons` | Champions from prior seasons |
 | `countdown` | Next episode countdown in the header |
+| `episodeRecaps` | Episodes tab and written recaps |
+| `castPhotos` | Real headshots instead of lettered cards |
+| `bootOrder` | Who is left and who has gone out, above the cast grid |
 
-The remaining flags (`myTeam`, `headToHead`, `scoreChart`, `weeklyAwards`,
-`bootOrder`, `episodeRecaps`, `castPhotos`) are reserved for sections that
-are planned but not built yet. They do nothing right now.
+The remaining flags (`myTeam`, `headToHead`, `scoreChart`, `weeklyAwards`)
+are reserved for sections that are planned but not built yet. They do
+nothing right now.
+
+## Eliminations
+
+The scoring workbook does not track who went home. The only exit it records
+is going out while holding an idol, because that one is worth points. So the
+boot order and the struck-through picks in the standings read from
+`data/boots<NN>.json` instead:
+
+```json
+{
+  "boots": [
+    { "name": "Rob Antonson", "episode": 2, "reason": "Voted out", "votes": "7-3" },
+    { "name": "Ana Sani", "episode": 3, "reason": "Quit Game" }
+  ]
+}
+```
+
+`name` has to match the Cast tab exactly. If it does not, the browser console
+says which name it could not find and that person stays on the board.
+`reason` and `votes` are optional and show up on hover. A reason containing
+"quit" or "med" gets a grey badge instead of a red one, since neither is a
+vote.
+
+Where the workbook already knows someone is out, the workbook wins.
+
+## Link preview and home screen icons
+
+`make_share_assets.py` builds `assets/img/share-card.png` (what Teams,
+iMessage and email show when the link is pasted) and the three home screen
+icons, all from `assets/img/season-logo.png` and `assets/img/favicon.svg`:
+
+```
+python3 make_share_assets.py
+```
+
+Run it once a season, after dropping in the new season logo. Then bump the
+`?v=` number on the `og:image` and `twitter:image` tags in `index.html`.
+Teams and iMessage cache preview images hard, and the version number is what
+forces them to fetch the new one.
 
 ## Adding a new season
 

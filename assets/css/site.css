@@ -923,6 +923,132 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   opacity: 0.75;
 }
 
+/* --------------------------------------------------------- boot order --- */
+
+/* Sits above the cast grid: who is left, then everyone who has gone out,
+   in the order they went. Wraps rather than scrolls so the whole season
+   reads at a glance on a phone. */
+
+.bootstrip {
+  margin: 0 0 34px;
+}
+
+.bootstrip[hidden] { display: none; }
+
+.bootstrip__group + .bootstrip__group {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.bootstrip__label {
+  margin: 0 0 14px;
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+}
+
+.bootstrip__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 14px;
+}
+
+.boot {
+  position: relative;
+  width: 72px;
+  text-align: center;
+}
+
+.boot__photo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 7px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--ink-2);
+  border: 2px solid var(--line);
+  font-family: var(--cond);
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.boot__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.boot__photo--letters { color: var(--ink); }
+
+.boot__name {
+  display: block;
+  font-size: 0.74rem;
+  line-height: 1.25;
+  color: var(--sand-dim);
+  overflow-wrap: anywhere;
+}
+
+.boot__badge {
+  position: absolute;
+  top: -4px;
+  right: 2px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--red);
+  color: var(--sand);
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  border: 2px solid var(--ink);
+}
+
+.boot__badge--won {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* Quit or pulled by medical: gone, but not voted out. */
+.boot__badge--exit {
+  background: var(--sand-faint);
+  color: var(--ink);
+}
+
+/* Out of the game reads as drained rather than hidden. */
+.boot--out .boot__photo {
+  border-color: var(--line);
+}
+
+.boot--out .boot__photo img {
+  filter: grayscale(1) brightness(0.62) contrast(0.95);
+}
+
+.boot--out .boot__name {
+  color: var(--sand-faint);
+}
+
+.boot--winner .boot__photo {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(232, 196, 104, 0.22);
+}
+
+.boot--winner .boot__name {
+  color: var(--gold);
+}
+
+@media (max-width: 560px) {
+  .bootstrip__row { gap: 14px 10px; }
+  .boot { width: 62px; }
+  .boot__photo { width: 56px; height: 56px; }
+}
+
 /* --------------------------------------------------------- draft board --- */
 
 .draft-grid { grid-template-columns: repeat(auto-fill, minmax(min(255px, 100%), 1fr)); }
@@ -969,6 +1095,7 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .rules {
   display: grid;
   gap: 18px;
+  align-items: start;
   grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
 }
 
@@ -1013,6 +1140,142 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .rules__pts--pos { color: var(--lime); }
 .rules__pts--neg { color: var(--red); }
+
+/* ------------------------------------------------------- league rules --- */
+
+.rules__section {
+  font-family: var(--cond);
+  font-size: 1.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sand);
+  margin: 30px 0 14px;
+}
+
+.rules__section:first-of-type { margin-top: 22px; }
+
+.steps {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.steps[hidden] { display: none; }
+
+.step {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 18px 18px 58px;
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--ink);
+  font-family: var(--cond);
+  font-size: 1.1rem;
+  display: grid;
+  place-items: center;
+}
+
+.step h4 {
+  font-family: var(--cond);
+  font-size: 1.16rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin: 0 0 5px;
+}
+
+.step p { margin: 0; color: var(--sand-dim); font-size: 0.93rem; line-height: 1.5; }
+
+/* the scoring rows carry a plain-language definition under each label */
+
+.rules__label { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+
+.rules__name { color: var(--sand); font-size: 0.97rem; font-weight: 600; overflow-wrap: anywhere; }
+
+.rules__def {
+  color: var(--sand-faint);
+  font-size: 0.83rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.rules__row { align-items: flex-start; }
+.rules__pts { padding-top: 1px; }
+
+.rulings {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.rulings[hidden] { display: none; }
+
+.ruling {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--cyan);
+  border-radius: var(--radius-sm);
+  padding: 15px 17px;
+}
+
+.ruling h4 {
+  font-family: var(--cond);
+  font-size: 1.12rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin: 0 0 4px;
+}
+
+.ruling p { margin: 0; color: var(--sand-dim); font-size: 0.9rem; line-height: 1.5; }
+
+.rules__foot {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  margin-top: 26px;
+}
+
+.rules__foot[hidden] { display: none; }
+
+.rules__note {
+  background: var(--ink-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 15px 17px;
+}
+
+.rules__note h4 {
+  font-family: var(--cond);
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 5px;
+}
+
+.rules__note p { margin: 0; color: var(--sand-dim); font-size: 0.9rem; line-height: 1.5; }
+
+@media (max-width: 560px) {
+  .step { padding: 16px 16px 16px 52px; }
+  .rules__section { font-size: 1.28rem; margin: 26px 0 12px; }
+}
 
 /* ------------------------------------------------------- past seasons --- */
 

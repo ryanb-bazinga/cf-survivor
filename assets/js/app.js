@@ -11,6 +11,7 @@ const state = {
   archives: [],
   recaps: { episodes: {} },
   bios: null,
+  boots: null,
   sort: { key: 'rank', dir: 1 },
 };
 
@@ -163,6 +164,14 @@ async function boot() {
       `data/bios${state.config.currentSeason}.json`
     ).catch(() => null);
 
+    // Eliminations are not a scoring category, so the workbook does not
+    // know who went home. data/boots<NN>.json carries that, written in the
+    // same pass as the weekly recap. Missing file is fine.
+    state.boots = await loadJSON(
+      `data/boots${state.config.currentSeason}.json`
+    ).catch(() => null);
+    applyBoots();
+
     const archiveIds = state.config.archiveSeasons || [];
     const archives = await Promise.all(
       archiveIds.map((id) =>
@@ -184,6 +193,7 @@ async function boot() {
   renderStandings();
   renderRecaps();
   renderDraftBoard();
+  renderBootOrder();
   renderCast();
   renderRules();
   renderPastSeasons();
@@ -331,7 +341,7 @@ const PANELS = [
   { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'draft', label: 'Draft Board', flag: 'draftBoard' },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
-  { id: 'rules', label: 'Scoring', flag: 'scoringRules' },
+  { id: 'rules', label: 'Rules', flag: 'scoringRules' },
   { id: 'history', label: 'Past Seasons', flag: 'pastSeasons' },
 ];
 
@@ -642,6 +652,148 @@ function buildBio(castaway, bio, labels) {
   }
 
   return panel;
+}
+
+/* ----------------------------------------------------- boot order --- */
+
+/**
+ * Folds data/boots<NN>.json into the castaway list. The workbook wins
+ * where it already knows someone is out, because it carries the scoring
+ * context (went out holding an idol, quit, medical). Everyone else picks
+ * up their exit from this file.
+ */
+function applyBoots() {
+  const boots = (state.boots && state.boots.boots) || [];
+  if (!boots.length) return;
+
+  const byName = new Map(state.season.castaways.map((c) => [c.name, c]));
+  const missing = [];
+
+  boots.forEach((boot) => {
+    const castaway = byName.get(boot.name);
+    if (!castaway) {
+      missing.push(boot.name);
+      return;
+    }
+    castaway.out_votes = boot.votes || null;
+    if (castaway.status === 'OUT') return;
+    castaway.status = 'OUT';
+    castaway.out_episode = boot.episode;
+    castaway.out_reason = boot.reason || 'Voted out';
+  });
+
+  // A typo in a name would quietly drop someone from the boot list, so
+  // say so in the console rather than rendering a wrong board.
+  if (missing.length) {
+    console.warn(`boots${state.season.season}.json: no castaway named`, missing);
+  }
+}
+
+/** The name people actually use: a quoted nickname, else the first name. */
+function shortName(name) {
+  const nickname = name.match(/"([^"]+)"/);
+  return nickname ? nickname[1] : name.split(/\s+/)[0];
+}
+
+function bootChip(castaway) {
+  const chip = el('div', 'boot');
+  const color = tribeColor(castaway.tribe);
+  const isOut = castaway.status === 'OUT';
+
+  if (isOut) chip.classList.add('boot--out');
+  if (castaway.winner) chip.classList.add('boot--winner');
+
+  const detail = [];
+  if (castaway.winner) detail.push('Sole Survivor');
+  else if (isOut) {
+    detail.push(`Out in Episode ${castaway.out_episode}`);
+    if (castaway.out_reason) detail.push(castaway.out_reason);
+    if (castaway.out_votes) detail.push(`Vote ${castaway.out_votes}`);
+  } else detail.push('Still in the game');
+  const teams = (castaway.drafted_by || []).length;
+  if (teams) detail.push(`On ${teams} ${teams === 1 ? 'team' : 'teams'}`);
+  chip.title = `${castaway.name} \u00b7 ${detail.join(' \u00b7 ')}`;
+
+  const photo = el('div', 'boot__photo');
+  if (state.config.features.castPhotos && castaway.photo) {
+    const img = document.createElement('img');
+    img.src = castaway.photo;
+    img.alt = '';
+    img.loading = 'lazy';
+    img.addEventListener('error', () => {
+      photo.replaceChildren(document.createTextNode(initials(castaway.name)));
+      photo.classList.add('boot__photo--letters');
+      photo.style.background = color || `hsl(${hueFor(castaway.name)} 34% 62%)`;
+    });
+    photo.appendChild(img);
+  } else {
+    photo.textContent = initials(castaway.name);
+    photo.classList.add('boot__photo--letters');
+    photo.style.background = color || `hsl(${hueFor(castaway.name)} 34% 62%)`;
+  }
+  if (color && !isOut) photo.style.borderColor = color;
+  chip.appendChild(photo);
+
+  if (castaway.winner) {
+    chip.appendChild(el('span', 'boot__badge boot__badge--won', 'WON'));
+  } else if (isOut) {
+    const badge = el('span', 'boot__badge', `E${castaway.out_episode}`);
+    // Quit and medical are not a vote, so they read differently.
+    if (/quit|med/i.test(castaway.out_reason || '')) {
+      badge.classList.add('boot__badge--exit');
+    }
+    chip.appendChild(badge);
+  }
+
+  chip.appendChild(el('span', 'boot__name', shortName(castaway.name)));
+  return chip;
+}
+
+function bootGroup(label, list) {
+  const group = el('div', 'bootstrip__group');
+  group.appendChild(el('h3', 'bootstrip__label', label));
+  const row = el('div', 'bootstrip__row');
+  list.forEach((castaway) => row.appendChild(bootChip(castaway)));
+  group.appendChild(row);
+  return group;
+}
+
+function renderBootOrder() {
+  const wrap = $('#boot-order');
+  if (!wrap) return;
+  wrap.replaceChildren();
+
+  if (!state.config.features.bootOrder) {
+    wrap.hidden = true;
+    return;
+  }
+  wrap.hidden = false;
+
+  const cast = state.season.castaways;
+  const out = cast
+    .filter((c) => c.status === 'OUT')
+    .sort(
+      (a, b) =>
+        (a.out_episode || 0) - (b.out_episode || 0) || a.name.localeCompare(b.name)
+    );
+  const alive = cast
+    .filter((c) => c.status !== 'OUT')
+    .sort((a, b) => {
+      if (a.winner !== b.winner) return a.winner ? -1 : 1;
+      return a.name.localeCompare(b.name);
+    });
+
+  if (alive.length) {
+    wrap.appendChild(
+      bootGroup(
+        out.length ? `Still in the game · ${alive.length}` : `The cast · ${cast.length}`,
+        alive
+      )
+    );
+  }
+  if (out.length) {
+    wrap.appendChild(bootGroup('Out of the game · in order', out));
+  }
 }
 
 function renderCast() {
@@ -1176,6 +1328,25 @@ function renderRules() {
   const panel = $('#panel-rules');
   if (!panel) return;
 
+  const rules = state.config.rules || {};
+  const defs = rules.definitions || {};
+
+  /* --- the three-step explainer ------------------------------------- */
+
+  const steps = $('#rules-steps');
+  if (steps) {
+    steps.replaceChildren();
+    (rules.howItWorks || []).forEach((step) => {
+      const item = el('li', 'step');
+      item.appendChild(el('h4', null, step.title));
+      item.appendChild(el('p', null, step.text));
+      steps.appendChild(item);
+    });
+    steps.hidden = !(rules.howItWorks || []).length;
+  }
+
+  /* --- the scoring table -------------------------------------------- */
+
   const build = (items, kind) => {
     const column = el('div', 'rules__col');
     column.appendChild(
@@ -1187,7 +1358,10 @@ function renderRules() {
     );
     items.forEach((item) => {
       const row = el('div', 'rules__row');
-      row.appendChild(el('span', null, item.label));
+      const label = el('div', 'rules__label');
+      label.appendChild(el('span', 'rules__name', item.label));
+      if (defs[item.label]) label.appendChild(el('span', 'rules__def', defs[item.label]));
+      row.appendChild(label);
       row.appendChild(
         el(
           'span',
@@ -1205,12 +1379,55 @@ function renderRules() {
   wrap.appendChild(build(state.season.scoring.positive, 'pos'));
   wrap.appendChild(build(state.season.scoring.negative, 'neg'));
 
+  /* --- rulings ------------------------------------------------------- */
+
+  const rulings = $('#rules-rulings');
+  if (rulings) {
+    rulings.replaceChildren();
+    (rules.rulings || []).forEach((item) => {
+      const card = el('div', 'ruling');
+      card.appendChild(el('h4', null, item.title));
+      card.appendChild(el('p', null, item.text));
+      rulings.appendChild(card);
+    });
+    rulings.hidden = !(rules.rulings || []).length;
+    const heading = rulings.previousElementSibling;
+    if (heading && heading.classList.contains('rules__section')) heading.hidden = rulings.hidden;
+  }
+
+  /* --- tiebreaker and scorekeeping ----------------------------------- */
+
+  const foot = $('#rules-foot');
+  if (foot) {
+    foot.replaceChildren();
+    const line = (title, text) => {
+      if (!text) return;
+      const block = el('div', 'rules__note');
+      block.appendChild(el('h4', null, title));
+      block.appendChild(el('p', null, text));
+      foot.appendChild(block);
+    };
+    line('Ties', rules.tiebreaker);
+    line('Who keeps score', rules.scorekeeping);
+    foot.hidden = !foot.childElementCount;
+  }
+
+  /* --- notices: draft deadline, then any episode that does not count -- */
+
   const notes = $('#rules-notes');
   notes.replaceChildren();
+
+  const deadline = draftDeadlineText();
+  if (deadline) {
+    const notice = el('div', 'notice');
+    notice.appendChild(el('strong', null, 'Draft deadline. '));
+    notice.appendChild(document.createTextNode(deadline));
+    notes.appendChild(notice);
+  }
+
   nonScoringNotes().forEach((episode) => {
     const notice = el('div', 'notice');
-    const label = el('strong', null, `Episode ${episode.number} does not count. `);
-    notice.appendChild(label);
+    notice.appendChild(el('strong', null, `Episode ${episode.number} does not count. `));
     notice.appendChild(document.createTextNode(episode.note));
     notes.appendChild(notice);
   });
