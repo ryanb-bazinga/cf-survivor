@@ -1,398 +1,479 @@
 {
- "site": {
-  "title": "CF Survivor League",
-  "org": "Cornerstone Fellowship",
-  "tagline": "Staff and family fantasy draft"
- },
- "rules": {
-  "howItWorks": [
-   {
-    "title": "Draft three castaways",
-    "text": "Pick any three from the cast. Other players can take the same people you did, so do not worry about who is already gone."
-   },
-   {
-    "title": "They score every week",
-    "text": "Whatever your three earn or lose in an episode is your score for that episode. Points come off the table below and nowhere else."
-   },
-   {
-    "title": "Highest total wins",
-    "text": "Scores add up across the whole season. Standings update the day after each episode airs."
-   }
+  "site": {
+    "title": "CF Survivor League",
+    "org": "Cornerstone Fellowship",
+    "tagline": "Staff and family fantasy draft"
+  },
+  "rules": {
+    "definitions": {
+      "Team Immunity Win": "Winning immunity as part of a group. Usually your tribe, but it also covers any week the cast is split into smaller teams to compete. Everyone on the winning side gets it.",
+      "Individual Immunity Win": "Winning immunity for yourself alone.",
+      "Individual Reward Win": "Winning a reward challenge for yourself alone. Rewards won as a tribe or team score nothing.",
+      "Win Fire Challenge": "Winning the fire-making challenge at final four.",
+      "Immunity Idol Find": "Finding a hidden immunity idol yourself. Being handed one does not count.",
+      "Effective REAL Idol": "Playing a real idol that saved you from going home. If you would have been voted out without it, it counts.",
+      "Effective FAKE Idol": "Playing a fake idol that actually fools the vote.",
+      "Win Advantage": "Any non-idol advantage: a journey win, extra vote, vote steal, block a vote, safety without power.",
+      "Shot in the Dark SUCCESS": "Playing the Shot in the Dark and drawing safety.",
+      "Make Jury": "Awarded once to everyone still in the game the week the jury phase begins.",
+      "Win Survivor": "Sole Survivor. The jury vote decides it.",
+      "Quit Game": "Walking away from the game on your own.",
+      "Med Visit EVAC": "Pulled from the game by medical.",
+      "Voted Out WITH Idol": "Going home with an idol still in your pocket.",
+      "Lose Vote": "You are at tribal council and cannot cast a vote. Usually a penalty, a vote blocker played on you, or a journey gamble you lost."
+    },
+    "rulings": [
+      {
+        "title": "Combined challenges count once",
+        "text": "When one challenge awards both reward and immunity, it scores as immunity only. You do not get the reward point on top."
+      },
+      {
+        "title": "Make Jury is a one-time award",
+        "text": "Everyone still in the game gets it the week the jury phase starts. Nobody picks it up later."
+      },
+      {
+        "title": "Every advantage is worth the same",
+        "text": "+1 for any non-idol advantage, whatever the show decides to call it that week."
+      },
+      {
+        "title": "An idol has to work",
+        "text": "Playing a real idol only counts if it saved you. If the votes would have sent you home and the idol stopped that, it is +2. If you were never going home that night, playing it is worth nothing."
+      },
+      {
+        "title": "Rosters are locked",
+        "text": "No trades and no replacements, even if one of your three quits or gets pulled by medical."
+      },
+      {
+        "title": "Late picks",
+        "text": "If your three are not in by the deadline, Ryan and Becky decide what happens. There is no automatic rule, so get them in."
+      }
+    ],
+    "tiebreaker": "Tied on points at the end of the season? You settle it the way the show does, with a fire making competition between the tied players. If that cannot happen, it goes to whoever's three castaways won the most individual immunity challenges across the season.",
+    "scorekeeping": "Ryan Bicker and Becky Fitch keep the scoring workbook, and this site is rebuilt straight from it. If a score looks wrong, say something and it gets corrected back to the episode it happened in.",
+    "fineprint": {
+      "Win Advantage": "And anything else the show invents. Final call is Ryan and Becky's."
+    },
+    "scoreGroups": {
+      "positive": [
+        {
+          "title": "Challenges",
+          "labels": [
+            "Team Immunity Win",
+            "Individual Immunity Win",
+            "Individual Reward Win",
+            "Win Fire Challenge"
+          ]
+        },
+        {
+          "title": "Idols and advantages",
+          "labels": [
+            "Immunity Idol Find",
+            "Effective REAL Idol",
+            "Effective FAKE Idol",
+            "Win Advantage",
+            "Shot in the Dark SUCCESS"
+          ]
+        },
+        {
+          "title": "Going the distance",
+          "labels": [
+            "Make Jury",
+            "Win Survivor"
+          ]
+        }
+      ],
+      "negative": [
+        {
+          "title": "Leaving the game",
+          "labels": [
+            "Quit Game",
+            "Med Visit EVAC"
+          ]
+        },
+        {
+          "title": "Mistakes/Punishments",
+          "labels": [
+            "Voted Out WITH Idol",
+            "Lose Vote"
+          ]
+        }
+      ]
+    },
+    "prize": {
+      "buyin": "$10 to enter. Venmo Becky at @fitchbecky or get her cash.",
+      "places": [
+        {
+          "place": "3rd",
+          "gets": "Your $10 back"
+        },
+        {
+          "place": "2nd",
+          "gets": "$20, double your money"
+        },
+        {
+          "place": "1st",
+          "gets": "The rest of the pot"
+        }
+      ],
+      "note": "The exact grand prize depends on how many people play, so we will know the number once all the picks are in."
+    },
+    "buyin": {
+      "before": "It is $10 to play. Venmo Becky or get her cash.",
+      "after": "Last thing: get Becky your $10, Venmo or cash.",
+      "venmo": "@fitchbecky"
+    }
+  },
+  "currentSeason": 51,
+  "archiveSeasons": [
+    50,
+    49,
+    48
   ],
-  "definitions": {
-   "Team Immunity Win": "Winning immunity as part of a group. Usually your tribe, but it also covers any week the cast is split into smaller teams to compete. Everyone on the winning side gets it.",
-   "Individual Immunity Win": "Winning immunity for yourself alone.",
-   "Individual Reward Win": "Winning a reward challenge for yourself alone. Rewards won as a tribe or team score nothing.",
-   "Win Fire Challenge": "Winning the fire-making challenge at final four.",
-   "Immunity Idol Find": "Finding a hidden immunity idol yourself. Being handed one does not count.",
-   "Effective REAL Idol": "Playing a real idol that saved you from going home. If you would have been voted out without it, it counts.",
-   "Effective FAKE Idol": "Playing a fake idol that actually fools the vote.",
-   "Win Advantage": "Any non-idol advantage: a journey win, extra vote, vote steal, block a vote, safety without power.",
-   "Shot in the Dark SUCCESS": "Playing the Shot in the Dark and drawing safety.",
-   "Make Jury": "Awarded once to everyone still in the game the week the jury phase begins.",
-   "Win Survivor": "Sole Survivor. The jury vote decides it.",
-   "Quit Game": "Walking away from the game on your own.",
-   "Med Visit EVAC": "Pulled from the game by medical.",
-   "Voted Out WITH Idol": "Going home with an idol still in your pocket.",
-   "Lose Vote": "You are at tribal council and cannot cast a vote. Usually a penalty, a vote blocker played on you, or a journey gamble you lost."
+  "features": {
+    "standings": true,
+    "draftBoard": true,
+    "castTracker": true,
+    "scoringRules": true,
+    "pastSeasons": true,
+    "countdown": true,
+    "myTeam": true,
+    "headToHead": true,
+    "scoreChart": true,
+    "weeklyAwards": true,
+    "bootOrder": false,
+    "episodeRecaps": true,
+    "castPhotos": true,
+    "pickSubmission": true,
+    "welcome": true
   },
-  "rulings": [
-   {
-    "title": "Combined challenges count once",
-    "text": "When one challenge awards both reward and immunity, it scores as immunity only. You do not get the reward point on top."
-   },
-   {
-    "title": "Make Jury is a one-time award",
-    "text": "Everyone still in the game gets it the week the jury phase starts. Nobody picks it up later."
-   },
-   {
-    "title": "Every advantage is worth the same",
-    "text": "+1 for any non-idol advantage, whatever the show decides to call it that week."
-   },
-   {
-    "title": "An idol has to work",
-    "text": "Playing a real idol only counts if it saved you. If the votes would have sent you home and the idol stopped that, it is +2. If you were never going home that night, playing it is worth nothing."
-   },
-   {
-    "title": "Rosters are locked",
-    "text": "No trades and no replacements, even if one of your three quits or gets pulled by medical."
-   },
-   {
-    "title": "Late picks",
-    "text": "If your three are not in by the deadline, Ryan and Becky decide what happens. There is no automatic rule, so get them in."
-   }
-  ],
-  "tiebreaker": "Tied on points at the end of the season? You settle it the way the show does, with a fire making competition between the tied players. If that cannot happen, it goes to whoever's three castaways won the most individual immunity challenges across the season.",
-  "scorekeeping": "Ryan Bicker and Becky Fitch keep the scoring workbook, and this site is rebuilt straight from it. If a score looks wrong, say something and it gets corrected back to the episode it happened in.",
-  "fineprint": {
-   "Win Advantage": "And anything else the show invents. Final call is Ryan and Becky's."
-  },
-  "scoreGroups": {
-   "positive": [
-    {
-     "title": "Challenges",
-     "labels": [
-      "Team Immunity Win",
-      "Individual Immunity Win",
-      "Individual Reward Win",
-      "Win Fire Challenge"
-     ]
+  "seasons": {
+    "51": {
+      "name": "Survivor 51",
+      "subtitle": "Outwit. Outplay. Outlast.",
+      "tribes": [
+        {
+          "name": "Savu",
+          "color": "#32B9DB"
+        },
+        {
+          "name": "Toka",
+          "color": "#CDD943"
+        }
+      ],
+      "draft": {
+        "closesBeforeEpisode": 2,
+        "hoursBefore": 1
+      },
+      "episodes": {
+        "1": {
+          "airs": "2026-09-23",
+          "title": "Permanent Uncertainty",
+          "counts": false,
+          "note": "Scouting episode. Airs before the draft, so it earns no points."
+        },
+        "2": {
+          "airs": "2026-09-30"
+        },
+        "3": {
+          "airs": "2026-10-07"
+        },
+        "4": {
+          "airs": "2026-10-14"
+        },
+        "5": {
+          "airs": "2026-10-21"
+        },
+        "6": {
+          "airs": "2026-10-28"
+        },
+        "7": {
+          "airs": "2026-11-04"
+        },
+        "8": {
+          "airs": "2026-11-11"
+        },
+        "9": {
+          "airs": "2026-11-18"
+        },
+        "10": {
+          "airs": "2026-11-25"
+        },
+        "11": {
+          "airs": "2026-12-02"
+        },
+        "12": {
+          "airs": "2026-12-09"
+        },
+        "13": {
+          "airs": "2026-12-16",
+          "title": "Finale"
+        }
+      },
+      "castBios": {
+        "Aaliyah Puglia": {
+          "age": 24,
+          "hometown": "Gloucester City, N.J.",
+          "residence": "Providence, R.I.",
+          "occupation": "Chef"
+        },
+        "Alexis Levine": {
+          "age": 34,
+          "hometown": "Atlanta, Ga.",
+          "residence": "Atlanta, Ga.",
+          "occupation": "Criminal defense attorney"
+        },
+        "An \"Thien An\" Nguyen": {
+          "age": 24,
+          "hometown": "Fort Worth, Texas",
+          "residence": "Fort Worth, Texas",
+          "occupation": "Medical student"
+        },
+        "Ana Sani": {
+          "age": 34,
+          "hometown": "Richmond Hill, Ontario",
+          "residence": "Toronto, Ontario",
+          "occupation": "Voice actress"
+        },
+        "Angelica \"Jelly\" Loblack": {
+          "age": 29,
+          "hometown": "Garland, Texas",
+          "residence": "Bloomington, Ind.",
+          "occupation": "Sociology professor"
+        },
+        "Brady Booker": {
+          "age": 27,
+          "hometown": "La Salle, Ill.",
+          "residence": "Knoxville, Tenn.",
+          "occupation": "Pro wrestler"
+        },
+        "Carter Krull": {
+          "age": 24,
+          "hometown": "Rock Rapids, Iowa",
+          "residence": "Sioux Falls, S.D.",
+          "occupation": "Livestock farmer"
+        },
+        "Cristian Chavez": {
+          "age": 26,
+          "hometown": "Salt Lake City, Utah",
+          "residence": "Salt Lake City, Utah",
+          "occupation": "Head of HR"
+        },
+        "Danny \"Kilby\" Kilby": {
+          "age": 30,
+          "hometown": "Mount Forest, Ontario",
+          "residence": "London, Ontario",
+          "occupation": "Game designer"
+        },
+        "Devin Way": {
+          "age": 33,
+          "hometown": "Lufkin, Texas",
+          "residence": "Los Angeles, Calif.",
+          "occupation": "Actor"
+        },
+        "Eric Macksoud": {
+          "age": 34,
+          "hometown": "Lincoln, R.I.",
+          "residence": "Windsor Locks, Conn.",
+          "occupation": "Mental health counselor"
+        },
+        "Jenna Doore": {
+          "age": 30,
+          "hometown": "Perrysburg, Ohio",
+          "residence": "Toledo, Ohio",
+          "occupation": "Wedding photographer"
+        },
+        "Kristin Flickinger": {
+          "age": 49,
+          "hometown": "Ketchum, Idaho",
+          "residence": "Santa Barbara, Calif.",
+          "occupation": "Crisis management"
+        },
+        "Lewis Kelly": {
+          "age": 28,
+          "hometown": "Dublin, Ireland",
+          "residence": "Puerto Rico",
+          "occupation": "Farmer"
+        },
+        "Linnea Capobianco": {
+          "age": 25,
+          "hometown": "Kearny, N.J.",
+          "residence": "Jersey City, N.J.",
+          "occupation": "Entrepreneur"
+        },
+        "Maggie Nestor": {
+          "age": 40,
+          "hometown": "Middleway, W.Va.",
+          "residence": "Charlestown, W.Va.",
+          "occupation": "Farmer"
+        },
+        "Mike Pinsky": {
+          "age": 32,
+          "hometown": "New York City, N.Y.",
+          "residence": "New York City, N.Y.",
+          "occupation": "Baseball executive"
+        },
+        "Ori Jean-Charles": {
+          "age": 27,
+          "hometown": "Spring Valley, N.Y.",
+          "residence": "Spring Valley, N.Y.",
+          "occupation": "Personal trainer"
+        },
+        "Patt Cannaday": {
+          "age": 33,
+          "hometown": "Tampa, Fla.",
+          "residence": "Washington, D.C.",
+          "occupation": "Federal prosecutor"
+        },
+        "Rob Antonson": {
+          "age": 40,
+          "hometown": "Johnston, R.I.",
+          "residence": "Cumberland, R.I.",
+          "occupation": "Airline gate agent"
+        },
+        "Sharonda Cox": {
+          "age": 34,
+          "hometown": "Pompano Beach, Fla.",
+          "residence": "Richmond, Ky.",
+          "occupation": "Resident, OBGYN"
+        }
+      }
     },
-    {
-     "title": "Idols and advantages",
-     "labels": [
-      "Immunity Idol Find",
-      "Effective REAL Idol",
-      "Effective FAKE Idol",
-      "Win Advantage",
-      "Shot in the Dark SUCCESS"
-     ]
+    "50": {
+      "name": "Survivor 50",
+      "subtitle": "In the Hands of the Fans",
+      "blurb": "Twenty-four returning players, the largest cast in the show's history, on a season where the fans voted the twists.",
+      "finale": {
+        "vote": "8-3-0",
+        "over": [
+          "Jonathan Young",
+          "Joe Hunter"
+        ]
+      }
     },
-    {
-     "title": "Going the distance",
-     "labels": [
-      "Make Jury",
-      "Win Survivor"
-     ]
+    "49": {
+      "name": "Survivor 49",
+      "subtitle": "",
+      "blurb": "Kele collapsed early, losing four in a row. The Tres Leches alliance picked up the pieces and ran the table.",
+      "finale": {
+        "vote": "5-2-1",
+        "over": [
+          "Sophi Balerdi",
+          "Sage Ahrens-Nichols"
+        ]
+      }
+    },
+    "48": {
+      "name": "Survivor 48",
+      "subtitle": "",
+      "blurb": "A chaotic pre-merge, then a quiet two-person alliance that undermined the dominant group from the inside.",
+      "finale": {
+        "vote": "5-2-1",
+        "over": [
+          "Eva Erickson",
+          "Joe Hunter"
+        ]
+      }
     }
-   ],
-   "negative": [
-    {
-     "title": "Leaving the game",
-     "labels": [
-      "Quit Game",
-      "Med Visit EVAC"
-     ]
-    },
-    {
-     "title": "Mistakes/Punishments",
-     "labels": [
-      "Voted Out WITH Idol",
-      "Lose Vote"
-     ]
-    }
-   ]
   },
-  "prize": {
-   "buyin": "$10 to enter.",
-   "places": [
-    {
-     "place": "3rd",
-     "gets": "Your $10 back"
-    },
-    {
-     "place": "2nd",
-     "gets": "$20, double your money"
-    },
-    {
-     "place": "1st",
-     "gets": "The rest of the pot"
-    }
-   ],
-   "note": "The exact grand prize depends on how many people play, so we will know the number once all the picks are in."
+  "supabase": {
+    "url": "https://foykdzrjuejavrichwut.supabase.co",
+    "key": "sb_publishable_uF0RwGJaMgvPgcXOBm-_KA_YDZScb5b"
   },
-  "buyin": {
-   "before": "It is $10 to play. Venmo Becky or get her cash.",
-   "after": "Last thing: get Becky your $10, Venmo or cash.",
-   "venmo": ""
+  "picks": {
+    "confirmation": "If you wake up at 2 a.m. certain you made a terrible mistake, you have until {deadline} to come back and fix it."
+  },
+  "welcome": {
+    "tagline": "Three castaways. Fourteen weeks. One of us gets bragging rights until next fall.",
+    "sections": [
+      {
+        "type": "prose",
+        "heading": "What this is",
+        "paragraphs": [
+          "Every season a bunch of us from Cornerstone and our families draft three castaways and then spend the next few months emotionally invested in strangers who are starving on a beach. This is season four. Staff, spouses, kids, anybody who wants in.",
+          "No skill required. Genuinely. Past winners have included people who picked entirely on vibes and at least one person who thought the show was still on Thursdays."
+        ]
+      },
+      {
+        "type": "steps",
+        "heading": "How it works",
+        "steps": [
+          {
+            "title": "Draft three castaways",
+            "text": "Pick any three from the cast. Other people can take the same ones you did, so grab who you actually want instead of playing 4D chess about it."
+          },
+          {
+            "title": "They score every week",
+            "text": "Whatever your three earn or lose in an episode is your score for that episode. Points come off the scoring table and nowhere else. → **[See the full table](#rules)**"
+          },
+          {
+            "title": "Highest total wins",
+            "text": "Scores add up across the whole season. No trades, no waiver wire, no take-backs. You and your three are in this together."
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "heading": "Scoring changed this year",
+        "text": "If you played last year, spend two minutes here before you draft. → **[This year's scoring rules](#rules)**"
+      },
+      {
+        "type": "list",
+        "heading": "If you have no idea who to pick",
+        "intro": "Normal. Most of us don't either. A few approaches that have worked about equally well:",
+        "items": [
+          "**[Read the bios](#cast)** and pick the three you'd actually want to sit next to on a plane",
+          "Pick whoever looks like they could carry a log",
+          "Pick the three with the best names",
+          "Ask your kid"
+        ],
+        "outro": "→ **[Go look at the cast and read their bios](#cast)**. Then **[make your picks](#picks)**."
+      },
+      {
+        "type": "dates",
+        "heading": "This season",
+        "items": [
+          {
+            "when": "Wed Sept 23",
+            "what": "Premiere. Watch it. This one does not score, it's your scouting report."
+          },
+          {
+            "when": "Wed Sept 30, 7:00 p.m.",
+            "what": "Picks due. One hour before episode 2. There is no grace period beyond \"text Ryan and grovel.\""
+          },
+          {
+            "when": "Wed Sept 30",
+            "what": "Scoring starts for real."
+          },
+          {
+            "when": "December",
+            "what": "Finale. Somebody gets paid, everybody else says the scoring was rigged."
+          }
+        ]
+      },
+      {
+        "type": "prose",
+        "heading": "The money",
+        "paragraphs": [
+          "$10 to play. Venmo Becky at **@fitchbecky** or get her cash. She is significantly better at collecting this than Ryan is.",
+          "Third place gets their $10 back, which is the participation trophy of gambling. Second doubles to $20. First takes everything left in the pot. The pot grows with every person who plays, so bring somebody in."
+        ]
+      },
+      {
+        "type": "prose",
+        "heading": "Every week",
+        "paragraphs": [
+          "Standings go up a day or two after each episode airs, along with a short recap of what scored and what it did to the board. → **[Check the standings](#standings)**",
+          "Fair warning: that recap will spoil the episode. If you're running behind on the show, stay off this site until you've caught up.",
+          "Want to see how badly this has gone for you historically? → **[Past seasons](#history)**"
+        ]
+      },
+      {
+        "type": "prose",
+        "heading": "Who runs this",
+        "paragraphs": [
+          "Becky or Ryan. If something looks wrong on the board, tell us, because it probably is. If you missed the deadline, tell us anyway and we'll figure it out."
+        ]
+      }
+    ]
   }
- },
- "currentSeason": 51,
- "archiveSeasons": [
-  50,
-  49,
-  48
- ],
- "features": {
-  "standings": true,
-  "draftBoard": true,
-  "castTracker": true,
-  "scoringRules": true,
-  "pastSeasons": true,
-  "countdown": true,
-  "myTeam": true,
-  "headToHead": true,
-  "scoreChart": true,
-  "weeklyAwards": true,
-  "bootOrder": false,
-  "episodeRecaps": true,
-  "castPhotos": true,
-  "pickSubmission": true
- },
- "seasons": {
-  "51": {
-   "name": "Survivor 51",
-   "subtitle": "Outwit. Outplay. Outlast.",
-   "tribes": [
-    {
-     "name": "Savu",
-     "color": "#32B9DB"
-    },
-    {
-     "name": "Toka",
-     "color": "#CDD943"
-    }
-   ],
-   "draft": {
-    "closesBeforeEpisode": 2,
-    "hoursBefore": 1
-   },
-   "episodes": {
-    "1": {
-     "airs": "2026-09-23",
-     "title": "Permanent Uncertainty",
-     "counts": false,
-     "note": "Scouting episode. Airs before the draft, so it earns no points."
-    },
-    "2": {
-     "airs": "2026-09-30"
-    },
-    "3": {
-     "airs": "2026-10-07"
-    },
-    "4": {
-     "airs": "2026-10-14"
-    },
-    "5": {
-     "airs": "2026-10-21"
-    },
-    "6": {
-     "airs": "2026-10-28"
-    },
-    "7": {
-     "airs": "2026-11-04"
-    },
-    "8": {
-     "airs": "2026-11-11"
-    },
-    "9": {
-     "airs": "2026-11-18"
-    },
-    "10": {
-     "airs": "2026-11-25"
-    },
-    "11": {
-     "airs": "2026-12-02"
-    },
-    "12": {
-     "airs": "2026-12-09"
-    },
-    "13": {
-     "airs": "2026-12-16",
-     "title": "Finale"
-    }
-   },
-   "castBios": {
-    "Aaliyah Puglia": {
-     "age": 24,
-     "hometown": "Gloucester City, N.J.",
-     "residence": "Providence, R.I.",
-     "occupation": "Chef"
-    },
-    "Alexis Levine": {
-     "age": 34,
-     "hometown": "Atlanta, Ga.",
-     "residence": "Atlanta, Ga.",
-     "occupation": "Criminal defense attorney"
-    },
-    "An \"Thien An\" Nguyen": {
-     "age": 24,
-     "hometown": "Fort Worth, Texas",
-     "residence": "Fort Worth, Texas",
-     "occupation": "Medical student"
-    },
-    "Ana Sani": {
-     "age": 34,
-     "hometown": "Richmond Hill, Ontario",
-     "residence": "Toronto, Ontario",
-     "occupation": "Voice actress"
-    },
-    "Angelica \"Jelly\" Loblack": {
-     "age": 29,
-     "hometown": "Garland, Texas",
-     "residence": "Bloomington, Ind.",
-     "occupation": "Sociology professor"
-    },
-    "Brady Booker": {
-     "age": 27,
-     "hometown": "La Salle, Ill.",
-     "residence": "Knoxville, Tenn.",
-     "occupation": "Pro wrestler"
-    },
-    "Carter Krull": {
-     "age": 24,
-     "hometown": "Rock Rapids, Iowa",
-     "residence": "Sioux Falls, S.D.",
-     "occupation": "Livestock farmer"
-    },
-    "Cristian Chavez": {
-     "age": 26,
-     "hometown": "Salt Lake City, Utah",
-     "residence": "Salt Lake City, Utah",
-     "occupation": "Head of HR"
-    },
-    "Danny \"Kilby\" Kilby": {
-     "age": 30,
-     "hometown": "Mount Forest, Ontario",
-     "residence": "London, Ontario",
-     "occupation": "Game designer"
-    },
-    "Devin Way": {
-     "age": 33,
-     "hometown": "Lufkin, Texas",
-     "residence": "Los Angeles, Calif.",
-     "occupation": "Actor"
-    },
-    "Eric Macksoud": {
-     "age": 34,
-     "hometown": "Lincoln, R.I.",
-     "residence": "Windsor Locks, Conn.",
-     "occupation": "Mental health counselor"
-    },
-    "Jenna Doore": {
-     "age": 30,
-     "hometown": "Perrysburg, Ohio",
-     "residence": "Toledo, Ohio",
-     "occupation": "Wedding photographer"
-    },
-    "Kristin Flickinger": {
-     "age": 49,
-     "hometown": "Ketchum, Idaho",
-     "residence": "Santa Barbara, Calif.",
-     "occupation": "Crisis management"
-    },
-    "Lewis Kelly": {
-     "age": 28,
-     "hometown": "Dublin, Ireland",
-     "residence": "Puerto Rico",
-     "occupation": "Farmer"
-    },
-    "Linnea Capobianco": {
-     "age": 25,
-     "hometown": "Kearny, N.J.",
-     "residence": "Jersey City, N.J.",
-     "occupation": "Entrepreneur"
-    },
-    "Maggie Nestor": {
-     "age": 40,
-     "hometown": "Middleway, W.Va.",
-     "residence": "Charlestown, W.Va.",
-     "occupation": "Farmer"
-    },
-    "Mike Pinsky": {
-     "age": 32,
-     "hometown": "New York City, N.Y.",
-     "residence": "New York City, N.Y.",
-     "occupation": "Baseball executive"
-    },
-    "Ori Jean-Charles": {
-     "age": 27,
-     "hometown": "Spring Valley, N.Y.",
-     "residence": "Spring Valley, N.Y.",
-     "occupation": "Personal trainer"
-    },
-    "Patt Cannaday": {
-     "age": 33,
-     "hometown": "Tampa, Fla.",
-     "residence": "Washington, D.C.",
-     "occupation": "Federal prosecutor"
-    },
-    "Rob Antonson": {
-     "age": 40,
-     "hometown": "Johnston, R.I.",
-     "residence": "Cumberland, R.I.",
-     "occupation": "Airline gate agent"
-    },
-    "Sharonda Cox": {
-     "age": 34,
-     "hometown": "Pompano Beach, Fla.",
-     "residence": "Richmond, Ky.",
-     "occupation": "Resident, OBGYN"
-    }
-   }
-  },
-  "50": {
-   "name": "Survivor 50",
-   "subtitle": "In the Hands of the Fans",
-   "blurb": "Twenty-four returning players, the largest cast in the show's history, on a season where the fans voted the twists.",
-   "finale": {
-    "vote": "8-3-0",
-    "over": [
-     "Jonathan Young",
-     "Joe Hunter"
-    ]
-   }
-  },
-  "49": {
-   "name": "Survivor 49",
-   "subtitle": "",
-   "blurb": "Kele collapsed early, losing four in a row. The Tres Leches alliance picked up the pieces and ran the table.",
-   "finale": {
-    "vote": "5-2-1",
-    "over": [
-     "Sophi Balerdi",
-     "Sage Ahrens-Nichols"
-    ]
-   }
-  },
-  "48": {
-   "name": "Survivor 48",
-   "subtitle": "",
-   "blurb": "A chaotic pre-merge, then a quiet two-person alliance that undermined the dominant group from the inside.",
-   "finale": {
-    "vote": "5-2-1",
-    "over": [
-     "Eva Erickson",
-     "Joe Hunter"
-    ]
-   }
-  }
- },
- "supabase": {
-  "url": "https://foykdzrjuejavrichwut.supabase.co",
-  "key": "sb_publishable_uF0RwGJaMgvPgcXOBm-_KA_YDZScb5b"
- },
- "picks": {
-  "confirmation": "If you wake up at 2 a.m. certain you made a terrible mistake, you have until {deadline} to come back and fix it."
- }
 }

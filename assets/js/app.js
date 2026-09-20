@@ -181,6 +181,7 @@ async function boot() {
 
   renderHero();
   renderNav();
+  renderWelcome();
   renderPicks();
   renderStandings();
   renderRecaps();
@@ -333,6 +334,7 @@ function startCountdown() {
    Board does the job of showing who ended up with whom. */
 const PANELS = [
   { id: 'picks', label: 'Make Picks', flag: 'pickSubmission', when: () => picksAreOpen() },
+  { id: 'welcome', label: 'Welcome', flag: 'welcome' },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
   { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'rules', label: 'Rules', flag: 'scoringRules' },
@@ -1346,6 +1348,98 @@ function renderRecaps() {
 
 /* --------------------------------------------------------------- rules --- */
 
+/* -------------------------------------------------------------- welcome --- */
+
+/* A very small subset of markdown so the welcome copy can live in
+   config.json: **bold** and [label](#panel). Parsed into real nodes rather
+   than dropped in with innerHTML, so nothing in the config file can inject
+   markup. An in-page [label](#panel) becomes a tab switch, not a jump. */
+function inlineRich(parent, text) {
+  const pattern = /\*\*(.+?)\*\*|\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let match;
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > last) {
+      parent.appendChild(document.createTextNode(text.slice(last, match.index)));
+    }
+    if (match[1] !== undefined) {
+      /* Bold can wrap a link, as **[label](#panel)** does throughout the
+         welcome copy, so the inside is parsed again rather than taken as
+         plain text. */
+      parent.appendChild(inlineRich(el('strong'), match[1]));
+    } else {
+      const link = el('a', 'welcome__link', match[2]);
+      link.href = match[3];
+      parent.appendChild(link);
+    }
+    last = pattern.lastIndex;
+  }
+  if (last < text.length) {
+    parent.appendChild(document.createTextNode(text.slice(last)));
+  }
+  return parent;
+}
+
+function richPara(text, className) {
+  return inlineRich(el('p', className || null), text);
+}
+
+function renderWelcome() {
+  const panel = $('#panel-welcome');
+  if (!panel) return;
+
+  const welcome = state.config.welcome || {};
+  const note = $('#welcome-note', panel);
+  if (note) note.textContent = welcome.tagline || '';
+
+  const body = $('#welcome-body', panel);
+  if (!body) return;
+  body.replaceChildren();
+
+  (welcome.sections || []).forEach((section) => {
+    if (section.type === 'callout') {
+      const box = el('div', 'welcome__callout');
+      if (section.heading) box.appendChild(el('h3', null, section.heading));
+      if (section.text) box.appendChild(richPara(section.text));
+      body.appendChild(box);
+      return;
+    }
+
+    const block = el('section', 'welcome__section');
+    if (section.heading) block.appendChild(el('h3', null, section.heading));
+
+    if (section.type === 'steps') {
+      const list = el('ol', 'steps');
+      (section.steps || []).forEach((step) => {
+        const item = el('li', 'step');
+        item.appendChild(el('h4', null, step.title));
+        item.appendChild(richPara(step.text));
+        list.appendChild(item);
+      });
+      block.appendChild(list);
+    } else if (section.type === 'dates') {
+      const list = el('dl', 'welcome__dates');
+      (section.items || []).forEach((entry) => {
+        list.appendChild(el('dt', null, entry.when));
+        list.appendChild(el('dd', null, entry.what));
+      });
+      block.appendChild(list);
+    } else if (section.type === 'list') {
+      if (section.intro) block.appendChild(richPara(section.intro));
+      const list = el('ul', 'welcome__bullets');
+      (section.items || []).forEach((item) => {
+        list.appendChild(inlineRich(el('li'), item));
+      });
+      block.appendChild(list);
+      if (section.outro) block.appendChild(richPara(section.outro, 'welcome__outro'));
+    } else {
+      (section.paragraphs || []).forEach((text) => block.appendChild(richPara(text)));
+    }
+
+    body.appendChild(block);
+  });
+}
+
 function renderRules() {
   const panel = $('#panel-rules');
   if (!panel) return;
@@ -2056,7 +2150,13 @@ function showPotDialog() {
 
 /** Swaps Becky's name for her Venmo handle once one is set in config.json. */
 function buyinText(text, venmo) {
-  return venmo ? text.replace('Venmo Becky', `Venmo Becky at ${venmo}`) : text;
+  if (!venmo || text.includes(venmo)) return text;
+  /* Two phrasings to cover: the form says "Venmo Becky", the confirmation
+     card says "get Becky your $10". Either way the handle lands once. */
+  if (text.includes('Venmo Becky')) {
+    return text.replace('Venmo Becky', `Venmo Becky at ${venmo}`);
+  }
+  return text.replace('Becky', `Becky (${venmo})`);
 }
 
 function picksDoneCard(owner, chosen) {

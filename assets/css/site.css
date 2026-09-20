@@ -1937,3 +1937,118 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   .picks__submit { width: 100%; }
   .picks__done { padding: 28px 18px 24px; }
 }
+
+/* ---------------------------------------------------------------- welcome --- */
+
+.welcome {
+  display: grid;
+  gap: 30px;
+  max-width: 760px;
+}
+
+.welcome__section h3 {
+  font-family: var(--cond);
+  font-size: 1.32rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 0 0 10px;
+}
+
+.welcome__section p {
+  margin: 0 0 12px;
+  line-height: 1.62;
+  color: var(--sand);
+}
+
+.welcome__section p:last-child { margin-bottom: 0; }
+
+.welcome__link {
+  color: var(--cyan);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.welcome__link:hover { color: var(--sand); }
+
+/* The steps grid is shared with the rules page, which is full width. The
+   welcome column is narrower, so the track minimum comes down to keep all
+   three on one row instead of orphaning the third. */
+.welcome__section .steps {
+  margin-top: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(min(205px, 100%), 1fr));
+}
+
+.welcome__bullets {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  display: grid;
+  gap: 7px;
+  line-height: 1.55;
+  color: var(--sand);
+}
+
+.welcome__bullets::marker,
+.welcome__bullets li::marker { color: var(--sand-faint); }
+
+.welcome__outro { color: var(--sand); }
+
+.welcome__dates {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 10px 20px;
+  align-items: baseline;
+}
+
+.welcome__dates dt {
+  font-family: var(--cond);
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--lime);
+  white-space: nowrap;
+}
+
+.welcome__dates dd {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--sand);
+}
+
+.welcome__callout {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+}
+
+.welcome__callout h3 {
+  font-family: var(--cond);
+  font-size: 1.18rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 6px;
+}
+
+.welcome__callout p {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--sand);
+}
+
+/* On a phone the two-column date list wraps to stacked pairs, which keeps
+   the long descriptions from squeezing into a narrow column. */
+@media (max-width: 560px) {
+  .welcome { gap: 26px; }
+
+  .welcome__dates {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .welcome__dates dd { margin-bottom: 10px; }
+  .welcome__dates dd:last-child { margin-bottom: 0; }
+}
