@@ -113,7 +113,29 @@
     }
    ]
   },
-  "prize": "It is $10 to enter. Third place gets their $10 back, second place doubles up to $20, and first place takes the rest of the pot. The exact grand prize depends on how many people play, so we will know the number once all the picks are in."
+  "prize": {
+   "buyin": "$10 to enter.",
+   "places": [
+    {
+     "place": "3rd",
+     "gets": "Your $10 back"
+    },
+    {
+     "place": "2nd",
+     "gets": "$20, double your money"
+    },
+    {
+     "place": "1st",
+     "gets": "The rest of the pot"
+    }
+   ],
+   "note": "The exact grand prize depends on how many people play, so we will know the number once all the picks are in."
+  },
+  "buyin": {
+   "before": "It is $10 to play. Venmo Becky or get her cash.",
+   "after": "Last thing: get Becky your $10, Venmo or cash.",
+   "venmo": ""
+  }
  },
  "currentSeason": 51,
  "archiveSeasons": [
@@ -369,5 +391,8 @@
  "supabase": {
   "url": "https://foykdzrjuejavrichwut.supabase.co",
   "key": "sb_publishable_uF0RwGJaMgvPgcXOBm-_KA_YDZScb5b"
+ },
+ "picks": {
+  "confirmation": "If you wake up at 2 a.m. certain you made a terrible mistake, you have until {deadline} to come back and fix it."
  }
 }

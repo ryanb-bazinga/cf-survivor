@@ -1445,7 +1445,12 @@ function renderRules() {
       block.appendChild(el('p', null, text));
       foot.appendChild(block);
     };
-    line('What you are playing for', rules.prize);
+    if (rules.prize) {
+      const block = el('div', 'rules__note');
+      block.appendChild(el('h4', null, 'How the pot pays out'));
+      block.appendChild(buildPayout());
+      foot.appendChild(block);
+    }
     line('Ties', rules.tiebreaker);
     line('Who keeps score', rules.scorekeeping);
     foot.hidden = !foot.childElementCount;
@@ -1640,6 +1645,22 @@ function pacificTime(date) {
     .replace('PM', 'p.m.');
 }
 
+function ordinal(n) {
+  const teens = n % 100;
+  if (teens >= 11 && teens <= 13) return `${n}th`;
+  return n + (['th', 'st', 'nd', 'rd'][n % 10] || 'th');
+}
+
+/** The deadline the short way: "7:00 p.m. on the 30th". */
+function shortDeadline() {
+  const due = draftDeadlineDate();
+  if (!due) return '';
+  const day = Number(
+    due.toLocaleDateString('en-US', { day: 'numeric', timeZone: 'America/Los_Angeles' })
+  );
+  return `${pacificTime(due)} on the ${ordinal(day)}`;
+}
+
 function pacificDay(date) {
   return date.toLocaleDateString('en-US', {
     weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles',
@@ -1685,6 +1706,14 @@ function buildPicksForm() {
     'Pick any three castaways. Other players can take the same people you do, '
     + 'so there is nothing to race for. Changed your mind? Fill this out again '
     + 'before the deadline and your newest entry is the one that counts.'));
+
+  const buyin = (state.config.rules || {}).buyin || {};
+  if (buyin.before) {
+    const note = el('p', 'picks__buyin');
+    note.appendChild(el('span', 'picks__buyin-tag', 'Buy in'));
+    note.appendChild(document.createTextNode(buyinText(buyin.before, buyin.venmo)));
+    form.appendChild(note);
+  }
 
   form.appendChild(buildNameStep());
   form.appendChild(buildTileStep());
@@ -1948,6 +1977,74 @@ function sendPicks(owner, chosen) {
   });
 }
 
+/**
+ * The payout, answered where they are standing. Sending someone to the Rules
+ * tab from the confirmation would throw away the confirmation they just
+ * earned, and they would have to submit again to see it.
+ */
+function buildPayout() {
+  const prize = (state.config.rules || {}).prize || {};
+  const box = el('div', 'payout');
+
+  if (prize.buyin) box.appendChild(el('p', 'payout__buyin', prize.buyin));
+
+  (prize.places || []).forEach((row) => {
+    const line = el('div', 'payout__row');
+    line.appendChild(el('span', 'payout__place', row.place));
+    line.appendChild(el('span', 'payout__gets', row.gets));
+    box.appendChild(line);
+  });
+
+  if (prize.note) box.appendChild(el('p', 'payout__note', prize.note));
+  return box;
+}
+
+function showPotDialog() {
+  const rules = state.config.rules || {};
+
+  const dialog = el('dialog', 'modal');
+  dialog.setAttribute('aria-labelledby', 'pot-title');
+
+  const card = el('div', 'modal__card');
+  const title = el('h3', 'modal__title', 'How the pot pays out');
+  title.id = 'pot-title';
+  card.appendChild(title);
+  card.appendChild(buildPayout());
+
+  const foot = el('div', 'modal__foot');
+
+  const more = el('button', 'picks__link', 'See all the rules');
+  more.type = 'button';
+  more.addEventListener('click', () => {
+    dialog.close();
+    selectPanel('rules');
+  });
+  foot.appendChild(more);
+
+  const done = el('button', 'modal__close', 'Got it');
+  done.type = 'button';
+  done.addEventListener('click', () => dialog.close());
+  foot.appendChild(done);
+
+  card.appendChild(foot);
+  dialog.appendChild(card);
+
+  // Clicking the dimmed area around the card closes it, as does Escape,
+  // which the dialog element handles on its own.
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => dialog.remove());
+
+  document.body.appendChild(dialog);
+  dialog.showModal();
+}
+
+/** Swaps Becky's name for her Venmo handle once one is set in config.json. */
+function buyinText(text, venmo) {
+  return venmo ? text.replace('Venmo Becky', `Venmo Becky at ${venmo}`) : text;
+}
+
 function picksDoneCard(owner, chosen) {
   const box = el('div', 'picks__done');
   box.appendChild(el('div', 'picks__tick', '✓'));
@@ -1977,9 +2074,27 @@ function picksDoneCard(owner, chosen) {
   });
   box.appendChild(row);
 
-  /* pacificTime already ends in a period ("9:50 a.m."), so no second one. */
-  box.appendChild(el('p', 'picks__stamp',
-    `Saved at ${pacificTime(new Date())} ${draftDeadlineText()}`));
+  /* The deadline, said like a person rather than a receipt. The heading
+     above already told them the picks landed. */
+  const copy = (state.config.picks || {}).confirmation;
+  const when = shortDeadline();
+  if (copy && when) {
+    box.appendChild(el('p', 'picks__stamp', copy.replace('{deadline}', when)));
+  } else if (copy) {
+    box.appendChild(el('p', 'picks__stamp', draftDeadlineText()));
+  }
+
+  const buyin = (state.config.rules || {}).buyin || {};
+  if (buyin.after) {
+    const ask = el('div', 'picks__owe');
+    ask.appendChild(el('strong', null, buyinText(buyin.after, buyin.venmo)));
+
+    const link = el('button', 'picks__link', 'How the pot pays out');
+    link.type = 'button';
+    link.addEventListener('click', showPotDialog);
+    ask.appendChild(link);
+    box.appendChild(ask);
+  }
 
   const again = el('button', 'picks__again', 'Change my picks');
   again.type = 'button';

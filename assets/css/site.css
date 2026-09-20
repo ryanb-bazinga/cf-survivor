@@ -1494,6 +1494,159 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   margin: 0 0 30px;
 }
 
+/* Buy in, stated before anyone picks so nobody meets a fee afterwards. */
+.picks__buyin {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 62ch;
+  margin: 0 0 30px;
+  padding: 11px 15px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+  color: var(--sand-dim);
+  font-size: 0.93rem;
+}
+
+.picks__buyin-tag {
+  font-family: var(--cond);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* The same fact on the confirmation, where it is the next thing to do. */
+.picks__owe {
+  margin: 0 0 20px;
+  padding: 15px 16px;
+  background: var(--ink-2);
+  border-radius: var(--radius-sm);
+  color: var(--sand);
+  font-size: 0.95rem;
+}
+
+.picks__owe strong { display: block; font-weight: 600; }
+
+.picks__link {
+  margin-top: 7px;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--orange);
+  font: inherit;
+  font-size: 0.86rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.picks__link:hover { color: var(--sand); }
+
+/* ------ the payout, on the rules page and in the popup ------ */
+
+/* Selectors carry the .payout parent so these win over `.rules__note p`
+   when the same block renders inside a rules footer card. */
+.payout .payout__buyin {
+  margin: 0 0 10px;
+  color: var(--sand);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.payout__row {
+  display: flex;
+  align-items: baseline;
+  gap: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(42, 80, 73, 0.5);
+}
+
+.payout__row:last-of-type { border-bottom: 0; }
+
+.payout__place {
+  flex: none;
+  min-width: 34px;
+  font-family: var(--cond);
+  font-size: 1.16rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.payout__gets { color: var(--sand-dim); font-size: 0.93rem; line-height: 1.4; }
+
+.payout .payout__note {
+  margin: 12px 0 0;
+  color: var(--sand-faint);
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* ------ the payout popup ------ */
+
+.modal {
+  width: min(460px, calc(100% - 32px));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--sand);
+}
+
+.modal::backdrop { background: rgba(5, 12, 11, 0.74); }
+
+.modal__card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 24px 20px;
+  text-align: left;
+}
+
+.modal__title { font-size: 1.5rem; margin-bottom: 10px; }
+
+.modal__body {
+  margin: 0 0 22px;
+  color: var(--sand-dim);
+  line-height: 1.55;
+}
+
+.modal__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.modal__foot .picks__link { margin-top: 0; }
+
+.modal__close {
+  padding: 10px 22px;
+  font-family: var(--cond);
+  font-size: 1.06rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  background: var(--orange);
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.modal__close:hover { background: var(--orange-lo); }
+
+.modal__close:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 2px;
+}
+
 .picks__step { margin-bottom: 34px; }
 
 .picks__steph {
@@ -1752,10 +1905,14 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .tiles--mini .tile { cursor: default; }
 .tiles--mini .tile:hover { transform: none; border-color: var(--orange); }
 
+/* Carries the deadline and the only joke on the page, so it reads a shade
+   brighter than the old timestamp it replaced. */
 .picks__stamp {
-  font-size: 0.86rem;
-  color: var(--sand-faint);
-  margin: 0 0 20px;
+  max-width: 44ch;
+  margin: 0 auto 20px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--sand-dim);
 }
 
 .picks__again {
