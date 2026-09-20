@@ -39,9 +39,17 @@ FALLBACK_ROOTS = [os.path.expanduser("~/mnt/Survivor")]
 
 SEASONS = [48, 49, 50, 51]
 
-# Scoring categories that mean a castaway left the game.
-# Losing your vote is a penalty, not an exit, so it does not belong here.
-# These are the only scoring categories that mean someone left the game.
+# The ELIMINATED column on each episode tab is the record of who left the
+# game and when. It is worth no points and is not a scoring category, so it
+# is kept out of the scoring table the site publishes.
+ELIMINATED_LABEL = "ELIMINATED"
+
+# Checked alongside ELIMINATED, these say HOW someone left. First match wins,
+# and anything else is an ordinary vote-out.
+EXIT_REASONS = ("Quit Game", "Med Visit EVAC", "Voted Out WITH Idol")
+
+# Fallback for the older workbooks (48, 49, 50), which have no ELIMINATED
+# column. Losing your vote is a penalty, not an exit, so it is not here.
 ELIMINATION_LABELS = {
     "Voted Out WITH Idol",
     "Med Visit EVAC",
@@ -133,12 +141,20 @@ def read_scoring(ws):
     for col in range(1, ws.max_column + 1):
         label = cell_text(ws.cell(row=LABEL_ROW, column=col).value)
         raw = ws.cell(row=VALUE_ROW, column=col).value
-        if not label or label == "NA":
+        if not label or label == "NA" or label == ELIMINATED_LABEL:
             continue
         if not isinstance(raw, (int, float)):
             continue
         columns.append({"col": col, "label": label, "points": int(raw)})
     return columns
+
+
+def eliminated_column(ws):
+    """Column index of the ELIMINATED checkbox, or None on an older workbook."""
+    for col in range(1, ws.max_column + 1):
+        if cell_text(ws.cell(row=LABEL_ROW, column=col).value) == ELIMINATED_LABEL:
+            return col
+    return None
 
 
 def read_castaways(wb, values):
@@ -156,6 +172,7 @@ def read_castaways(wb, values):
             roster.append({
                 "name": name,
                 "tribe": cell_text(ws.cell(row=row, column=2).value),
+                "row": row,
             })
         return roster
 
@@ -185,6 +202,14 @@ def build_season(season, workbook_path, config):
 
     roster = read_castaways(wb, values)
     by_name = {c["name"]: c for c in roster}
+
+    # Column C on an episode tab is =Cast!A<row>. openpyxl reads cached
+    # results, and a workbook that a script wrote has none until Excel opens
+    # and saves it. The episode tabs mirror the Cast tab row for row, so fall
+    # back to that mapping instead of silently scoring nothing.
+    names_by_row = {c["row"]: c["name"] for c in roster if c.get("row")}
+    for castaway in roster:
+        castaway.pop("row", None)
     bios = season_cfg.get("castBios", {})
     for castaway in roster:
         castaway.update(bios.get(castaway["name"], {}))
@@ -205,6 +230,7 @@ def build_season(season, workbook_path, config):
     for number, sheet_name in episode_sheets(wb):
         ws = values[sheet_name]
         columns = read_scoring(ws)
+        elim_col = eliminated_column(ws)
         if scoring_table is None and columns:
             scoring_table = columns
 
@@ -218,13 +244,15 @@ def build_season(season, workbook_path, config):
         episode_events = []
 
         for row in range(FIRST_DATA_ROW, ws.max_row + 1):
-            name = cell_text(ws.cell(row=row, column=3).value)
+            name = cell_text(ws.cell(row=row, column=3).value) or names_by_row.get(row, "")
             if not name or name not in by_name:
                 continue
             castaway = by_name[name]
+            checked = set()
             for column in columns:
                 if not is_checked(ws.cell(row=row, column=column["col"]).value):
                     continue
+                checked.add(column["label"])
                 if not counts:
                     continue
                 scored = True
@@ -239,12 +267,32 @@ def build_season(season, workbook_path, config):
                     "label": column["label"],
                     "points": column["points"],
                 })
-                if column["label"] in ELIMINATION_LABELS and castaway["status"] == "IN":
+                if column["label"] == WINNER_LABEL:
+                    castaway["winner"] = True
+                # Older workbooks have no ELIMINATED column, so on those the
+                # scoring category is the only signal that someone is gone.
+                if (
+                    elim_col is None
+                    and column["label"] in ELIMINATION_LABELS
+                    and castaway["status"] == "IN"
+                ):
                     castaway["status"] = "OUT"
                     castaway["out_episode"] = number
                     castaway["out_reason"] = column["label"]
-                if column["label"] == WINNER_LABEL:
-                    castaway["winner"] = True
+
+            # Leaving the game is not a score, so it is recorded even on an
+            # episode that earns no points, such as a premiere before the draft.
+            if (
+                elim_col is not None
+                and castaway["status"] == "IN"
+                and is_checked(ws.cell(row=row, column=elim_col).value)
+            ):
+                castaway["status"] = "OUT"
+                castaway["out_episode"] = number
+                castaway["out_reason"] = next(
+                    (reason for reason in EXIT_REASONS if reason in checked),
+                    "Voted out",
+                )
 
         episodes.append({
             "number": number,

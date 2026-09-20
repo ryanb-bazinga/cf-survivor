@@ -11,7 +11,6 @@ const state = {
   archives: [],
   recaps: { episodes: {} },
   bios: null,
-  boots: null,
   sort: { key: 'rank', dir: 1 },
 };
 
@@ -163,14 +162,6 @@ async function boot() {
     state.bios = await loadJSON(
       `data/bios${state.config.currentSeason}.json`
     ).catch(() => null);
-
-    // Eliminations are not a scoring category, so the workbook does not
-    // know who went home. data/boots<NN>.json carries that, written in the
-    // same pass as the weekly recap. Missing file is fine.
-    state.boots = await loadJSON(
-      `data/boots${state.config.currentSeason}.json`
-    ).catch(() => null);
-    applyBoots();
 
     const archiveIds = state.config.archiveSeasons || [];
     const archives = await Promise.all(
@@ -656,39 +647,6 @@ function buildBio(castaway, bio, labels) {
 
 /* ----------------------------------------------------- boot order --- */
 
-/**
- * Folds data/boots<NN>.json into the castaway list. The workbook wins
- * where it already knows someone is out, because it carries the scoring
- * context (went out holding an idol, quit, medical). Everyone else picks
- * up their exit from this file.
- */
-function applyBoots() {
-  const boots = (state.boots && state.boots.boots) || [];
-  if (!boots.length) return;
-
-  const byName = new Map(state.season.castaways.map((c) => [c.name, c]));
-  const missing = [];
-
-  boots.forEach((boot) => {
-    const castaway = byName.get(boot.name);
-    if (!castaway) {
-      missing.push(boot.name);
-      return;
-    }
-    castaway.out_votes = boot.votes || null;
-    if (castaway.status === 'OUT') return;
-    castaway.status = 'OUT';
-    castaway.out_episode = boot.episode;
-    castaway.out_reason = boot.reason || 'Voted out';
-  });
-
-  // A typo in a name would quietly drop someone from the boot list, so
-  // say so in the console rather than rendering a wrong board.
-  if (missing.length) {
-    console.warn(`boots${state.season.season}.json: no castaway named`, missing);
-  }
-}
-
 /** The name people actually use: a quoted nickname, else the first name. */
 function shortName(name) {
   const nickname = name.match(/"([^"]+)"/);
@@ -708,7 +666,6 @@ function bootChip(castaway) {
   else if (isOut) {
     detail.push(`Out in Episode ${castaway.out_episode}`);
     if (castaway.out_reason) detail.push(castaway.out_reason);
-    if (castaway.out_votes) detail.push(`Vote ${castaway.out_votes}`);
   } else detail.push('Still in the game');
   const teams = (castaway.drafted_by || []).length;
   if (teams) detail.push(`On ${teams} ${teams === 1 ? 'team' : 'teams'}`);

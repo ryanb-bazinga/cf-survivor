@@ -3,7 +3,7 @@
  "name": "Survivor 48",
  "subtitle": "",
  "status": "complete",
- "generated": "2026-09-19",
+ "generated": "2026-09-20",
  "source_workbook": "Survivor Tracking Season 48.xlsx",
  "tribes": [],
  "castaways": [
@@ -15,6 +15,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [],
    "drafted_by": [
     "Chad",
@@ -31,6 +32,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 6,
@@ -58,6 +60,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 6,
@@ -98,6 +101,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 3,
@@ -159,6 +163,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": true,
+   "photo": null,
    "events": [
     {
      "episode": 2,
@@ -215,6 +220,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 2,
@@ -254,6 +260,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 3,
@@ -275,6 +282,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 5,
@@ -330,6 +338,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 6,
@@ -393,6 +402,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 6,
@@ -433,6 +443,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 6,
@@ -463,6 +474,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 2,
@@ -485,6 +497,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 6,
@@ -507,6 +520,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 3,
@@ -526,6 +540,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [],
    "drafted_by": [
     "Kaitlynn",
@@ -540,6 +555,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 2,
@@ -583,6 +599,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [
     {
      "episode": 1,
@@ -607,6 +624,7 @@
    "out_episode": null,
    "out_reason": null,
    "winner": false,
+   "photo": null,
    "events": [],
    "drafted_by": []
   }
@@ -1240,6 +1258,8 @@
    "label": "E1",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1254,6 +1274,8 @@
    "label": "E2",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1283,6 +1305,8 @@
    "label": "E3",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1312,6 +1336,8 @@
    "label": "E4",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1326,6 +1352,8 @@
    "label": "E5",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1340,6 +1368,8 @@
    "label": "E6",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1414,6 +1444,8 @@
    "label": "E7",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1478,6 +1510,8 @@
    "label": "E8",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1532,6 +1566,8 @@
    "label": "E9",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1551,6 +1587,8 @@
    "label": "E10",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1570,6 +1608,8 @@
    "label": "E11",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1594,6 +1634,8 @@
    "label": "E12",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {
@@ -1613,6 +1655,8 @@
    "label": "E13",
    "title": "",
    "airs": null,
+   "counts": true,
+   "note": "",
    "scored": true,
    "events": [
     {

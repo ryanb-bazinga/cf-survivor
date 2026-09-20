@@ -21,7 +21,6 @@ data/season49.json      archive
 data/season48.json      archive
 data/recaps51.json      written episode recaps
 data/bios51.json        cast bios
-data/boots51.json       who left the game and when (hand written, see below)
 build.py                reads a tracking workbook, writes a season JSON
 make_share_assets.py    regenerates the share card and home screen icons
 ```
@@ -37,8 +36,7 @@ make_share_assets.py    regenerates the share card and home screen icons
 
    Or `python3 build.py all` to rebuild every season.
 
-3. Add the week's elimination to `data/boots51.json` (see below).
-4. Commit and push. GitHub Pages redeploys on its own within a minute.
+3. Commit and push. GitHub Pages redeploys on its own within a minute.
 
 `build.py` looks for the workbooks in the CF OneDrive Survivor folder by
 default. Point it somewhere else with `--root` or `--workbook`.
@@ -66,27 +64,25 @@ nothing right now.
 
 ## Eliminations
 
-The scoring workbook does not track who went home. The only exit it records
-is going out while holding an idol, because that one is worth points. So the
-boot order and the struck-through picks in the standings read from
-`data/boots<NN>.json` instead:
+Every episode tab has an **ELIMINATED** checkbox as its last column, at V.
+Tick it on the episode a castaway leaves the game. That drives the boot order
+strip on the site, the struck-through picks in the standings, and the Status
+column on the Cast tab.
 
-```json
-{
-  "boots": [
-    { "name": "Rob Antonson", "episode": 2, "reason": "Voted out", "votes": "7-3" },
-    { "name": "Ana Sani", "episode": 3, "reason": "Quit Game" }
-  ]
-}
-```
+It is worth zero points and sits outside the range the Points column sums, so
+ticking it can never move anyone's score.
 
-`name` has to match the Cast tab exactly. If it does not, the browser console
-says which name it could not find and that person stays on the board.
-`reason` and `votes` are optional and show up on hover. A reason containing
-"quit" or "med" gets a grey badge instead of a red one, since neither is a
-vote.
+How someone left comes from the boxes already next to it. Quit Game, Med
+Visit EVAC or Voted Out WITH Idol next to a ticked ELIMINATED gives that
+reason. ELIMINATED on its own means an ordinary vote-out. Quit and medical
+show a grey badge on the site instead of a red one, since neither is a vote.
 
-Where the workbook already knows someone is out, the workbook wins.
+Eliminations are recorded even on an episode marked as not counting, such as
+a premiere that airs before the draft. Leaving the game is not a score.
+
+Seasons 48 through 50 have no ELIMINATED column. `build.py` falls back to the
+old behaviour there, which only knows about people who went out holding an
+idol, so their boot order is incomplete. Nothing on the live site reads it.
 
 ## Link preview and home screen icons
 
