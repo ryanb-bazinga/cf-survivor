@@ -473,6 +473,12 @@
         "paragraphs": [
           "Becky or Ryan. If something looks wrong on the board, tell us, because it probably is. If you missed the deadline, tell us anyway and we'll figure it out."
         ]
+      },
+      {
+        "type": "image",
+        "src": "assets/img/becky-and-ryan.jpg",
+        "alt": "Becky and Ryan in Survivor buffs behind Team Becky and Team Ryan banners, with a sign reading Same Game. Different Strategies.",
+        "caption": "Your commissioners. Same game, different strategies, one shared spreadsheet."
       }
     ]
   }

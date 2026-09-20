@@ -1405,6 +1405,20 @@ function renderWelcome() {
       return;
     }
 
+    if (section.type === 'image') {
+      const figure = el('figure', 'welcome__figure');
+      const image = el('img');
+      image.src = section.src;
+      image.alt = section.alt || '';
+      image.loading = 'lazy';
+      figure.appendChild(image);
+      if (section.caption) {
+        figure.appendChild(inlineRich(el('figcaption'), section.caption));
+      }
+      body.appendChild(figure);
+      return;
+    }
+
     const block = el('section', 'welcome__section');
     if (section.heading) block.appendChild(el('h3', null, section.heading));
 

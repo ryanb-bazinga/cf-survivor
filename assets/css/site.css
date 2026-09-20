@@ -2052,3 +2052,23 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   .welcome__dates dd { margin-bottom: 10px; }
   .welcome__dates dd:last-child { margin-bottom: 0; }
 }
+
+.welcome__figure {
+  margin: 0;
+}
+
+.welcome__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.welcome__figure figcaption {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--sand-faint);
+  text-align: center;
+}
