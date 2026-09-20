@@ -736,7 +736,7 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   color: var(--orange);
 }
 
-.castaway__more::after { content: " \\203A"; }
+.castaway__more::after { content: " \203A"; }
 
 .castaway--expandable[open] .castaway__more { display: none; }
 
@@ -870,8 +870,17 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .chip--out    { color: var(--red);    border-color: rgba(224, 86, 63, 0.4); }
 .chip--winner { color: var(--gold);   border-color: var(--gold); background: rgba(232, 196, 104, 0.12); }
 
-.castaway--out { opacity: 0.58; }
-.castaway--out .castaway__avatar { filter: grayscale(1); }
+/* Out of the game: the entire card drains to grey, not just the photo, so
+   one glance down the grid separates who is left from who is gone. */
+.castaway--out {
+  filter: grayscale(1);
+  opacity: 0.66;
+  background: var(--ink-2);
+  border-color: transparent;
+}
+
+.castaway--out:hover,
+.castaway--out[open] { opacity: 0.9; }
 
 .castaway__pts {
   position: absolute;

@@ -765,6 +765,13 @@ function renderCast() {
 
   const cast = [...state.season.castaways].sort((a, b) => {
     if (a.status !== b.status) return a.status === 'IN' ? -1 : 1;
+    // Everyone who is out sits at the end in boot order, which is the one
+    // thing the separate strip above the grid used to be for.
+    if (a.status === 'OUT') {
+      return (
+        (a.out_episode || 0) - (b.out_episode || 0) || a.name.localeCompare(b.name)
+      );
+    }
     if (b.points !== a.points) return b.points - a.points;
     return a.name.localeCompare(b.name);
   });

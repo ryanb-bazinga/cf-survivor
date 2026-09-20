@@ -77,7 +77,7 @@
   "headToHead": true,
   "scoreChart": true,
   "weeklyAwards": true,
-  "bootOrder": true,
+  "bootOrder": false,
   "episodeRecaps": true,
   "castPhotos": true,
   "pickSubmission": true
