@@ -2053,22 +2053,42 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   .welcome__dates dd:last-child { margin-bottom: 0; }
 }
 
+/* The photo is pre-torn into a parchment mat in the image itself, so there
+   is no border or radius here. The shadow follows the ragged alpha edge,
+   which a box-shadow would not. */
 .welcome__figure {
-  margin: 0;
+  margin: 4px auto 0;
+  max-width: 440px;
 }
 
 .welcome__figure img {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  transform: rotate(-1.1deg);
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45));
 }
 
 .welcome__figure figcaption {
-  margin-top: 10px;
+  margin-top: 18px;
   font-size: 0.88rem;
   line-height: 1.5;
   color: var(--sand-faint);
   text-align: center;
+}
+
+/* The welcome tagline is a sentence, not the short note the other panels
+   put on this row, so it sits under the heading instead of being pushed to
+   the far right by the shared space-between. */
+#panel-welcome .panel__head {
+  display: block;
+  margin-bottom: 24px;
+}
+
+#panel-welcome .panel__note {
+  display: block;
+  margin-top: 6px;
+  max-width: 640px;
+  font-size: 0.98rem;
+  color: var(--sand-dim);
 }
