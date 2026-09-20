@@ -363,7 +363,16 @@ function renderNav() {
     if (!available.includes(panel)) node.remove();
   });
 
-  if (available.length) selectPanel(available[0].id);
+  /* A hash in the URL wins over the default, so #rules can be shared
+     directly. Anything that is not an available panel is ignored. */
+  const ids = available.map((panel) => panel.id);
+  const fromHash = location.hash.replace('#', '');
+  selectPanel(ids.includes(fromHash) ? fromHash : ids[0]);
+
+  window.addEventListener('hashchange', () => {
+    const id = location.hash.replace('#', '');
+    if (ids.includes(id)) selectPanel(id);
+  });
 }
 
 function selectPanel(id) {
@@ -373,6 +382,11 @@ function selectPanel(id) {
   $$('.panel').forEach((panel) => {
     panel.classList.toggle('is-active', panel.id === `panel-${id}`);
   });
+  /* replaceState rather than assigning location.hash: it keeps the URL
+     copyable without scrolling the page or stacking history entries. */
+  if (location.hash !== `#${id}`) {
+    history.replaceState(null, '', `#${id}`);
+  }
 }
 
 /* ----------------------------------------------------------- standings --- */

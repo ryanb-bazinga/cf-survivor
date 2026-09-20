@@ -64,11 +64,15 @@ VALUE_ROW = 3      # point value for each category
 FIRST_DATA_ROW = 4
 
 # Dashboard layout.
-DASH_HEADER_ROW = 3
-DASH_FIRST_ROW = 4
+# Dashboard geometry. The light-theme rebuild put a title on row 2, KPI tiles
+# on 4-5, the podium on 7-10, headers on 12 and the player rows from 13.
+DASH_HEADER_ROW = 12
+DASH_FIRST_ROW = 13
 DASH_NAME_COL = 2   # B
-DASH_SCORE_COL = 3  # C
-DASH_PICK_COLS = (4, 5, 6)  # D, E, F
+DASH_PAID_COL = 3   # C (tracking only, never published to the site)
+DASH_SCORE_COL = 4  # D
+DASH_PICK_COLS = (5, 6, 7)  # E, F, G
+DASH_FIRST_EP_COL = 8  # H
 
 
 def find_workbook(season, root=None):
