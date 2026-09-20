@@ -407,18 +407,14 @@
           },
           {
             "title": "They score every week",
-            "text": "Whatever your three earn or lose in an episode is your score for that episode. Points come off the scoring table and nowhere else. → **[See the full table](#rules)**"
+            "text": "Whatever your three earn or lose in an episode is your score for that episode. Points come off the scoring table and nowhere else."
           },
           {
             "title": "Highest total wins",
             "text": "Scores add up across the whole season. No trades, no waiver wire, no take-backs. You and your three are in this together."
           }
-        ]
-      },
-      {
-        "type": "callout",
-        "heading": "Scoring changed this year",
-        "text": "If you played last year, spend two minutes here before you draft. → **[This year's scoring rules](#rules)**"
+        ],
+        "outro": "One thing if you played last year: the scoring changed. Spend two minutes on **[this year's rules](#rules)** before you draft."
       },
       {
         "type": "list",
@@ -430,28 +426,15 @@
           "Pick the three with the best names",
           "Ask your kid"
         ],
-        "outro": "→ **[Go look at the cast and read their bios](#cast)**. Then **[make your picks](#picks)**."
+        "outro": "**[Go look at the cast and read their bios](#cast)**. Then **[make your picks](#picks)**."
       },
       {
-        "type": "dates",
+        "type": "prose",
         "heading": "This season",
-        "items": [
-          {
-            "when": "Wed Sept 23",
-            "what": "Premiere. Watch it. This one does not score, it's your scouting report."
-          },
-          {
-            "when": "Wed Sept 30, 7:00 p.m.",
-            "what": "Picks due. One hour before episode 2. There is no grace period beyond \"text Ryan and grovel.\""
-          },
-          {
-            "when": "Wed Sept 30",
-            "what": "Scoring starts for real."
-          },
-          {
-            "when": "December",
-            "what": "Finale. Somebody gets paid, everybody else says the scoring was rigged."
-          }
+        "paragraphs": [
+          "The premiere is **Wed Sept 23**. Watch it. That one does not score, it is your scouting report.",
+          "Picks are due **Wed Sept 30 at 7:00 p.m.**, one hour before episode 2, which is where scoring starts for real. There is no grace period beyond \"text Ryan and grovel.\"",
+          "The finale is in December. Somebody gets paid, everybody else says the scoring was rigged."
         ]
       },
       {
@@ -466,16 +449,10 @@
         "type": "prose",
         "heading": "Every week",
         "paragraphs": [
-          "Standings go up a day or two after each episode airs, along with a short recap of what scored and what it did to the board. → **[Check the standings](#standings)**",
+          "Standings go up a day or two after each episode airs, along with a short recap of what scored and what it did to the board. **[Check the standings](#standings)**",
           "Fair warning: that recap will spoil the episode. If you're running behind on the show, stay off this site until you've caught up.",
-          "Want to see how badly this has gone for you historically? → **[Past seasons](#history)**"
-        ]
-      },
-      {
-        "type": "prose",
-        "heading": "Who runs this",
-        "paragraphs": [
-          "Becky or Ryan. If something looks wrong on the board, tell us, because it probably is. If you missed the deadline, tell us anyway and we'll figure it out."
+          "Want to see how badly this has gone for you historically? **[Past seasons](#history)**",
+          "Becky or Ryan run this. If something looks wrong on the board, tell us, because it probably is. If you missed the deadline, tell us anyway and we'll figure it out."
         ]
       },
       {

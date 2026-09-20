@@ -1991,7 +1991,11 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .welcome__bullets::marker,
 .welcome__bullets li::marker { color: var(--sand-faint); }
 
-.welcome__outro { color: var(--sand); }
+.welcome__outro {
+  margin-top: 14px;
+  line-height: 1.6;
+  color: var(--sand);
+}
 
 .welcome__dates {
   margin: 0;
@@ -2006,7 +2010,7 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   font-size: 1.02rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: var(--sand);
   white-space: nowrap;
 }
 

@@ -1445,10 +1445,14 @@ function renderWelcome() {
         list.appendChild(inlineRich(el('li'), item));
       });
       block.appendChild(list);
-      if (section.outro) block.appendChild(richPara(section.outro, 'welcome__outro'));
     } else {
       (section.paragraphs || []).forEach((text) => block.appendChild(richPara(text)));
     }
+
+    // Any section can carry a closing line, not just the bullet list. The
+    // scoring-changed note uses it to sit under the steps as plain copy
+    // instead of needing its own boxed callout.
+    if (section.outro) block.appendChild(richPara(section.outro, 'welcome__outro'));
 
     body.appendChild(block);
   });
