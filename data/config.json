@@ -20,25 +20,26 @@
    }
   ],
   "definitions": {
+   "Team Immunity Win": "Winning immunity as part of a group. Usually your tribe, but it also covers any week the cast is split into smaller teams to compete. Everyone on the winning side gets it.",
+   "Individual Immunity Win": "Winning immunity for yourself alone.",
+   "Individual Reward Win": "Winning a reward challenge for yourself alone. Rewards won as a tribe or team score nothing.",
+   "Win Fire Challenge": "Winning the fire-making challenge at final four.",
    "Immunity Idol Find": "Finding a hidden immunity idol yourself. Being handed one does not count.",
+   "Effective REAL Idol": "Playing a real idol that saved you from going home. If you would have been voted out without it, it counts.",
    "Effective FAKE Idol": "Playing a fake idol that actually fools the vote.",
-   "Effective REAL Idol": "Playing a real idol on a night votes were cast against you, and it saves you.",
-   "Immunity Challenge Win": "Winning individual immunity, or being on the tribe that wins it.",
-   "Reward Challenge Win": "Winning a standalone reward challenge, alone or with your tribe.",
    "Win Advantage": "Any non-idol advantage: a journey win, extra vote, vote steal, block a vote, safety without power.",
    "Shot in the Dark SUCCESS": "Playing the Shot in the Dark and drawing safety.",
    "Make Jury": "Awarded once to everyone still in the game the week the jury phase begins.",
-   "Win Fire Challenge": "Winning the fire-making challenge at final four.",
    "Win Survivor": "Sole Survivor. The jury vote decides it.",
-   "Voted Out WITH Idol": "Going home with an idol still in your pocket.",
-   "Lose Vote": "Losing your vote at tribal, from a journey gamble, a vote blocker played on you, or a penalty.",
+   "Quit Game": "Walking away from the game on your own.",
    "Med Visit EVAC": "Pulled from the game by medical.",
-   "Quit Game": "Walking away from the game on your own."
+   "Voted Out WITH Idol": "Going home with an idol still in your pocket.",
+   "Lose Vote": "You are at tribal council and cannot cast a vote. Usually a penalty, a vote blocker played on you, or a journey gamble you lost."
   },
   "rulings": [
    {
     "title": "Combined challenges count once",
-    "text": "When one challenge awards both reward and immunity, it scores as immunity only, +2. Not +3."
+    "text": "When one challenge awards both reward and immunity, it scores as immunity only. You do not get the reward point on top."
    },
    {
     "title": "Make Jury is a one-time award",
@@ -50,15 +51,69 @@
    },
    {
     "title": "An idol has to work",
-    "text": "Playing a real idol on a night nobody voted for you is worth nothing."
+    "text": "Playing a real idol only counts if it saved you. If the votes would have sent you home and the idol stopped that, it is +2. If you were never going home that night, playing it is worth nothing."
    },
    {
     "title": "Rosters are locked",
     "text": "No trades and no replacements, even if one of your three quits or gets pulled by medical."
+   },
+   {
+    "title": "Late picks",
+    "text": "If your three are not in by the deadline, Ryan and Becky decide what happens. There is no automatic rule, so get them in."
    }
   ],
-  "tiebreaker": "Tied on points at the end of the season? Whoever drafted the Sole Survivor takes it. If that still does not settle it, co-champions.",
-  "scorekeeping": "Ryan Bicker and Becky Fitch keep the scoring workbook, and this site is rebuilt straight from it. If a score looks wrong, say something and it gets corrected back to the episode it happened in."
+  "tiebreaker": "Tied on points at the end of the season? You settle it the way the show does, with a fire making competition between the tied players. If that cannot happen, it goes to whoever's three castaways won the most individual immunity challenges across the season.",
+  "scorekeeping": "Ryan Bicker and Becky Fitch keep the scoring workbook, and this site is rebuilt straight from it. If a score looks wrong, say something and it gets corrected back to the episode it happened in.",
+  "fineprint": {
+   "Win Advantage": "And anything else the show invents. Final call is Ryan and Becky's."
+  },
+  "scoreGroups": {
+   "positive": [
+    {
+     "title": "Challenges",
+     "labels": [
+      "Team Immunity Win",
+      "Individual Immunity Win",
+      "Individual Reward Win",
+      "Win Fire Challenge"
+     ]
+    },
+    {
+     "title": "Idols and advantages",
+     "labels": [
+      "Immunity Idol Find",
+      "Effective REAL Idol",
+      "Effective FAKE Idol",
+      "Win Advantage",
+      "Shot in the Dark SUCCESS"
+     ]
+    },
+    {
+     "title": "Going the distance",
+     "labels": [
+      "Make Jury",
+      "Win Survivor"
+     ]
+    }
+   ],
+   "negative": [
+    {
+     "title": "Leaving the game",
+     "labels": [
+      "Quit Game",
+      "Med Visit EVAC"
+     ]
+    },
+    {
+     "title": "Mistakes/Punishments",
+     "labels": [
+      "Voted Out WITH Idol",
+      "Lose Vote"
+     ]
+    }
+   ]
+  },
+  "prize": "It is $10 to enter. Third place gets their $10 back, second place doubles up to $20, and first place takes the rest of the pot. The exact grand prize depends on how many people play, so we will know the number once all the picks are in."
  },
  "currentSeason": 51,
  "archiveSeasons": [

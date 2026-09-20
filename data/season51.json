@@ -522,11 +522,11 @@
     "points": 2
    },
    {
-    "label": "Immunity Challenge Win",
+    "label": "Individual Immunity Win",
     "points": 2
    },
    {
-    "label": "Reward Challenge Win",
+    "label": "Individual Reward Win",
     "points": 1
    },
    {
@@ -540,6 +540,10 @@
    {
     "label": "Make Jury",
     "points": 2
+   },
+   {
+    "label": "Team Immunity Win",
+    "points": 0.5
    },
    {
     "label": "Win Fire Challenge",

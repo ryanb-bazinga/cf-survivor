@@ -1254,6 +1254,31 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   overflow-wrap: anywhere;
 }
 
+/* Smaller still, for the cases a definition cannot finish listing. */
+.rules__fine {
+  display: block;
+  margin-top: 4px;
+  color: var(--sand-faint);
+  font-size: 0.74rem;
+  font-style: italic;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+/* Section heading inside a scoring column. */
+.rules__group {
+  padding: 16px 18px 7px;
+  font-family: var(--cond);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sand-faint);
+  border-bottom: 1px solid rgba(42, 80, 73, 0.5);
+}
+
+.rules__head + .rules__group { padding-top: 13px; }
+
 .rules__row { align-items: flex-start; }
 .rules__pts { padding-top: 1px; }
 

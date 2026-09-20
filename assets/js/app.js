@@ -1338,6 +1338,7 @@ function renderRules() {
 
   const rules = state.config.rules || {};
   const defs = rules.definitions || {};
+  const fine = rules.fineprint || {};
 
   /* --- the three-step explainer ------------------------------------- */
 
@@ -1364,21 +1365,50 @@ function renderRules() {
         kind === 'pos' ? 'Points you want' : 'Points you do not'
       )
     );
-    items.forEach((item) => {
-      const row = el('div', 'rules__row');
+
+    const row = (item) => {
+      const line = el('div', 'rules__row');
       const label = el('div', 'rules__label');
       label.appendChild(el('span', 'rules__name', item.label));
       if (defs[item.label]) label.appendChild(el('span', 'rules__def', defs[item.label]));
-      row.appendChild(label);
-      row.appendChild(
+      if (fine[item.label]) label.appendChild(el('span', 'rules__fine', fine[item.label]));
+      line.appendChild(label);
+      line.appendChild(
         el(
           'span',
           `rules__pts rules__pts--${kind}`,
           item.points > 0 ? `+${item.points}` : String(item.points)
         )
       );
-      column.appendChild(row);
+      return line;
+    };
+
+    /* The workbook knows labels and point values. The reading order and the
+       group headings live in config.json, because a spreadsheet column order
+       is not an argument about what belongs next to what. */
+    const remaining = new Map(items.map((item) => [item.label, item]));
+    const groups = (rules.scoreGroups || {})[kind === 'pos' ? 'positive' : 'negative'] || [];
+
+    groups.forEach((group) => {
+      const found = (group.labels || [])
+        .map((label) => remaining.get(label))
+        .filter(Boolean);
+      if (!found.length) return;
+      column.appendChild(el('div', 'rules__group', group.title));
+      found.forEach((item) => {
+        column.appendChild(row(item));
+        remaining.delete(item.label);
+      });
     });
+
+    /* A new column added to the workbook shows up here rather than silently
+       vanishing because nobody remembered to put it in a group. */
+    const ungrouped = [...remaining.values()];
+    if (ungrouped.length) {
+      if (groups.length) column.appendChild(el('div', 'rules__group', 'Everything else'));
+      ungrouped.forEach((item) => column.appendChild(row(item)));
+    }
+
     return column;
   };
 
@@ -1415,6 +1445,7 @@ function renderRules() {
       block.appendChild(el('p', null, text));
       foot.appendChild(block);
     };
+    line('What you are playing for', rules.prize);
     line('Ties', rules.tiebreaker);
     line('Who keeps score', rules.scorekeeping);
     foot.hidden = !foot.childElementCount;

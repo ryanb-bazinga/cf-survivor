@@ -163,7 +163,14 @@ def read_scoring(ws):
             continue
         if not isinstance(raw, (int, float)):
             continue
-        columns.append({"col": col, "label": label, "points": int(raw)})
+        value = float(raw)
+        # Half points are real now: a team immunity win is worth 0.5.
+        # Whole numbers stay whole so the JSON does not churn to 2.0.
+        columns.append({
+            "col": col,
+            "label": label,
+            "points": int(value) if value.is_integer() else value,
+        })
     return columns
 
 
