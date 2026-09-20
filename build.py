@@ -118,6 +118,23 @@ def find_photo(season, name):
     return None
 
 
+def find_full_photo(season, name):
+    """
+    The full length press shot, shown when a cast card is expanded.
+    Lives in assets/img/cast/<season>/full/. Returns None when there is
+    no such file, and the card then shows the bio text on its own.
+    """
+    folder = os.path.join(HERE, "assets", "img", "cast", str(season), "full")
+    if not os.path.isdir(folder):
+        return None
+    slug = slugify(name)
+    for extension in PHOTO_EXTENSIONS:
+        candidate = os.path.join(folder, slug + extension)
+        if os.path.exists(candidate):
+            return f"assets/img/cast/{season}/full/{slug}{extension}"
+    return None
+
+
 def is_checked(value):
     """Excel checkboxes come through as booleans or as the strings TRUE/FALSE."""
     if isinstance(value, bool):
@@ -221,6 +238,7 @@ def build_season(season, workbook_path, config):
             "out_reason": None,
             "winner": False,
             "photo": find_photo(season, castaway["name"]),
+            "photo_full": find_full_photo(season, castaway["name"]),
             "events": [],
             "drafted_by": [],
         })

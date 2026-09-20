@@ -622,7 +622,24 @@ function renderDraftBoard() {
 
 /** The expanded half of a cast card: their own answers, verbatim. */
 function buildBio(castaway, bio, labels) {
-  const panel = el('div', 'castaway__bio');
+  const wrap = el('div', 'castaway__bio');
+
+  /* The full length press shot. src is held back until the card is first
+     opened, so twenty-one of these are never downloaded by someone who
+     only came to look at the standings. */
+  if (castaway.photo_full) {
+    const figure = el('figure', 'castaway__full');
+    const shot = document.createElement('img');
+    shot.dataset.src = castaway.photo_full;
+    shot.alt = '';
+    // A missing file drops the whole frame rather than leaving a grey
+    // rectangle, and the bio text then spreads across the full card.
+    shot.addEventListener('error', () => figure.remove());
+    figure.appendChild(shot);
+    wrap.appendChild(figure);
+  }
+
+  const panel = el('div', 'castaway__bio-text');
 
   if (bio.words) {
     const words = el('div', 'bio-words');
@@ -649,7 +666,8 @@ function buildBio(castaway, bio, labels) {
     panel.appendChild(el('p', 'bio-source', state.bios.source));
   }
 
-  return panel;
+  wrap.appendChild(panel);
+  return wrap;
 }
 
 /* ----------------------------------------------------- boot order --- */
@@ -872,6 +890,25 @@ function renderCast() {
       head.appendChild(el('span', 'castaway__more', 'Read their bio'));
       card.appendChild(head);
       card.appendChild(buildBio(castaway, bio, labels));
+
+      card.addEventListener('toggle', () => {
+        if (!card.open) return;
+
+        // One at a time. Two open cards push everything else off screen.
+        $$('.castaway[open]', grid).forEach((other) => {
+          if (other !== card) other.open = false;
+        });
+
+        const shot = $('.castaway__full img[data-src]', card);
+        if (shot) {
+          shot.src = shot.dataset.src;
+          delete shot.dataset.src;
+        }
+
+        // Closing the card above this one shifts the page, so make sure
+        // the card that was just opened is still in view.
+        card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      });
     }
 
     grid.appendChild(card);
