@@ -1651,8 +1651,17 @@ function buildNameStep() {
   placeholder.disabled = true;
   placeholder.selected = true;
   select.appendChild(placeholder);
-  knownOwners().forEach((name) => select.appendChild(new Option(name, name)));
+
+  /* Sits above the roster so anyone new sees it straight away instead of
+     scrolling past 27 names that are not theirs. */
   select.appendChild(new Option('I am not on this list', '__new'));
+
+  const roster = document.createElement('optgroup');
+  roster.label = state.season.players.length
+    ? 'Players'
+    : 'Last season\u2019s players';
+  knownOwners().forEach((name) => roster.appendChild(new Option(name, name)));
+  select.appendChild(roster);
   step.appendChild(select);
 
   const custom = el('input', 'picks__input');
