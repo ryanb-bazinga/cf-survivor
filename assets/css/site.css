@@ -26,6 +26,8 @@
   --radius-sm:  9px;
   --shadow:     0 18px 44px rgba(0, 0, 0, 0.42);
 
+  --venmo-mark: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.3 2.7c.7 1.2 1 2.4 1 4 0 5-4.3 11.5-7.8 16H3.6L.4 3.6l7-.7 1.7 13.7c1.6-2.6 3.6-6.7 3.6-9.5 0-1.5-.3-2.6-.7-3.5l6.3-.9z"/></svg>');
+
   --sans: "Barlow", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --cond: "Barlow Condensed", "Barlow", Impact, sans-serif;
 }
@@ -1580,7 +1582,7 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px 16px;
   max-width: 62ch;
   margin: 0 0 30px;
   padding: 11px 15px;
@@ -1590,6 +1592,55 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   border-radius: var(--radius-sm);
   color: var(--sand-dim);
   font-size: 0.93rem;
+}
+
+.picks__buyin-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  flex: 1 1 22ch;
+}
+
+/* The pay button. Venmo blue rather than a site accent: people recognise
+   the colour faster than they read the label, and it keeps a payment
+   action visually separate from the site's own orange controls. */
+.venmo-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: #008CFF;
+  color: #FFFFFF;
+  font-family: var(--cond);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.14s, transform 0.14s;
+}
+
+.venmo-btn::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #FFFFFF;
+  /* Venmo's rounded-square mark, drawn rather than loaded: no external
+     request and it stays crisp at any size. */
+  -webkit-mask: var(--venmo-mark) center / contain no-repeat;
+  mask: var(--venmo-mark) center / contain no-repeat;
+}
+
+.venmo-btn:hover { background: #0074D4; transform: translateY(-1px); }
+.venmo-btn:active { transform: none; }
+
+.venmo-btn:focus-visible {
+  outline: 2px solid var(--sand);
+  outline-offset: 2px;
 }
 
 .picks__buyin-tag {
@@ -1612,6 +1663,10 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 }
 
 .picks__owe strong { display: block; font-weight: 600; }
+
+/* The pay button and the payout link sit on one row under the sentence. */
+.picks__owe .venmo-btn { margin-top: 11px; }
+.picks__owe .venmo-btn + .picks__link { margin-left: 14px; }
 
 .picks__link {
   margin-top: 7px;

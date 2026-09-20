@@ -1423,6 +1423,10 @@ function inlineRich(parent, text) {
     } else {
       const link = el('a', 'welcome__link', match[2]);
       link.href = match[3];
+      if (!match[3].startsWith('#')) {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      }
       parent.appendChild(link);
     }
     last = pattern.lastIndex;
@@ -1961,9 +1965,17 @@ function buildPicksForm() {
 
   const buyin = (state.config.rules || {}).buyin || {};
   if (buyin.before) {
-    const note = el('p', 'picks__buyin');
-    note.appendChild(el('span', 'picks__buyin-tag', 'Buy in'));
-    note.appendChild(document.createTextNode(buyinText(buyin.before, buyin.venmo)));
+    const note = el('div', 'picks__buyin');
+    const line = el('p', 'picks__buyin-line');
+    line.appendChild(el('span', 'picks__buyin-tag', 'Buy in'));
+    /* The handle is only spelled out in the sentence when there is no
+       button to carry it. */
+    const pay = venmoButton();
+    line.appendChild(
+      document.createTextNode(pay ? buyin.before : buyinText(buyin.before, buyin.venmo))
+    );
+    note.appendChild(line);
+    if (pay) note.appendChild(pay);
     form.appendChild(note);
   }
 
@@ -2238,7 +2250,7 @@ function buildPayout() {
   const prize = (state.config.rules || {}).prize || {};
   const box = el('div', 'payout');
 
-  if (prize.buyin) box.appendChild(el('p', 'payout__buyin', prize.buyin));
+  if (prize.buyin) box.appendChild(inlineRich(el('p', 'payout__buyin'), prize.buyin));
 
   (prize.places || []).forEach((row) => {
     const line = el('div', 'payout__row');
@@ -2293,6 +2305,32 @@ function showPotDialog() {
 }
 
 /** Swaps Becky's name for her Venmo handle once one is set in config.json. */
+/* Venmo profile URL from the handle. On a phone this hands off to the
+   Venmo app; on a desktop it opens her profile in the browser. An explicit
+   rules.buyin.venmoUrl in config wins, so a prefilled payment link can be
+   pasted in later without touching this. */
+function venmoUrl() {
+  const buyin = (state.config.rules || {}).buyin || {};
+  if (buyin.venmoUrl) return buyin.venmoUrl;
+  if (!buyin.venmo) return null;
+  const handle = String(buyin.venmo).trim().replace(/^@/, '');
+  return handle ? `https://venmo.com/u/${encodeURIComponent(handle)}` : null;
+}
+
+/* The pay button, used on the pick form and again on the confirmation
+   card. Returns null when no handle is configured, so every caller has to
+   cope with the button simply not being there. */
+function venmoButton(label) {
+  const href = venmoUrl();
+  if (!href) return null;
+  const buyin = (state.config.rules || {}).buyin || {};
+  const link = el('a', 'venmo-btn', label || `Venmo ${buyin.venmo}`);
+  link.href = href;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  return link;
+}
+
 function buyinText(text, venmo) {
   if (!venmo || text.includes(venmo)) return text;
   /* Two phrasings to cover: the form says "Venmo Becky", the confirmation
@@ -2345,7 +2383,12 @@ function picksDoneCard(owner, chosen) {
   const buyin = (state.config.rules || {}).buyin || {};
   if (buyin.after) {
     const ask = el('div', 'picks__owe');
-    ask.appendChild(el('strong', null, buyinText(buyin.after, buyin.venmo)));
+    ask.appendChild(
+      el('strong', null, venmoUrl() ? buyin.after : buyinText(buyin.after, buyin.venmo))
+    );
+
+    const pay = venmoButton();
+    if (pay) ask.appendChild(pay);
 
     const link = el('button', 'picks__link', 'How the pot pays out');
     link.type = 'button';

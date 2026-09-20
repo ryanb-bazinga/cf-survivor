@@ -100,7 +100,7 @@
       ]
     },
     "prize": {
-      "buyin": "$10 to enter. Venmo Becky at @fitchbecky or get her cash.",
+      "buyin": "$10 to enter. Venmo Becky at **[@fitchbecky](https://venmo.com/u/fitchbecky)** or get her cash.",
       "places": [
         {
           "place": "3rd",
@@ -445,7 +445,7 @@
         "type": "prose",
         "heading": "The money",
         "paragraphs": [
-          "$10 to play. Venmo Becky at **@fitchbecky** or get her cash. She is significantly better at collecting this than Ryan is.",
+          "$10 to play. Venmo Becky at **[@fitchbecky](https://venmo.com/u/fitchbecky)** or get her cash. She is significantly better at collecting this than Ryan is.",
           "Third place gets their $10 back, which is the participation trophy of gambling. Second doubles to $20. First takes everything left in the pot. The pot grows with every person who plays, so bring somebody in."
         ]
       },
