@@ -150,3 +150,15 @@ workbook. Nothing on this site reads it.
 number with its open and close times, and confirm `supabase.url` and
 `supabase.key` in `config.json` still point at the right project. The key in
 that file is a publishable key and is meant to be public; it can only insert.
+
+## Browser caching
+
+GitHub Pages tells browsers to hang on to `app.js` and `site.css`, so anyone who
+has opened the site before keeps running the old code and will not see a new
+section until they hard refresh. `build.py` handles this: it stamps the links in
+`index.html` with a short hash of each file's contents, so a changed file gets a
+new URL and a changed URL always gets fetched. The hash only moves when the file
+actually changes, so a normal weekly rebuild leaves `index.html` alone.
+
+Nothing to remember here, just do not hand-edit those `?v=` values, and run
+`build.py` after changing the CSS or JS rather than committing them on their own.

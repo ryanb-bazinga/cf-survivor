@@ -15,6 +15,7 @@ The workbook is the source of truth. Nothing here writes back to it.
 """
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -403,6 +404,37 @@ def build_season(season, workbook_path, config):
     }
 
 
+def stamp_assets():
+    """Version the CSS and JS links in index.html with a hash of their contents.
+
+    GitHub Pages tells browsers to cache app.js and site.css, so without this a
+    player who has opened the site before keeps running the old code and never
+    sees a new section. The hash only changes when the file changes, so this is
+    a no-op on a normal weekly rebuild.
+    """
+    page = os.path.join(HERE, "index.html")
+    if not os.path.exists(page):
+        return
+    html = original = open(page).read()
+
+    for asset in ("assets/css/site.css", "assets/js/app.js"):
+        path = os.path.join(HERE, asset)
+        if not os.path.exists(path):
+            continue
+        with open(path, "rb") as handle:
+            tag = hashlib.sha1(handle.read()).hexdigest()[:8]
+        html = re.sub(
+            re.escape(asset) + r'(\?v=[0-9a-f]+)?"',
+            f'{asset}?v={tag}"',
+            html,
+        )
+
+    if html != original:
+        with open(page, "w") as handle:
+            handle.write(html)
+        print("  stamped index.html with new asset versions")
+
+
 def load_config():
     path = os.path.join(DATA_DIR, "config.json")
     if not os.path.exists(path):
@@ -438,6 +470,8 @@ def main():
             f"{len(data['castaways'])} castaways, {scored} episodes scored "
             f"-> {os.path.relpath(out, HERE)}"
         )
+
+    stamp_assets()
 
 
 if __name__ == "__main__":
