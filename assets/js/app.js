@@ -1727,7 +1727,35 @@ function castawayTile(castaway) {
   tile.appendChild(shot);
 
   tile.appendChild(el('span', 'tile__badge'));
-  tile.appendChild(el('span', 'tile__name', shortName(castaway.name)));
+
+  /* The quick facts live on the tile so nobody has to bounce to the Cast
+     tab and back while deciding. The full bios stay over there. */
+  const body = el('div', 'tile__body');
+  body.appendChild(el('span', 'tile__name', shortName(castaway.name)));
+
+  const facts = [castaway.age, castaway.occupation].filter(Boolean).join(' \u00b7 ');
+  if (facts) body.appendChild(el('span', 'tile__facts', facts));
+
+  const from = castaway.residence || castaway.hometown;
+  if (from) body.appendChild(el('span', 'tile__where', from));
+
+  /* Tribes are not public until premiere night, so the line is always
+     there and reads "Tribe TBD" until the Cast tab has the assignments. */
+  const tribe = el('span', 'tile__tribe');
+  const dot = el('span', 'tribe-dot');
+  if (castaway.tribe) {
+    const color = tribeColor(castaway.tribe);
+    if (color) dot.style.background = color;
+    tribe.appendChild(dot);
+    tribe.appendChild(document.createTextNode(castaway.tribe));
+  } else {
+    tribe.classList.add('tile__tribe--tbd');
+    tribe.appendChild(dot);
+    tribe.appendChild(document.createTextNode('Tribe TBD'));
+  }
+  body.appendChild(tribe);
+
+  tile.appendChild(body);
 
   tile.addEventListener('click', () => {
     const index = draft.selected.indexOf(castaway.name);
@@ -1862,7 +1890,9 @@ function picksDoneCard(owner, chosen) {
       shot.textContent = initials(name);
     }
     tile.appendChild(shot);
-    tile.appendChild(el('span', 'tile__name', shortName(name)));
+    const body = el('div', 'tile__body');
+    body.appendChild(el('span', 'tile__name', shortName(name)));
+    tile.appendChild(body);
     row.appendChild(tile);
   });
   box.appendChild(row);

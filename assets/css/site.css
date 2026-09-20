@@ -1509,7 +1509,7 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(196px, 100%), 1fr));
   gap: 12px;
 }
 
@@ -1547,15 +1547,50 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   transition: filter 0.18s ease;
 }
 
+.tile__body {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  flex: 1;
+  transition: background 0.14s ease;
+}
+
 .tile__name {
-  padding: 9px 6px 10px;
   font-family: var(--cond);
-  font-size: 1.06rem;
+  font-size: 1.18rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.1;
-  text-align: center;
 }
+
+.tile__facts {
+  font-size: 0.82rem;
+  line-height: 1.3;
+  color: var(--sand-dim);
+}
+
+.tile__where {
+  font-size: 0.78rem;
+  color: var(--sand-faint);
+}
+
+.tile__tribe {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-dim);
+}
+
+/* Waiting on premiere night. Reads white so it is obvious it is a
+   placeholder rather than a quiet tribe nobody has heard of. */
+.tile__tribe--tbd { color: var(--sand); }
+.tile__tribe--tbd .tribe-dot { background: var(--sand); }
 
 .tile__badge {
   position: absolute;
@@ -1575,7 +1610,11 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .tile.is-picked { border-color: var(--orange); }
 .tile.is-picked .tile__badge { opacity: 1; transform: scale(1); }
-.tile.is-picked .tile__name { background: var(--orange); color: var(--ink); font-weight: 600; }
+.tile.is-picked .tile__body { background: var(--orange); color: var(--ink); }
+.tile.is-picked .tile__facts,
+.tile.is-picked .tile__where,
+.tile.is-picked .tile__tribe { color: rgba(10, 22, 20, 0.78); }
+.tile.is-picked .tile__tribe--tbd .tribe-dot { background: rgba(10, 22, 20, 0.5); }
 
 .tile.is-muted { opacity: 0.4; }
 .tile.is-muted .tile__shot img { filter: grayscale(1); }
@@ -1671,9 +1710,14 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 .picks__again:hover { background: var(--surface-2); color: var(--sand); }
 
 @media (max-width: 720px) {
-  .tiles { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .tile__name { font-size: 0.92rem; padding: 7px 4px 8px; }
+  /* A phone gets one castaway per row, photo on the left, so the facts are
+     readable instead of squeezed into a third of the screen. */
+  .tiles:not(.tiles--mini) { grid-template-columns: 1fr; gap: 8px; }
+  .tiles:not(.tiles--mini) .tile { flex-direction: row; }
+  .tiles:not(.tiles--mini) .tile__shot { width: 88px; flex: none; }
   .tile__badge { width: 22px; height: 22px; font-size: 0.78rem; }
+
+  .tiles--mini .tile__name { font-size: 0.92rem; }
   .picks__select, .picks__input { width: 100%; }
   .picks__submit { width: 100%; }
   .picks__done { padding: 28px 18px 24px; }
