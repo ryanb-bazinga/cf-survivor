@@ -119,3 +119,34 @@ a point value in the workbook and it changes on the site at the next build.
   `assets/img/cast/` later and wired up through the `castPhotos` flag.
 - Episode air dates in `config.json` are estimates past the premiere. Correct
   them as CBS confirms the schedule.
+
+## Pick submission
+
+Players submit their three castaways on the site itself, on the "Make Picks" tab.
+That tab only exists while the draft window is open. Once the deadline in
+`config.json` passes it removes itself from the nav and the Draft Board takes over.
+
+**How it works.** The page writes one row per submission to a Supabase table and
+can never read a row back: the table has an insert policy and no select policy,
+so picks are not visible to anyone browsing the site, including the person who
+just submitted. Submitting again does not overwrite anything, it adds another
+row. The newest row per owner is that owner's real entry, which is what makes
+"change my picks" work with no login.
+
+**The deadline is enforced twice.** The page hides the form after the date
+derived from `config.json`, and the database refuses the insert outright after
+`league_settings.picks_close_at`. The database one is the real cutoff. Leaving
+the tab open past the deadline does not buy anyone extra time.
+
+**Changing the deadline** means changing it in both places: the episode air date
+and `draft.hoursBefore` in `config.json` for the display, and the
+`league_settings` row for enforcement.
+
+**Reading the picks.** Ask Claude. The `latest_picks` view already returns the
+newest submission per owner per season, which is what gets typed into the
+workbook. Nothing on this site reads it.
+
+**New season checklist:** insert a `league_settings` row for the new season
+number with its open and close times, and confirm `supabase.url` and
+`supabase.key` in `config.json` still point at the right project. The key in
+that file is a publishable key and is meant to be public; it can only insert.

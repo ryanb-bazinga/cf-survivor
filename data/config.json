@@ -79,7 +79,8 @@
   "weeklyAwards": true,
   "bootOrder": true,
   "episodeRecaps": true,
-  "castPhotos": true
+  "castPhotos": true,
+  "pickSubmission": true
  },
  "seasons": {
   "51": {
@@ -309,5 +310,9 @@
     ]
    }
   }
+ },
+ "supabase": {
+  "url": "https://foykdzrjuejavrichwut.supabase.co",
+  "key": "sb_publishable_uF0RwGJaMgvPgcXOBm-_KA_YDZScb5b"
  }
 }

@@ -181,6 +181,7 @@ async function boot() {
 
   renderHero();
   renderNav();
+  renderPicks();
   renderStandings();
   renderRecaps();
   renderDraftBoard();
@@ -237,12 +238,10 @@ function draftDeadlineText() {
   const draft = cfg.draft;
   if (!draft) return cfg.draftNote || '';
 
-  const episode = (cfg.episodes || {})[String(draft.closesBeforeEpisode)];
-  if (!episode || !episode.airs) return cfg.draftNote || '';
+  const due = draftDeadlineDate();
+  if (!due) return cfg.draftNote || '';
 
   const hours = draft.hoursBefore || 0;
-  const airs = new Date(`${episode.airs}T20:00:00-07:00`);
-  const due = new Date(airs.getTime() - hours * 3600 * 1000);
 
   const day = due.toLocaleDateString('en-US', {
     weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles',
@@ -328,6 +327,9 @@ function startCountdown() {
 /* ----------------------------------------------------------------- nav --- */
 
 const PANELS = [
+  // Shown only while the draft window is open, then it takes itself out of
+  // the nav and the Draft Board does the job instead.
+  { id: 'picks', label: 'Make Picks', flag: 'pickSubmission', when: () => picksAreOpen() },
   { id: 'standings', label: 'Standings', flag: 'standings' },
   { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'draft', label: 'Draft Board', flag: 'draftBoard' },
@@ -338,7 +340,9 @@ const PANELS = [
 
 function renderNav() {
   const nav = $('#nav-inner');
-  const available = PANELS.filter((panel) => state.config.features[panel.flag]);
+  const available = PANELS.filter(
+    (panel) => state.config.features[panel.flag] && (!panel.when || panel.when())
+  );
 
   available.forEach((panel, index) => {
     const button = el('button', null, panel.label);
@@ -353,7 +357,7 @@ function renderNav() {
   PANELS.forEach((panel) => {
     const node = document.getElementById(`panel-${panel.id}`);
     if (!node) return;
-    if (!state.config.features[panel.flag]) node.remove();
+    if (!available.includes(panel)) node.remove();
   });
 
   if (available.length) selectPanel(available[0].id);
@@ -1480,6 +1484,392 @@ function renderFooter() {
     `Standings generated ${season.generated} from ${season.source_workbook}`;
   $('#footer-org').textContent =
     `${state.config.site.org} · ${state.config.site.tagline}`;
+}
+
+
+/* --------------------------------------------------------------- picks --- */
+
+/**
+ * Pick submission.
+ *
+ * The page can write a row and can never read one back: the picks table has
+ * an insert policy and no select policy, so a submission goes in and nothing
+ * comes out. Every submit is a new row, and the newest row per owner is that
+ * owner's real entry, which makes "change my picks" nothing more than filling
+ * the form out again.
+ *
+ * The deadline below only decides what this page shows. The real cutoff lives
+ * in the database policy, so a late submit is refused even if this clock is
+ * wrong or someone leaves the tab open past the deadline.
+ */
+
+const draft = { selected: [] };
+
+/** The moment picks close, derived from the episode schedule in config.json. */
+function draftDeadlineDate() {
+  const cfg = state.config.seasons[String(state.season.season)] || {};
+  const draft = cfg.draft;
+  if (!draft) return null;
+
+  const episode = (cfg.episodes || {})[String(draft.closesBeforeEpisode)];
+  if (!episode || !episode.airs) return null;
+
+  const airs = new Date(`${episode.airs}T20:00:00-07:00`);
+  return new Date(airs.getTime() - (draft.hoursBefore || 0) * 3600 * 1000);
+}
+
+function picksAreOpen() {
+  if (!state.config.features.pickSubmission) return false;
+  const due = draftDeadlineDate();
+  return !due || Date.now() < due.getTime();
+}
+
+/* Last season's roster, so most people choose their name instead of typing it.
+   Typed names are what break the "newest row per owner" rule: Chris one week
+   and Chris Stockhaus the next reads as two different owners. */
+function knownOwners() {
+  const names = new Set();
+  (state.season.players || []).forEach((player) => names.add(player.name));
+  if (!names.size) {
+    const recent = [...state.archives].sort((a, b) => b.season - a.season)[0];
+    if (recent) (recent.players || []).forEach((player) => names.add(player.name));
+  }
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function rememberedOwner() {
+  try {
+    return localStorage.getItem('cf-survivor-owner') || '';
+  } catch (error) {
+    return '';
+  }
+}
+
+function rememberOwner(name) {
+  try {
+    localStorage.setItem('cf-survivor-owner', name);
+  } catch (error) {
+    /* private window, or storage is off. Nothing here depends on it. */
+  }
+}
+
+function pacificTime(date) {
+  return date
+    .toLocaleTimeString('en-US', {
+      hour: 'numeric', minute: '2-digit', timeZone: 'America/Los_Angeles',
+    })
+    .replace('AM', 'a.m.')
+    .replace('PM', 'p.m.');
+}
+
+function pacificDay(date) {
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long', month: 'long', day: 'numeric', timeZone: 'America/Los_Angeles',
+  });
+}
+
+function renderPicks() {
+  const panel = $('#panel-picks');
+  if (!panel) return;
+
+  const body = $('#picks-body', panel);
+  body.replaceChildren();
+  draft.selected = [];
+
+  const due = draftDeadlineDate();
+
+  if (!picksAreOpen()) {
+    $('#picks-note', panel).textContent = 'The draft is closed.';
+    body.appendChild(picksClosedCard(due));
+    return;
+  }
+
+  $('#picks-note', panel).textContent = draftDeadlineText();
+  body.appendChild(buildPicksForm());
+}
+
+function picksClosedCard(due) {
+  const box = el('div', 'empty');
+  box.appendChild(el('h3', null, 'The draft is closed'));
+  box.appendChild(el('p', null, due
+    ? `Picks closed at ${pacificTime(due)} Pacific on ${pacificDay(due)}.`
+    : 'Picks are closed for this season.'));
+  box.appendChild(el('p', 'empty__aside', 'Every roster is on the Draft Board.'));
+  return box;
+}
+
+/* ------------------------------------------------------------ the form --- */
+
+function buildPicksForm() {
+  const form = el('form', 'draft-form');
+
+  form.appendChild(el('p', 'picks__lede',
+    'Pick any three castaways. Other players can take the same people you do, '
+    + 'so there is nothing to race for. Changed your mind? Fill this out again '
+    + 'before the deadline and your newest entry is the one that counts.'));
+
+  form.appendChild(buildNameStep());
+  form.appendChild(buildTileStep());
+
+  const foot = el('div', 'picks__foot');
+  const submit = el('button', 'picks__submit', 'Submit my picks');
+  submit.type = 'submit';
+  submit.disabled = true;
+  foot.appendChild(submit);
+
+  const status = el('p', 'picks__status');
+  status.setAttribute('role', 'status');
+  foot.appendChild(status);
+  form.appendChild(foot);
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    handlePicksSubmit(form);
+  });
+
+  paintPicks(form);
+  return form;
+}
+
+function buildNameStep() {
+  const step = el('div', 'picks__step');
+  const head = el('h3', 'picks__steph', 'Who are you?');
+  head.prepend(el('span', 'picks__num', '1'));
+  step.appendChild(head);
+
+  const select = el('select', 'picks__select');
+  select.setAttribute('aria-label', 'Your name');
+
+  const placeholder = new Option('Choose your name', '');
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  select.appendChild(placeholder);
+  knownOwners().forEach((name) => select.appendChild(new Option(name, name)));
+  select.appendChild(new Option('I am not on this list', '__new'));
+  step.appendChild(select);
+
+  const custom = el('input', 'picks__input');
+  custom.type = 'text';
+  custom.placeholder = 'First and last name';
+  custom.autocomplete = 'name';
+  custom.hidden = true;
+  custom.setAttribute('aria-label', 'Your name');
+  step.appendChild(custom);
+
+  /* Someone who has submitted before comes back to their own name filled in. */
+  const saved = rememberedOwner();
+  if (saved) {
+    if (knownOwners().includes(saved)) {
+      select.value = saved;
+    } else {
+      select.value = '__new';
+      custom.hidden = false;
+      custom.value = saved;
+    }
+  }
+
+  const sync = () => {
+    custom.hidden = select.value !== '__new';
+    if (!custom.hidden && !custom.value) custom.focus();
+    paintPicks(select.closest('form'));
+  };
+  select.addEventListener('change', sync);
+  custom.addEventListener('input', () => paintPicks(custom.closest('form')));
+
+  return step;
+}
+
+function buildTileStep() {
+  const step = el('div', 'picks__step');
+  const head = el('h3', 'picks__steph', 'Pick three');
+  head.prepend(el('span', 'picks__num', '2'));
+  head.appendChild(el('span', 'picks__count'));
+  step.appendChild(head);
+
+  const grid = el('div', 'tiles');
+  [...state.season.castaways]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .forEach((castaway) => grid.appendChild(castawayTile(castaway)));
+  step.appendChild(grid);
+
+  return step;
+}
+
+function castawayTile(castaway) {
+  const tile = el('button', 'tile');
+  tile.type = 'button';
+  tile.dataset.name = castaway.name;
+  tile.setAttribute('aria-pressed', 'false');
+
+  const shot = el('div', 'tile__shot');
+  if (state.config.features.castPhotos && castaway.photo) {
+    const img = document.createElement('img');
+    img.src = castaway.photo;
+    img.alt = '';
+    img.loading = 'lazy';
+    /* A missing file falls back to initials rather than a hole in the grid. */
+    img.addEventListener('error', () => {
+      shot.classList.add('tile__shot--empty');
+      shot.replaceChildren(document.createTextNode(initials(castaway.name)));
+    });
+    shot.appendChild(img);
+  } else {
+    shot.classList.add('tile__shot--empty');
+    shot.textContent = initials(castaway.name);
+  }
+  tile.appendChild(shot);
+
+  tile.appendChild(el('span', 'tile__badge'));
+  tile.appendChild(el('span', 'tile__name', shortName(castaway.name)));
+
+  tile.addEventListener('click', () => {
+    const index = draft.selected.indexOf(castaway.name);
+    if (index >= 0) draft.selected.splice(index, 1);
+    else if (draft.selected.length < 3) draft.selected.push(castaway.name);
+    paintPicks(tile.closest('form'));
+  });
+
+  return tile;
+}
+
+/** Single place that repaints tiles, counter and the submit button. */
+function paintPicks(form) {
+  if (!form) return;
+  const full = draft.selected.length === 3;
+
+  $$('.tile', form).forEach((tile) => {
+    const index = draft.selected.indexOf(tile.dataset.name);
+    const chosen = index >= 0;
+    tile.classList.toggle('is-picked', chosen);
+    tile.classList.toggle('is-muted', full && !chosen);
+    tile.setAttribute('aria-pressed', String(chosen));
+    $('.tile__badge', tile).textContent = chosen ? String(index + 1) : '';
+  });
+
+  const count = $('.picks__count', form);
+  if (count) {
+    count.textContent = full
+      ? 'All three in'
+      : `${draft.selected.length} of 3`;
+    count.classList.toggle('is-full', full);
+  }
+
+  const submit = $('.picks__submit', form);
+  if (submit) submit.disabled = !(full && ownerNameFrom(form));
+}
+
+function ownerNameFrom(form) {
+  const select = $('.picks__select', form);
+  const custom = $('.picks__input', form);
+  const value = select.value === '__new' ? custom.value : select.value;
+  const name = (value || '').trim().replace(/\s+/g, ' ');
+  return name.length >= 2 ? name : '';
+}
+
+/* ------------------------------------------------------------ sending --- */
+
+async function handlePicksSubmit(form) {
+  const owner = ownerNameFrom(form);
+  if (!owner || draft.selected.length !== 3) return;
+
+  const submit = $('.picks__submit', form);
+  const status = $('.picks__status', form);
+  submit.disabled = true;
+  submit.textContent = 'Sending...';
+  status.textContent = '';
+  status.className = 'picks__status';
+
+  const chosen = [...draft.selected];
+
+  try {
+    const response = await sendPicks(owner, chosen);
+
+    if (response.ok) {
+      rememberOwner(owner);
+      const panel = $('#panel-picks');
+      $('#picks-body', panel).replaceChildren(picksDoneCard(owner, chosen));
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    /* A row level security refusal means the database shut the window,
+       which can happen a minute before this page thinks it did. Say so
+       plainly instead of bouncing them back to an empty form. */
+    if (response.status === 401 || response.status === 403) {
+      const panel = $('#panel-picks');
+      $('#picks-note', panel).textContent = 'The draft is closed.';
+      $('#picks-body', panel).replaceChildren(picksClosedCard(draftDeadlineDate()));
+      return;
+    }
+
+    throw new Error(`${response.status} ${await response.text()}`);
+  } catch (error) {
+    console.error('Pick submission failed', error);
+    status.textContent =
+      'That did not save. Check your connection and try again, or text Ryan your three.';
+    status.classList.add('picks__status--bad');
+    submit.disabled = false;
+    submit.textContent = 'Submit my picks';
+  }
+}
+
+function sendPicks(owner, chosen) {
+  const cfg = state.config.supabase || {};
+  return fetch(`${cfg.url}/rest/v1/picks`, {
+    method: 'POST',
+    headers: {
+      apikey: cfg.key,
+      Authorization: `Bearer ${cfg.key}`,
+      'Content-Type': 'application/json',
+      Prefer: 'return=minimal',
+    },
+    body: JSON.stringify({
+      season: state.season.season,
+      owner_name: owner,
+      pick1: chosen[0],
+      pick2: chosen[1],
+      pick3: chosen[2],
+    }),
+  });
+}
+
+function picksDoneCard(owner, chosen) {
+  const box = el('div', 'picks__done');
+  box.appendChild(el('div', 'picks__tick', '✓'));
+  box.appendChild(el('h3', null, 'Your picks are in'));
+  box.appendChild(el('p', 'picks__doneline', `${shortName(owner)}, you are drafting:`));
+
+  const row = el('div', 'tiles tiles--mini');
+  chosen.forEach((name) => {
+    const castaway = castawayByName(name) || { name };
+    const tile = el('div', 'tile is-picked');
+
+    const shot = el('div', 'tile__shot');
+    if (castaway.photo) {
+      const img = document.createElement('img');
+      img.src = castaway.photo;
+      img.alt = '';
+      shot.appendChild(img);
+    } else {
+      shot.classList.add('tile__shot--empty');
+      shot.textContent = initials(name);
+    }
+    tile.appendChild(shot);
+    tile.appendChild(el('span', 'tile__name', shortName(name)));
+    row.appendChild(tile);
+  });
+  box.appendChild(row);
+
+  /* pacificTime already ends in a period ("9:50 a.m."), so no second one. */
+  box.appendChild(el('p', 'picks__stamp',
+    `Saved at ${pacificTime(new Date())} ${draftDeadlineText()}`));
+
+  const again = el('button', 'picks__again', 'Change my picks');
+  again.type = 'button';
+  again.addEventListener('click', renderPicks);
+  box.appendChild(again);
+
+  return box;
 }
 
 document.addEventListener('DOMContentLoaded', boot);
