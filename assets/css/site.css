@@ -222,7 +222,7 @@ h1, h2, h3 {
 .nav button {
   flex: 0 0 auto;
   appearance: none;
-  border: 0;
+  border: 1px solid transparent;
   background: transparent;
   color: var(--sand-dim);
   font-family: var(--cond);
@@ -241,6 +241,20 @@ h1, h2, h3 {
 .nav button[aria-selected="true"] {
   color: var(--ink);
   background: var(--orange);
+}
+
+/* The call-to-action tab. Scoped to :not(selected) so the solid active
+   fill still wins when you are actually on it, whatever the rule order. */
+.nav button.nav__cta:not([aria-selected="true"]) {
+  color: var(--orange);
+  background: rgba(237, 132, 84, 0.14);
+  border-color: rgba(237, 132, 84, 0.5);
+}
+
+.nav button.nav__cta:not([aria-selected="true"]):hover {
+  color: var(--orange);
+  background: rgba(237, 132, 84, 0.24);
+  border-color: var(--orange);
 }
 
 /* ------------------------------------------------------------- panels --- */

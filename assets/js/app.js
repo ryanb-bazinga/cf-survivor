@@ -333,8 +333,11 @@ function startCountdown() {
    takes itself out of the nav, Cast inherits first place, and the Draft
    Board does the job of showing who ended up with whom. */
 const PANELS = [
-  { id: 'picks', label: 'Make Picks', flag: 'pickSubmission', when: () => picksAreOpen() },
   { id: 'welcome', label: 'Welcome', flag: 'welcome' },
+  /* Second in the nav but highlighted, so it reads as the thing to do
+     without taking the landing spot from Welcome. Removes itself, and its
+     highlight with it, once the deadline passes. */
+  { id: 'picks', label: 'Make Picks', flag: 'pickSubmission', when: () => picksAreOpen(), cta: true },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
   { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'rules', label: 'Rules', flag: 'scoringRules' },
@@ -354,6 +357,7 @@ function renderNav() {
     button.type = 'button';
     button.setAttribute('role', 'tab');
     button.dataset.panel = panel.id;
+    if (panel.cta) button.classList.add('nav__cta');
     button.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
     button.addEventListener('click', () => selectPanel(panel.id));
     nav.appendChild(button);
