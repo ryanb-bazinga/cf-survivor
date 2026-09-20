@@ -1484,7 +1484,9 @@ function renderRules() {
       el(
         'div',
         `rules__head rules__head--${kind}`,
-        kind === 'pos' ? 'Points you want' : 'Points you do not'
+        kind === 'pos'
+          ? (rules.columnHeads || {}).positive || 'Points you want'
+          : (rules.columnHeads || {}).negative || 'Points that hurt'
       )
     );
 

@@ -121,6 +121,10 @@
       "before": "It is $10 to play. Venmo Becky or get her cash.",
       "after": "Last thing: get Becky your $10, Venmo or cash.",
       "venmo": "@fitchbecky"
+    },
+    "columnHeads": {
+      "positive": "Points you want",
+      "negative": "Points that hurt"
     }
   },
   "currentSeason": 51,
