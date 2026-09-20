@@ -382,8 +382,15 @@ function renderNav() {
 }
 
 function selectPanel(id) {
+  /* Read this before the panels swap: once the document height changes the
+     scroll position is no longer a reliable answer to "were they partway
+     down the page when they clicked?" */
+  const wasBelowTop = window.scrollY > panelTopY() + 1;
+  let active = null;
   $$('#nav-inner button').forEach((button) => {
-    button.setAttribute('aria-selected', String(button.dataset.panel === id));
+    const on = button.dataset.panel === id;
+    button.setAttribute('aria-selected', String(on));
+    if (on) active = button;
   });
   $$('.panel').forEach((panel) => {
     panel.classList.toggle('is-active', panel.id === `panel-${id}`);
@@ -393,6 +400,48 @@ function selectPanel(id) {
   if (location.hash !== `#${id}`) {
     history.replaceState(null, '', `#${id}`);
   }
+  revealTab(active);
+  if (wasBelowTop) {
+    /* Hiding one panel and showing another resizes the document, and the
+       browser adjusts the scroll position while that settles. Waiting a
+       frame means the scroll lands where we asked instead of being undone. */
+    requestAnimationFrame(() => window.scrollTo({ top: panelTopY(), behavior: 'auto' }));
+  }
+}
+
+/* The nav scrolls sideways on a phone, so the tab you just switched to can
+   sit off the right edge. Nothing then looks selected and you lose your
+   place. Slide the nav until the active tab is on screen. On a desktop the
+   nav does not overflow, so this is a no-op. */
+function revealTab(button) {
+  const nav = $('#nav-inner');
+  if (!nav || !button) return;
+  const navBox = nav.getBoundingClientRect();
+  const tabBox = button.getBoundingClientRect();
+  const gutter = 14;
+  let left = nav.scrollLeft;
+  if (tabBox.left < navBox.left) {
+    left -= navBox.left - tabBox.left + gutter;
+  } else if (tabBox.right > navBox.right) {
+    left += tabBox.right - navBox.right + gutter;
+  } else {
+    return;
+  }
+  nav.scrollLeft = left;
+}
+
+/* Where the page sits when a panel starts at the top of the screen.
+   Measured from <main> rather than the nav: offsetTop on a sticky element
+   reports where it is currently pinned, not where it rests, so asking the
+   nav directly returns the scroll position back to you and every
+   comparison against it is true. */
+function panelTopY() {
+  const main = $('main');
+  const nav = $('.nav');
+  if (!main || !nav) return 0;
+  let top = 0;
+  for (let node = main; node; node = node.offsetParent) top += node.offsetTop;
+  return Math.max(0, top - nav.offsetHeight);
 }
 
 /* ----------------------------------------------------------- standings --- */
