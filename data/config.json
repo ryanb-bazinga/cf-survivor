@@ -133,6 +133,10 @@
     49,
     48
   ],
+  "trophy": {
+    "name": "The Snuffed Torch",
+    "blurb": "Finish last and it is yours until somebody finishes lower. It travels every season. In theory."
+  },
   "features": {
     "standings": true,
     "draftBoard": true,

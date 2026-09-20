@@ -1421,6 +1421,73 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   margin-top: 7px;
 }
 
+/* The Snuffed Torch banner. Sits above the season cards, styled like a
+   plaque rather than a stat tile. The dimmed ember orange already in the
+   palette carries it: gold belongs to the Sole Survivor and red reads as
+   an error, while a burnt-down torch is exactly what --orange-lo looks
+   like. No new accent colour introduced. */
+.trophy {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--orange-lo);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px 18px;
+  margin-bottom: 22px;
+}
+
+.trophy__label {
+  font-family: var(--cond);
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--orange-lo);
+  margin-bottom: 6px;
+}
+
+.trophy__holder {
+  font-family: var(--cond);
+  font-size: 1.75rem;
+  line-height: 1.1;
+  color: var(--sand);
+}
+
+.trophy__meta {
+  font-size: 0.86rem;
+  color: var(--sand-dim);
+  margin-top: 3px;
+}
+
+.trophy__roll {
+  font-size: 0.82rem;
+  color: var(--sand-faint);
+  margin-top: 8px;
+}
+
+.trophy__blurb {
+  margin: 10px 0 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--sand-faint);
+  max-width: 62ch;
+}
+
+/* Last place is a footnote, not a headline: smaller than the champion and
+   in the muted text colour rather than gold. */
+.season-card__block--cellar { margin-top: 14px; padding-top: 12px; }
+
+.season-card__cellar {
+  font-family: var(--cond);
+  font-size: 1.12rem;
+  color: var(--sand-dim);
+  line-height: 1.2;
+}
+
+.season-card__cellar-score {
+  font-size: 0.82rem;
+  color: var(--sand-faint);
+  margin-top: 1px;
+}
+
 /* ------------------------------------------------------------ footer ---- */
 
 .footer {

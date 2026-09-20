@@ -1660,9 +1660,61 @@ function renderRules() {
 
 /* -------------------------------------------------------- past seasons --- */
 
+/* Everyone on the lowest total. Players arrive rank-sorted, so the last
+   entry carries the worst score and anyone matching it shares the honour. */
+function cellar(season) {
+  const players = season.players || [];
+  if (!players.length) return null;
+  const worst = players[players.length - 1].total;
+  return { total: worst, names: players.filter((p) => p.total === worst).map((p) => p.name) };
+}
+
+function listNames(names) {
+  if (names.length <= 1) return names[0] || '';
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
+}
+
+/* The trophy banner. Archives are newest first, so the first one that has
+   standings is the current holder and the rest are the roll behind them.
+   Nobody is claimed to have held it twice: the roll is printed and the
+   reader does that arithmetic themselves. */
+function renderTrophy() {
+  const host = $('#trophy');
+  if (!host) return;
+  host.replaceChildren();
+
+  const trophy = state.config.trophy;
+  const held = state.archives
+    .map((season) => ({ season, bottom: cellar(season) }))
+    .filter((entry) => entry.bottom);
+  if (!trophy || !held.length) return;
+
+  const box = el('div', 'trophy');
+  box.appendChild(el('div', 'trophy__label', trophy.name));
+
+  const current = held[0];
+  box.appendChild(el('div', 'trophy__holder', listNames(current.bottom.names)));
+  box.appendChild(
+    el('div', 'trophy__meta', `${current.season.name} · ${current.bottom.total} points`)
+  );
+
+  if (held.length > 1) {
+    const before = held
+      .slice(1)
+      .map((entry) => `${listNames(entry.bottom.names)} (${entry.season.name})`)
+      .join(', ');
+    box.appendChild(el('div', 'trophy__roll', `Previously: ${before}`));
+  }
+
+  if (trophy.blurb) box.appendChild(el('p', 'trophy__blurb', trophy.blurb));
+  host.appendChild(box);
+}
+
 function renderPastSeasons() {
   const panel = $('#panel-history');
   if (!panel) return;
+  renderTrophy();
   const grid = $('#history-grid', panel);
   grid.replaceChildren();
 
@@ -1734,6 +1786,25 @@ function renderPastSeasons() {
       card.appendChild(block);
     } else {
       card.appendChild(el('p', 'panel__note', 'No standings recorded.'));
+    }
+
+    /* Last place, which in a league this size is its own kind of fame.
+       Skipped when the field is small enough that the bottom is already
+       showing in the top five above. */
+    const bottom = season.players.length > 5 ? cellar(season) : null;
+    if (bottom) {
+      const trophy = state.config.trophy || {};
+      const block = el('div', 'season-card__block season-card__block--cellar');
+      block.appendChild(el('div', 'season-card__label', trophy.name || 'Last place'));
+      block.appendChild(el('div', 'season-card__cellar', listNames(bottom.names)));
+      block.appendChild(
+        el(
+          'div',
+          'season-card__cellar-score',
+          `${bottom.total} ${bottom.total === 1 ? 'point' : 'points'}`
+        )
+      );
+      card.appendChild(block);
     }
 
     grid.appendChild(card);
