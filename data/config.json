@@ -11,7 +11,7 @@
       "Individual Reward Win": "Winning a reward challenge for yourself alone. Rewards won as a tribe or team score nothing.",
       "Win Fire Challenge": "Winning the fire-making challenge at final four.",
       "Immunity Idol Find": "Finding a hidden immunity idol yourself. Being handed one does not count.",
-      "Effective REAL Idol": "Playing a real idol that saved you from going home. If you would have been voted out without it, it counts.",
+      "Effective REAL Idol": "Playing a real idol that saved somebody from going home, yourself or another castaway. The points go to whoever played it.",
       "Effective FAKE Idol": "Playing a fake idol that actually fools the vote.",
       "Win Advantage": "Any non-idol advantage: a journey win, extra vote, vote steal, block a vote, safety without power.",
       "Shot in the Dark SUCCESS": "Playing the Shot in the Dark and drawing safety.",
@@ -37,7 +37,7 @@
       },
       {
         "title": "An idol has to work",
-        "text": "Playing a real idol only counts if it saved you. If the votes would have sent you home and the idol stopped that, it is +2. If you were never going home that night, playing it is worth nothing."
+        "text": "A real idol only counts if it changed the result. If the votes would have sent somebody home and the idol stopped that, it is +2 to the castaway who played it, on themselves or on somebody else. If nobody was going home that night, playing it is worth nothing."
       },
       {
         "title": "Rosters are locked",
