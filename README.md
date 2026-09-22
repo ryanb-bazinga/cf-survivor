@@ -57,10 +57,12 @@ that section disappears from the navigation without touching any code.
 | `episodeRecaps` | Episodes tab and written recaps |
 | `castPhotos` | Real headshots instead of lettered cards |
 | `bootOrder` | Who is left and who has gone out, above the cast grid |
+| `pickSubmission` | Make Picks tab and the draft form |
+| `welcome` | Welcome tab |
 
-The remaining flags (`myTeam`, `headToHead`, `scoreChart`, `weeklyAwards`)
-are reserved for sections that are planned but not built yet. They do
-nothing right now.
+Every flag in the block is wired to something. If you add a new one, wire it
+up in `app.js` at the same time, otherwise it sits in config doing nothing and
+the next person reading this file assumes the section exists.
 
 ## Eliminations
 
