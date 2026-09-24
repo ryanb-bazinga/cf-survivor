@@ -899,6 +899,9 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--sand-faint);
+  /* Savu's official purple is almost as dark as the page, so every dot
+     gets a faint light ring to stay visible whatever the tribe colour. */
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.55);
 }
 
 .chip {
