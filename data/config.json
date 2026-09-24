@@ -144,7 +144,7 @@
     "scoringRules": true,
     "pastSeasons": true,
     "countdown": true,
-    "bootOrder": false,
+    "bootOrder": true,
     "episodeRecaps": true,
     "castPhotos": true,
     "pickSubmission": true,

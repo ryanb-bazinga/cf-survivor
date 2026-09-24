@@ -2067,7 +2067,10 @@ function buildTileStep() {
   step.appendChild(head);
 
   const grid = el('div', 'tiles');
-  [...state.season.castaways]
+  // Anyone already voted out is left off the board, so nobody drafts a
+  // castaway who can no longer score (the premiere airs before picks close).
+  state.season.castaways
+    .filter((c) => c.status !== 'OUT')
     .sort((a, b) => a.name.localeCompare(b.name))
     .forEach((castaway) => grid.appendChild(castawayTile(castaway)));
   step.appendChild(grid);

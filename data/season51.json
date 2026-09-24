@@ -3,7 +3,7 @@
  "name": "Survivor 51",
  "subtitle": "Outwit. Outplay. Outlast.",
  "status": "pre_draft",
- "generated": "2026-09-20",
+ "generated": "2026-09-24",
  "source_workbook": "Survivor Tracking Season 51.xlsx",
  "tribes": [
   {
@@ -18,7 +18,7 @@
  "castaways": [
   {
    "name": "Alexis Levine",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 34,
    "hometown": "Atlanta, Ga.",
    "residence": "Atlanta, Ga.",
@@ -35,7 +35,7 @@
   },
   {
    "name": "Ana Sani",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 34,
    "hometown": "Richmond Hill, Ontario",
    "residence": "Toronto, Ontario",
@@ -52,7 +52,7 @@
   },
   {
    "name": "Carter Krull",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 24,
    "hometown": "Rock Rapids, Iowa",
    "residence": "Sioux Falls, S.D.",
@@ -69,7 +69,7 @@
   },
   {
    "name": "Cristian Chavez",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 26,
    "hometown": "Salt Lake City, Utah",
    "residence": "Salt Lake City, Utah",
@@ -86,7 +86,7 @@
   },
   {
    "name": "Eric Macksoud",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 34,
    "hometown": "Lincoln, R.I.",
    "residence": "Windsor Locks, Conn.",
@@ -103,7 +103,7 @@
   },
   {
    "name": "Kristin Flickinger",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 49,
    "hometown": "Ketchum, Idaho",
    "residence": "Santa Barbara, Calif.",
@@ -120,7 +120,7 @@
   },
   {
    "name": "Linnea Capobianco",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 25,
    "hometown": "Kearny, N.J.",
    "residence": "Jersey City, N.J.",
@@ -137,7 +137,7 @@
   },
   {
    "name": "Ori Jean-Charles",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 27,
    "hometown": "Spring Valley, N.Y.",
    "residence": "Spring Valley, N.Y.",
@@ -154,7 +154,7 @@
   },
   {
    "name": "Rob Antonson",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 40,
    "hometown": "Johnston, R.I.",
    "residence": "Cumberland, R.I.",
@@ -171,7 +171,7 @@
   },
   {
    "name": "Sharonda Cox",
-   "tribe": "",
+   "tribe": "Savu",
    "age": 34,
    "hometown": "Pompano Beach, Fla.",
    "residence": "Richmond, Ky.",
@@ -188,15 +188,15 @@
   },
   {
    "name": "Aaliyah Puglia",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 24,
    "hometown": "Gloucester City, N.J.",
    "residence": "Providence, R.I.",
    "occupation": "Chef",
-   "status": "IN",
+   "status": "OUT",
    "points": 0,
-   "out_episode": null,
-   "out_reason": null,
+   "out_episode": 1,
+   "out_reason": "Voted out",
    "winner": false,
    "photo": "assets/img/cast/51/aaliyah-puglia.jpg",
    "photo_full": "assets/img/cast/51/full/aaliyah-puglia.jpg",
@@ -205,7 +205,7 @@
   },
   {
    "name": "An \"Thien An\" Nguyen",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 24,
    "hometown": "Fort Worth, Texas",
    "residence": "Fort Worth, Texas",
@@ -222,7 +222,7 @@
   },
   {
    "name": "Angelica \"Jelly\" Loblack",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 29,
    "hometown": "Garland, Texas",
    "residence": "Bloomington, Ind.",
@@ -239,7 +239,7 @@
   },
   {
    "name": "Brady Booker",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 27,
    "hometown": "La Salle, Ill.",
    "residence": "Knoxville, Tenn.",
@@ -256,7 +256,7 @@
   },
   {
    "name": "Danny \"Kilby\" Kilby",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 30,
    "hometown": "Mount Forest, Ontario",
    "residence": "London, Ontario",
@@ -273,7 +273,7 @@
   },
   {
    "name": "Devin Way",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 33,
    "hometown": "Lufkin, Texas",
    "residence": "Los Angeles, Calif.",
@@ -290,7 +290,7 @@
   },
   {
    "name": "Jenna Doore",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 30,
    "hometown": "Perrysburg, Ohio",
    "residence": "Toledo, Ohio",
@@ -307,7 +307,7 @@
   },
   {
    "name": "Lewis Kelly",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 28,
    "hometown": "Dublin, Ireland",
    "residence": "Puerto Rico",
@@ -324,7 +324,7 @@
   },
   {
    "name": "Maggie Nestor",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 40,
    "hometown": "Middleway, W.Va.",
    "residence": "Charlestown, W.Va.",
@@ -341,7 +341,7 @@
   },
   {
    "name": "Mike Pinsky",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 32,
    "hometown": "New York City, N.Y.",
    "residence": "New York City, N.Y.",
@@ -358,7 +358,7 @@
   },
   {
    "name": "Patt Cannaday",
-   "tribe": "",
+   "tribe": "Toka",
    "age": 33,
    "hometown": "Tampa, Fla.",
    "residence": "Washington, D.C.",
