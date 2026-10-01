@@ -161,7 +161,7 @@
     "bootOrder": true,
     "episodeRecaps": true,
     "castPhotos": true,
-    "pickSubmission": true,
+    "pickSubmission": false,
     "welcome": true
   },
   "seasons": {
@@ -441,7 +441,7 @@
           "Pick the three with the best names",
           "Ask your kid"
         ],
-        "outro": "**[Go look at the cast and read their bios](#cast)**. Then **[make your picks](#picks)**."
+        "outro": "**[Go look at the cast and read their bios](#cast)**. Then **[see how everyone's picks are doing](#standings)**."
       },
       {
         "type": "prose",
