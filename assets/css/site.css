@@ -687,6 +687,8 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 }
 
 .ep-player__pick-name { color: var(--sand-dim); }
+.ep-player__pick--out { opacity: 0.45; }
+.ep-player__pick--out .ep-player__pick-name { text-decoration: line-through; color: var(--sand-faint); }
 
 .ep-player__pick-pts { font-variant-numeric: tabular-nums; }
 .ep-player__pick-pts--pos  { color: var(--lime); }
@@ -2328,6 +2330,10 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
 
 .dpick--out .dpick__name { text-decoration: line-through; color: var(--sand-faint); }
 .dpick--out .dpick__face { filter: grayscale(1); opacity: 0.6; }
+/* Voted-out castaways in the ownership bars: grey name and bar, still showing who picked them. */
+.ownership-item--out .ownership__name { text-decoration: line-through; color: var(--sand-faint); }
+.ownership-item--out .ownership__fill { filter: grayscale(1); opacity: 0.4; }
+.ownership-item--out .ownership__count { color: var(--sand-faint); }
 .dpick--winner .dpick__name { color: var(--gold); }
 
 @media (max-width: 560px) {

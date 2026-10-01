@@ -711,7 +711,7 @@ function renderDraftBoard() {
     row.type = 'button';
     row.setAttribute('aria-expanded', 'false');
     const name = el('div', 'ownership__name', castaway.name);
-    if (castaway.status === 'OUT') name.style.opacity = '0.55';
+    if (castaway.status === 'OUT') item.classList.add('ownership-item--out');
     row.appendChild(name);
     const bar = el('div', 'ownership__bar');
     const fill = el('div', 'ownership__fill');
@@ -1421,6 +1421,12 @@ function renderPlayerResults(episode) {
         .reduce((sum, event) => sum + event.points, 0);
 
       const line = el('div', 'ep-player__pick');
+      // Greyed once that castaway is gone (including the episode they went home).
+      const who = castawayByName(pick);
+      if (who && who.status === 'OUT' && who.out_episode <= episode.number) {
+        line.classList.add('ep-player__pick--out');
+        line.title = `Out in Episode ${who.out_episode}`;
+      }
       line.appendChild(el('span', 'ep-player__pick-name', pick));
       line.appendChild(
         el('span', `ep-player__pick-pts ep-player__pick-pts--${pointsClass(earned)}`,
