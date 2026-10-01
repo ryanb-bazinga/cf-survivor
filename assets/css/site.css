@@ -2362,6 +2362,17 @@ button.ownership { padding: 9px 6px; }
   border-color: color-mix(in srgb, var(--tribe) 55%, var(--line));
 }
 .pick__dot { width: 7px; height: 7px; margin-right: 6px; vertical-align: 1px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5); }
+/* Castaway season points beside each pick: small orange number. */
+.pick__pts {
+  margin-left: 5px;
+  font-size: 0.8em;
+  font-weight: 800;
+  color: var(--orange);
+  vertical-align: 0.2em;
+  text-decoration: none;
+  display: inline-block;
+}
+.pick__pts--neg { color: #E0645A; }
 
 /* ------------------------------------------- standings: phone rows ------- */
 /* On a phone the table would scroll sideways and hide the picks. Each row
@@ -2397,5 +2408,6 @@ button.ownership { padding: 9px 6px; }
   #standings-body .pick__dot { width: 6px; height: 6px; margin-right: 4px; }
   #standings-body .pick__full { display: none; }
   #standings-body .pick__short { display: inline; }
+  #standings-body .pick__pts { margin-left: 3px; }
   #standings-body .score { font-size: 1.15rem; }
 }

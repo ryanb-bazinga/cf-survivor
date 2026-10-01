@@ -478,6 +478,14 @@ function pickChip(name) {
   }
   chip.appendChild(el('span', 'pick__full', name));
   chip.appendChild(el('span', 'pick__short', shortName(name)));
+  // Running season total for this castaway, so players can see where their score comes from.
+  if (castaway && scoredEpisodes().length) {
+    const pts = Number(castaway.points) || 0;
+    const tag = el('span', 'pick__pts', String(pts));
+    if (pts < 0) tag.classList.add('pick__pts--neg');
+    tag.title = `${name}: ${pts} season points`;
+    chip.appendChild(tag);
+  }
   chip.title = name;
   if (castaway) {
     if (castaway.winner) chip.classList.add('pick--winner');
