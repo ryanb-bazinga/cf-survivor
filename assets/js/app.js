@@ -335,9 +335,15 @@ function startCountdown() {
 const PANELS = [
   { id: 'welcome', label: 'Welcome', flag: 'welcome' },
   /* Second in the nav but highlighted, so it reads as the thing to do
-     without taking the landing spot from Welcome. Removes itself, and its
-     highlight with it, once the deadline passes. */
-  { id: 'picks', label: 'Make Picks', flag: 'pickSubmission', when: () => picksAreOpen(), cta: true },
+     without taking the landing spot from Welcome. Once the deadline passes
+     it stays, renamed Make Late Picks, and the panel points people to Becky
+     instead of the form. Turn features.pickSubmission off to retire it. */
+  {
+    id: 'picks',
+    label: () => (picksAreOpen() ? 'Make Picks' : latePicksCopy().tab),
+    flag: 'pickSubmission',
+    cta: true,
+  },
   { id: 'cast', label: 'Cast', flag: 'castTracker' },
   { id: 'recaps', label: 'Episodes', flag: 'episodeRecaps' },
   { id: 'rules', label: 'Rules', flag: 'scoringRules' },
@@ -353,7 +359,8 @@ function renderNav() {
   );
 
   available.forEach((panel, index) => {
-    const button = el('button', null, panel.label);
+    const label = typeof panel.label === 'function' ? panel.label() : panel.label;
+    const button = el('button', null, label);
     button.type = 'button';
     button.setAttribute('role', 'tab');
     button.dataset.panel = panel.id;
@@ -1934,22 +1941,56 @@ function renderPicks() {
   const due = draftDeadlineDate();
 
   if (!picksAreOpen()) {
-    $('#picks-note', panel).textContent = 'The draft is closed.';
-    body.appendChild(picksClosedCard(due));
+    showLatePicks(panel, due);
     return;
   }
 
+  $('h2', panel).textContent = 'Make Your Picks';
   $('#picks-note', panel).textContent = draftDeadlineText();
   body.appendChild(buildPicksForm());
 }
 
-function picksClosedCard(due) {
-  const box = el('div', 'empty');
-  box.appendChild(el('h3', null, 'The draft is closed'));
-  box.appendChild(el('p', null, due
-    ? `Picks closed at ${pacificTime(due)} Pacific on ${pacificDay(due)}.`
-    : 'Picks are closed for this season.'));
-  box.appendChild(el('p', 'empty__aside', 'Every roster is on the Draft Board.'));
+/* Copy for the panel once the deadline passes. Lives in config.latePicks so
+   the wording can change without code; these are the fallbacks. */
+function latePicksCopy() {
+  const copy = state.config.latePicks || {};
+  return {
+    tab: copy.tab || 'Make Late Picks',
+    heading: copy.heading || 'Late Picks',
+    title: copy.title || 'Missed the deadline?',
+    text: copy.text || [],
+    aside: copy.aside || '',
+  };
+}
+
+function showLatePicks(panel, due) {
+  const copy = latePicksCopy();
+  $('h2', panel).textContent = copy.heading;
+  $('#picks-note', panel).textContent = due
+    ? `The form closed at ${pacificTime(due)} Pacific on ${pacificDay(due)}.`
+    : 'The form is closed.';
+  $('#picks-body', panel).replaceChildren(latePicksCard(copy));
+}
+
+function latePicksCard(copy) {
+  const box = el('div', 'empty late-picks');
+  box.appendChild(el('h3', null, copy.title));
+  copy.text.forEach((line) => {
+    const p = el('p');
+    inlineRich(p, line);
+    box.appendChild(p);
+  });
+  if (copy.aside) {
+    const aside = el('p', 'empty__aside');
+    inlineRich(aside, copy.aside);
+    box.appendChild(aside);
+  }
+  const pay = venmoButton();
+  if (pay) {
+    const row = el('div', 'late-picks__pay');
+    row.appendChild(pay);
+    box.appendChild(row);
+  }
   return box;
 }
 
@@ -2207,9 +2248,7 @@ async function handlePicksSubmit(form) {
        which can happen a minute before this page thinks it did. Say so
        plainly instead of bouncing them back to an empty form. */
     if (response.status === 401 || response.status === 403) {
-      const panel = $('#panel-picks');
-      $('#picks-note', panel).textContent = 'The draft is closed.';
-      $('#picks-body', panel).replaceChildren(picksClosedCard(draftDeadlineDate()));
+      showLatePicks($('#panel-picks'), draftDeadlineDate());
       return;
     }
 

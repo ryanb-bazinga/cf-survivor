@@ -137,6 +137,16 @@
     49,
     48
   ],
+  "latePicks": {
+    "tab": "Make Late Picks",
+    "heading": "Late Picks",
+    "title": "Missed the deadline?",
+    "text": [
+      "The pick form is closed, but the door is not locked yet. **Send Becky a message** with your name and your three castaways, and throw yourself on the mercy of the commissioners.",
+      "Late picks are a judgment call. Becky and Ryan decide them case by case, and groveling has been known to help."
+    ],
+    "aside": "Still owe your $10? Same Venmo as everyone else."
+  },
   "trophy": {
     "name": "The Snuffed Torch Award",
     "blurb": "Finish last and it is yours until somebody finishes lower. It travels every season. In theory."

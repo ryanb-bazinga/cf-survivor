@@ -2254,3 +2254,6 @@ tbody tr:hover { background: rgba(255, 255, 255, 0.028); }
   font-size: 0.98rem;
   color: var(--sand-dim);
 }
+
+/* ------------------------------------------------ late picks (after 7pm) --- */
+.late-picks__pay { margin-top: 16px; display: flex; justify-content: center; }
