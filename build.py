@@ -382,7 +382,9 @@ def build_season(season, workbook_path, config):
 
     # Movement versus the previous scored episode.
     scored_labels = [e["label"] for e in episodes if e["scored"]]
-    if len(scored_labels) >= 1:
+    # Needs two scored episodes: after the first there is no "before" to
+    # compare against, and an all-zero start would rank people alphabetically.
+    if len(scored_labels) >= 2:
         previous = {}
         for player in players:
             through = sum(
@@ -392,7 +394,14 @@ def build_season(season, workbook_path, config):
         ordered = sorted(
             players, key=lambda p: (-previous[p["name"]], p["name"].lower())
         )
-        prior_rank = {p["name"]: i for i, p in enumerate(ordered, start=1)}
+        # Ties share a rank here too, or a tie broken by the alphabet would
+        # show as someone moving.
+        prior_rank = {}
+        last_total, last_rank = None, 0
+        for i, p in enumerate(ordered, start=1):
+            if previous[p["name"]] != last_total:
+                last_rank, last_total = i, previous[p["name"]]
+            prior_rank[p["name"]] = last_rank
         for player in players:
             player["previous_rank"] = prior_rank[player["name"]]
             player["movement"] = prior_rank[player["name"]] - player["rank"]

@@ -457,9 +457,28 @@ function castawayByName(name) {
   return state.season.castaways.find((c) => c.name === name);
 }
 
+/* What a castaway goes by, for tight spaces: the quoted nickname when there
+   is one (Jelly, Thien An, Kilby), otherwise the first name. */
+function shortName(name) {
+  const nick = name.match(/"([^"]+)"/);
+  return nick ? nick[1] : name.split(/\s+/)[0];
+}
+
 function pickChip(name) {
   const castaway = castawayByName(name);
-  const chip = el('span', 'pick', name);
+  const chip = el('span', 'pick');
+  // Tribe shown subtly: a small dot plus a faint tint of the tribe colour.
+  const color = castaway && tribeColor(castaway.tribe);
+  if (color && castaway.status !== 'OUT') {
+    chip.classList.add('pick--tribe');
+    chip.style.setProperty('--tribe', color);
+    const dot = el('span', 'tribe-dot pick__dot');
+    dot.style.background = color;
+    chip.appendChild(dot);
+  }
+  chip.appendChild(el('span', 'pick__full', name));
+  chip.appendChild(el('span', 'pick__short', shortName(name)));
+  chip.title = name;
   if (castaway) {
     if (castaway.winner) chip.classList.add('pick--winner');
     else if (castaway.status === 'OUT') {
@@ -667,7 +686,7 @@ function renderDraftBoard() {
   const ownership = el('div', 'card');
   ownership.appendChild(el('h3', null, 'Most drafted'));
   ownership.appendChild(
-    el('p', 'panel__note', 'How many people have each castaway on their team.')
+    el('p', 'panel__note', 'How many people have each castaway on their team. Tap a bar to see who.')
   );
 
   const owned = [...state.season.castaways]
@@ -677,7 +696,12 @@ function renderDraftBoard() {
   const max = owned.length ? owned[0].drafted_by.length : 1;
 
   owned.forEach((castaway) => {
-    const row = el('div', 'ownership');
+    // Each bar is a button: tap it and the owners drop down underneath.
+    // One open at a time, same as the pick cards above.
+    const item = el('div', 'ownership-item');
+    const row = el('button', 'ownership');
+    row.type = 'button';
+    row.setAttribute('aria-expanded', 'false');
     const name = el('div', 'ownership__name', castaway.name);
     if (castaway.status === 'OUT') name.style.opacity = '0.55';
     row.appendChild(name);
@@ -687,7 +711,32 @@ function renderDraftBoard() {
     bar.appendChild(fill);
     row.appendChild(bar);
     row.appendChild(el('div', 'ownership__count', String(castaway.drafted_by.length)));
-    ownership.appendChild(row);
+    item.appendChild(row);
+
+    const drop = el('div', 'ownership__drop');
+    drop.hidden = true;
+    const names = el('div', 'dpick__names');
+    [...castaway.drafted_by]
+      .sort((a, b) => a.localeCompare(b))
+      .forEach((n) => names.appendChild(el('span', 'dpick__owner', n)));
+    drop.appendChild(names);
+    item.appendChild(drop);
+
+    row.addEventListener('click', () => {
+      const opening = drop.hidden;
+      ownership.querySelectorAll('.ownership-item.is-open').forEach((open) => {
+        open.classList.remove('is-open');
+        open.querySelector('.ownership__drop').hidden = true;
+        open.querySelector('.ownership').setAttribute('aria-expanded', 'false');
+      });
+      if (opening) {
+        item.classList.add('is-open');
+        drop.hidden = false;
+        row.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    ownership.appendChild(item);
   });
 
   ownership.style.marginTop = '18px';
