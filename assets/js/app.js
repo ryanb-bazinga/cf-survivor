@@ -649,6 +649,21 @@ function renderDraftBoard() {
   const body = panel.querySelector('.panel__body');
   body.replaceChildren();
 
+  const grid = el('div', 'grid draft-grid');
+
+  [...players]
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .forEach((player) => {
+      const card = el('div', 'card draft-card');
+      card.appendChild(el('div', 'draft-card__name', player.name));
+      const list = el('div', 'dpicks');
+      player.picks.forEach((pick) => list.appendChild(draftPick(pick, player.name, grid)));
+      card.appendChild(list);
+      grid.appendChild(card);
+    });
+
+  body.appendChild(grid);
+
   const ownership = el('div', 'card');
   ownership.appendChild(el('h3', null, 'Most drafted'));
   ownership.appendChild(
@@ -675,23 +690,76 @@ function renderDraftBoard() {
     ownership.appendChild(row);
   });
 
+  ownership.style.marginTop = '18px';
   body.appendChild(ownership);
+}
 
-  const grid = el('div', 'grid draft-grid');
-  grid.style.marginTop = '18px';
+/* One pick on a draft card: face, name, and how many other teams share it.
+   Tapping it drops down the names of those other owners. Only one is open
+   across the whole board at a time, so the grid never turns into a wall. */
+function draftPick(name, owner, board) {
+  const castaway = castawayByName(name) || { name, drafted_by: [] };
+  const others = (castaway.drafted_by || [])
+    .filter((n) => n !== owner)
+    .sort((a, b) => a.localeCompare(b));
 
-  [...players]
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .forEach((player) => {
-      const card = el('div', 'card');
-      card.appendChild(el('div', 'draft-card__name', player.name));
-      const picks = el('div', 'picks');
-      player.picks.forEach((pick) => picks.appendChild(pickChip(pick)));
-      card.appendChild(picks);
-      grid.appendChild(card);
+  const wrap = el('div', 'dpick');
+  if (castaway.winner) wrap.classList.add('dpick--winner');
+  else if (castaway.status === 'OUT') wrap.classList.add('dpick--out');
+
+  const btn = el('button', 'dpick__btn');
+  btn.type = 'button';
+  btn.setAttribute('aria-expanded', 'false');
+
+  if (castaway.photo) {
+    const face = document.createElement('img');
+    face.className = 'dpick__face';
+    face.src = castaway.photo;
+    face.alt = '';
+    face.loading = 'lazy';
+    face.addEventListener('error', () => face.remove());
+    btn.appendChild(face);
+  }
+  btn.appendChild(el('span', 'dpick__name', name));
+
+  const badge = el('span', 'dpick__badge');
+  if (others.length) {
+    badge.textContent = `+${others.length}`;
+    badge.title = `${others.length} other ${others.length === 1 ? 'team has' : 'teams have'} ${name}`;
+  } else {
+    badge.textContent = 'Solo';
+    badge.classList.add('dpick__badge--solo');
+    badge.title = `Nobody else has ${name}`;
+  }
+  btn.appendChild(badge);
+  wrap.appendChild(btn);
+
+  const drop = el('div', 'dpick__drop');
+  drop.hidden = true;
+  if (others.length) {
+    const names = el('div', 'dpick__names');
+    others.forEach((n) => names.appendChild(el('span', 'dpick__owner', n)));
+    drop.appendChild(names);
+  } else {
+    drop.appendChild(el('p', 'dpick__solo', 'All yours. Nobody else took this one.'));
+  }
+  wrap.appendChild(drop);
+
+  btn.addEventListener('click', () => {
+    const opening = drop.hidden;
+    board.querySelectorAll('.dpick.is-open').forEach((open) => {
+      open.classList.remove('is-open');
+      open.querySelector('.dpick__drop').hidden = true;
+      open.querySelector('.dpick__btn').setAttribute('aria-expanded', 'false');
     });
+    if (opening) {
+      wrap.classList.add('is-open');
+      drop.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
 
-  body.appendChild(grid);
+  return wrap;
 }
 
 /* ---------------------------------------------------------------- cast --- */
