@@ -176,6 +176,10 @@
         {
           "name": "Toka",
           "color": "#FEE137"
+        },
+        {
+          "name": "Dina",
+          "color": "#F12650"
         }
       ],
       "draft": {
@@ -198,16 +202,20 @@
           "title": "What I'm Smellin' Is Stinky"
         },
         "4": {
-          "airs": "2026-10-14"
+          "airs": "2026-10-14",
+          "title": "That's the Magic of Survivor"
         },
         "5": {
-          "airs": "2026-10-21"
+          "airs": "2026-10-21",
+          "title": "Not Here to Get a Pedicure"
         },
         "6": {
-          "airs": "2026-10-28"
+          "airs": "2026-10-28",
+          "title": "I Love Crying"
         },
         "7": {
-          "airs": "2026-11-04"
+          "airs": "2026-11-04",
+          "title": "You Broke My Heart Like I Was a Girl at the Prom"
         },
         "8": {
           "airs": "2026-11-11"
