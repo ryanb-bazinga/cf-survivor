@@ -79,7 +79,7 @@
    "residence": "Sioux Falls, S.D.",
    "occupation": "Livestock farmer",
    "status": "IN",
-   "points": 1.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -100,6 +100,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -116,7 +121,7 @@
    "residence": "Salt Lake City, Utah",
    "occupation": "Head of HR",
    "status": "IN",
-   "points": 1.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -137,6 +142,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -151,7 +161,7 @@
    "residence": "Windsor Locks, Conn.",
    "occupation": "Mental health counselor",
    "status": "IN",
-   "points": 1.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -172,6 +182,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -186,7 +201,7 @@
    "residence": "Santa Barbara, Calif.",
    "occupation": "Crisis management",
    "status": "IN",
-   "points": 3.0,
+   "points": 5.0,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -217,6 +232,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -335,7 +355,7 @@
    "residence": "Richmond, Ky.",
    "occupation": "Resident, OBGYN",
    "status": "IN",
-   "points": 1.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -356,6 +376,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -391,7 +416,7 @@
    "residence": "Fort Worth, Texas",
    "occupation": "Medical student",
    "status": "IN",
-   "points": 2.0,
+   "points": 4.0,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -417,6 +442,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -434,7 +464,7 @@
    "residence": "Bloomington, Ind.",
    "occupation": "Sociology professor",
    "status": "IN",
-   "points": 2.5,
+   "points": 4.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -450,6 +480,11 @@
      "episode": 2,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -467,7 +502,7 @@
    "residence": "Knoxville, Tenn.",
    "occupation": "Pro wrestler",
    "status": "OUT",
-   "points": 2.0,
+   "points": 4.0,
    "out_episode": 7,
    "out_reason": "Voted out",
    "winner": false,
@@ -493,6 +528,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": []
@@ -505,7 +545,7 @@
    "residence": "London, Ontario",
    "occupation": "Game designer",
    "status": "IN",
-   "points": 2.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -523,14 +563,14 @@
      "points": 0.5
     },
     {
-     "episode": 5,
-     "label": "Win Advantage",
-     "points": 1
-    },
-    {
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -546,7 +586,7 @@
    "residence": "Los Angeles, Calif.",
    "occupation": "Actor",
    "status": "IN",
-   "points": 1.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -562,6 +602,11 @@
      "episode": 3,
      "label": "Win Advantage",
      "points": 1
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -602,7 +647,7 @@
    "residence": "Puerto Rico",
    "occupation": "Farmer",
    "status": "IN",
-   "points": 1.5,
+   "points": 3.5,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -623,6 +668,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": [
@@ -638,7 +688,7 @@
    "residence": "Charlestown, W.Va.",
    "occupation": "Farmer",
    "status": "IN",
-   "points": 3.0,
+   "points": 6.0,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -662,6 +712,11 @@
     },
     {
      "episode": 5,
+     "label": "Win Advantage",
+     "points": 1
+    },
+    {
+     "episode": 5,
      "label": "Team Immunity Win",
      "points": 0.5
     },
@@ -669,6 +724,11 @@
      "episode": 6,
      "label": "Team Immunity Win",
      "points": 0.5
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
+     "points": 2
     }
    ],
    "drafted_by": []
@@ -681,7 +741,7 @@
    "residence": "New York City, N.Y.",
    "occupation": "Baseball executive",
    "status": "IN",
-   "points": 4.0,
+   "points": 6.0,
    "out_episode": null,
    "out_reason": null,
    "winner": false,
@@ -711,6 +771,11 @@
     {
      "episode": 7,
      "label": "Individual Immunity Win",
+     "points": 2
+    },
+    {
+     "episode": 7,
+     "label": "Make Jury",
      "points": 2
     }
    ],
@@ -765,7 +830,7 @@
     "Mike Pinsky",
     "Kristin Flickinger"
    ],
-   "total": 9.5,
+   "total": 15.5,
    "episodes": {
     "E1": 0,
     "E2": 3.0,
@@ -773,7 +838,7 @@
     "E4": 1.0,
     "E5": 1.0,
     "E6": 2.0,
-    "E7": 2,
+    "E7": 8,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -792,7 +857,7 @@
     "An \"Thien An\" Nguyen",
     "Kristin Flickinger"
    ],
-   "total": 9.0,
+   "total": 15.0,
    "episodes": {
     "E1": 0,
     "E2": 1.0,
@@ -800,7 +865,7 @@
     "E4": 1.5,
     "E5": 1.5,
     "E6": 2.5,
-    "E7": 2,
+    "E7": 8,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -819,7 +884,7 @@
     "Kristin Flickinger",
     "Mike Pinsky"
    ],
-   "total": 8.5,
+   "total": 14.5,
    "episodes": {
     "E1": 0,
     "E2": 0.5,
@@ -827,7 +892,7 @@
     "E4": 1.5,
     "E5": 1.5,
     "E6": 2.5,
-    "E7": 2,
+    "E7": 8,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -846,7 +911,7 @@
     "Kristin Flickinger",
     "Mike Pinsky"
    ],
-   "total": 8.5,
+   "total": 14.5,
    "episodes": {
     "E1": 0,
     "E2": 0.5,
@@ -854,7 +919,7 @@
     "E4": 1.5,
     "E5": 1.0,
     "E6": 2.5,
-    "E7": 2,
+    "E7": 8,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -867,21 +932,21 @@
    "movement": 1
   },
   {
-   "name": "Nick Penko",
+   "name": "Chelsea Whitley",
    "picks": [
-    "Mike Pinsky",
-    "Danny \"Kilby\" Kilby",
-    "Sharonda Cox"
+    "Kristin Flickinger",
+    "Angelica \"Jelly\" Loblack",
+    "Carter Krull"
    ],
-   "total": 8.0,
+   "total": 13.0,
    "episodes": {
     "E1": 0,
-    "E2": 1.0,
+    "E2": 2.5,
     "E3": 0.5,
-    "E4": 1.5,
-    "E5": 1.5,
-    "E6": 1.5,
-    "E7": 2,
+    "E4": 1.0,
+    "E5": 1.0,
+    "E6": 2.0,
+    "E7": 6,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -890,79 +955,25 @@
     "E13": 0
    },
    "rank": 5,
-   "previous_rank": 7,
-   "movement": 2
-  },
-  {
-   "name": "Shauna Stockhaus",
-   "picks": [
-    "Patt Cannaday",
-    "Mike Pinsky",
-    "Kristin Flickinger"
-   ],
-   "total": 7.5,
-   "episodes": {
-    "E1": 0,
-    "E2": 1.0,
-    "E3": 0.5,
-    "E4": 1.0,
-    "E5": 1.0,
-    "E6": 2.0,
-    "E7": 2,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 6,
-   "previous_rank": 9,
-   "movement": 3
-  },
-  {
-   "name": "Chelsea Whitley",
-   "picks": [
-    "Kristin Flickinger",
-    "Angelica \"Jelly\" Loblack",
-    "Carter Krull"
-   ],
-   "total": 7.0,
-   "episodes": {
-    "E1": 0,
-    "E2": 2.5,
-    "E3": 0.5,
-    "E4": 1.0,
-    "E5": 1.0,
-    "E6": 2.0,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 7,
    "previous_rank": 2,
-   "movement": -5
+   "movement": -3
   },
   {
-   "name": "Josh Olsen",
+   "name": "Nick Penko",
    "picks": [
     "Mike Pinsky",
     "Danny \"Kilby\" Kilby",
-    "Alexis Levine"
+    "Sharonda Cox"
    ],
-   "total": 7.0,
+   "total": 13.0,
    "episodes": {
     "E1": 0,
     "E2": 1.0,
     "E3": 0.5,
-    "E4": 1.0,
-    "E5": 1.5,
-    "E6": 1.0,
-    "E7": 2,
+    "E4": 1.5,
+    "E5": 0.5,
+    "E6": 1.5,
+    "E7": 8,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -970,9 +981,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 7,
-   "previous_rank": 12,
-   "movement": 5
+   "rank": 5,
+   "previous_rank": 11,
+   "movement": 6
   },
   {
    "name": "Kennedy Bicker",
@@ -981,7 +992,7 @@
     "Devin Way",
     "Kristin Flickinger"
    ],
-   "total": 6.5,
+   "total": 12.5,
    "episodes": {
     "E1": 0,
     "E2": 1.0,
@@ -989,7 +1000,7 @@
     "E4": 1.0,
     "E5": 1.0,
     "E6": 2.0,
-    "E7": 0,
+    "E7": 6,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -997,9 +1008,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 9,
+   "rank": 7,
    "previous_rank": 4,
-   "movement": -5
+   "movement": -3
   },
   {
    "name": "Christiaan VandenHeuvel",
@@ -1008,7 +1019,7 @@
     "Kristin Flickinger",
     "Lewis Kelly"
    ],
-   "total": 6.0,
+   "total": 12.0,
    "episodes": {
     "E1": 0,
     "E2": 0.5,
@@ -1016,7 +1027,7 @@
     "E4": 1.5,
     "E5": 0.5,
     "E6": 2.5,
-    "E7": 0,
+    "E7": 6,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1024,134 +1035,26 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 10,
+   "rank": 8,
    "previous_rank": 7,
-   "movement": -3
+   "movement": -1
   },
   {
-   "name": "Kim Kennedy",
-   "picks": [
-    "Alexis Levine",
-    "Mike Pinsky",
-    "Sharonda Cox"
-   ],
-   "total": 6.0,
-   "episodes": {
-    "E1": 0,
-    "E2": 0.5,
-    "E3": 1.0,
-    "E4": 1.0,
-    "E5": 0.5,
-    "E6": 1.0,
-    "E7": 2,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 10,
-   "previous_rank": 15,
-   "movement": 5
-  },
-  {
-   "name": "Julie Olsen",
-   "picks": [
-    "An \"Thien An\" Nguyen",
-    "Kristin Flickinger",
-    "Ori Jean-Charles"
-   ],
-   "total": 5.5,
-   "episodes": {
-    "E1": 0,
-    "E2": 0.5,
-    "E3": 1.0,
-    "E4": 1.0,
-    "E5": 1.0,
-    "E6": 2.0,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 12,
-   "previous_rank": 9,
-   "movement": -3
-  },
-  {
-   "name": "Kaitlynn Newby",
-   "picks": [
-    "An \"Thien An\" Nguyen",
-    "Kristin Flickinger",
-    "Ori Jean-Charles"
-   ],
-   "total": 5.5,
-   "episodes": {
-    "E1": 0,
-    "E2": 0.5,
-    "E3": 1.0,
-    "E4": 1.0,
-    "E5": 1.0,
-    "E6": 2.0,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 12,
-   "previous_rank": 9,
-   "movement": -3
-  },
-  {
-   "name": "Becky Fitch",
+   "name": "Shauna Stockhaus",
    "picks": [
     "Patt Cannaday",
     "Mike Pinsky",
-    "Alexis Levine"
+    "Kristin Flickinger"
    ],
-   "total": 5.0,
+   "total": 11.5,
    "episodes": {
     "E1": 0,
     "E2": 1.0,
     "E3": 0.5,
-    "E4": 0.5,
-    "E5": 0.5,
-    "E6": 0.5,
-    "E7": 2,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 14,
-   "previous_rank": 19,
-   "movement": 5
-  },
-  {
-   "name": "Jackson Bicker",
-   "picks": [
-    "Carter Krull",
-    "Alexis Levine",
-    "Kristin Flickinger"
-   ],
-   "total": 5.0,
-   "episodes": {
-    "E1": 0,
-    "E2": 0,
-    "E3": 1.0,
     "E4": 1.0,
     "E5": 1.0,
     "E6": 2.0,
-    "E7": 0,
+    "E7": 6,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1159,36 +1062,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 14,
-   "previous_rank": 12,
-   "movement": -2
-  },
-  {
-   "name": "Matt Langseth",
-   "picks": [
-    "Mike Pinsky",
-    "Ori Jean-Charles",
-    "Patt Cannaday"
-   ],
-   "total": 5.0,
-   "episodes": {
-    "E1": 0,
-    "E2": 1.0,
-    "E3": 0.5,
-    "E4": 0.5,
-    "E5": 0.5,
-    "E6": 0.5,
-    "E7": 2,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 14,
-   "previous_rank": 19,
-   "movement": 5
+   "rank": 9,
+   "previous_rank": 8,
+   "movement": -1
   },
   {
    "name": "Taylor McAllister",
@@ -1197,7 +1073,7 @@
     "Lewis Kelly",
     "Eric Macksoud"
    ],
-   "total": 4.5,
+   "total": 10.5,
    "episodes": {
     "E1": 0,
     "E2": 0.5,
@@ -1205,7 +1081,7 @@
     "E4": 1.5,
     "E5": 0,
     "E6": 1.5,
-    "E7": 0,
+    "E7": 6,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1213,9 +1089,198 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 17,
+   "rank": 10,
+   "previous_rank": 13,
+   "movement": 3
+  },
+  {
+   "name": "Josh Olsen",
+   "picks": [
+    "Mike Pinsky",
+    "Danny \"Kilby\" Kilby",
+    "Alexis Levine"
+   ],
+   "total": 10.0,
+   "episodes": {
+    "E1": 0,
+    "E2": 1.0,
+    "E3": 0.5,
+    "E4": 1.0,
+    "E5": 0.5,
+    "E6": 1.0,
+    "E7": 6,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 11,
    "previous_rank": 14,
-   "movement": -3
+   "movement": 3
+  },
+  {
+   "name": "Kim Kennedy",
+   "picks": [
+    "Alexis Levine",
+    "Mike Pinsky",
+    "Sharonda Cox"
+   ],
+   "total": 10.0,
+   "episodes": {
+    "E1": 0,
+    "E2": 0.5,
+    "E3": 1.0,
+    "E4": 1.0,
+    "E5": 0.5,
+    "E6": 1.0,
+    "E7": 6,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 11,
+   "previous_rank": 14,
+   "movement": 3
+  },
+  {
+   "name": "Julie Olsen",
+   "picks": [
+    "An \"Thien An\" Nguyen",
+    "Kristin Flickinger",
+    "Ori Jean-Charles"
+   ],
+   "total": 9.5,
+   "episodes": {
+    "E1": 0,
+    "E2": 0.5,
+    "E3": 1.0,
+    "E4": 1.0,
+    "E5": 1.0,
+    "E6": 2.0,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 13,
+   "previous_rank": 8,
+   "movement": -5
+  },
+  {
+   "name": "Kaitlynn Newby",
+   "picks": [
+    "An \"Thien An\" Nguyen",
+    "Kristin Flickinger",
+    "Ori Jean-Charles"
+   ],
+   "total": 9.5,
+   "episodes": {
+    "E1": 0,
+    "E2": 0.5,
+    "E3": 1.0,
+    "E4": 1.0,
+    "E5": 1.0,
+    "E6": 2.0,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 13,
+   "previous_rank": 8,
+   "movement": -5
+  },
+  {
+   "name": "Jackson Bicker",
+   "picks": [
+    "Carter Krull",
+    "Alexis Levine",
+    "Kristin Flickinger"
+   ],
+   "total": 9.0,
+   "episodes": {
+    "E1": 0,
+    "E2": 0,
+    "E3": 1.0,
+    "E4": 1.0,
+    "E5": 1.0,
+    "E6": 2.0,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 15,
+   "previous_rank": 11,
+   "movement": -4
+  },
+  {
+   "name": "Becky Fitch",
+   "picks": [
+    "Patt Cannaday",
+    "Mike Pinsky",
+    "Alexis Levine"
+   ],
+   "total": 7.0,
+   "episodes": {
+    "E1": 0,
+    "E2": 1.0,
+    "E3": 0.5,
+    "E4": 0.5,
+    "E5": 0.5,
+    "E6": 0.5,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 16,
+   "previous_rank": 19,
+   "movement": 3
+  },
+  {
+   "name": "Matt Langseth",
+   "picks": [
+    "Mike Pinsky",
+    "Ori Jean-Charles",
+    "Patt Cannaday"
+   ],
+   "total": 7.0,
+   "episodes": {
+    "E1": 0,
+    "E2": 1.0,
+    "E3": 0.5,
+    "E4": 0.5,
+    "E5": 0.5,
+    "E6": 0.5,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 16,
+   "previous_rank": 19,
+   "movement": 3
   },
   {
    "name": "Brian Gillen",
@@ -1224,7 +1289,7 @@
     "Kristin Flickinger",
     "Ori Jean-Charles"
    ],
-   "total": 4.0,
+   "total": 6.0,
    "episodes": {
     "E1": 0,
     "E2": 0,
@@ -1232,7 +1297,7 @@
     "E4": 0.5,
     "E5": 0.5,
     "E6": 1.5,
-    "E7": 0,
+    "E7": 2,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1241,8 +1306,8 @@
     "E13": 0
    },
    "rank": 18,
-   "previous_rank": 15,
-   "movement": -3
+   "previous_rank": 14,
+   "movement": -4
   },
   {
    "name": "Dan Hatfield",
@@ -1251,7 +1316,7 @@
     "Kristin Flickinger",
     "Ori Jean-Charles"
    ],
-   "total": 4.0,
+   "total": 6.0,
    "episodes": {
     "E1": 0,
     "E2": 0,
@@ -1259,7 +1324,7 @@
     "E4": 0.5,
     "E5": 0.5,
     "E6": 1.5,
-    "E7": 0,
+    "E7": 2,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1268,8 +1333,8 @@
     "E13": 0
    },
    "rank": 18,
-   "previous_rank": 15,
-   "movement": -3
+   "previous_rank": 14,
+   "movement": -4
   },
   {
    "name": "Erin Gorham",
@@ -1278,7 +1343,7 @@
     "Linnea Capobianco",
     "Ori Jean-Charles"
    ],
-   "total": 4.0,
+   "total": 6.0,
    "episodes": {
     "E1": 0,
     "E2": 2.5,
@@ -1286,7 +1351,7 @@
     "E4": 0.5,
     "E5": 0,
     "E6": 0,
-    "E7": 0,
+    "E7": 2,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1295,8 +1360,35 @@
     "E13": 0
    },
    "rank": 18,
-   "previous_rank": 15,
-   "movement": -3
+   "previous_rank": 14,
+   "movement": -4
+  },
+  {
+   "name": "Giselle Davis",
+   "picks": [
+    "Angelica \"Jelly\" Loblack",
+    "Kristin Flickinger",
+    "Rob Antonson"
+   ],
+   "total": 5.5,
+   "episodes": {
+    "E1": 0,
+    "E2": 2.5,
+    "E3": -3.5,
+    "E4": 0.5,
+    "E5": 0.5,
+    "E6": 1.5,
+    "E7": 4,
+    "E8": 0,
+    "E9": 0,
+    "E10": 0,
+    "E11": 0,
+    "E12": 0,
+    "E13": 0
+   },
+   "rank": 21,
+   "previous_rank": 21,
+   "movement": 0
   },
   {
    "name": "Erin McGrath",
@@ -1321,36 +1413,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 21,
+   "rank": 22,
    "previous_rank": 21,
-   "movement": 0
-  },
-  {
-   "name": "Giselle Davis",
-   "picks": [
-    "Angelica \"Jelly\" Loblack",
-    "Kristin Flickinger",
-    "Rob Antonson"
-   ],
-   "total": 1.5,
-   "episodes": {
-    "E1": 0,
-    "E2": 2.5,
-    "E3": -3.5,
-    "E4": 0.5,
-    "E5": 0.5,
-    "E6": 1.5,
-    "E7": 0,
-    "E8": 0,
-    "E9": 0,
-    "E10": 0,
-    "E11": 0,
-    "E12": 0,
-    "E13": 0
-   },
-   "rank": 21,
-   "previous_rank": 21,
-   "movement": 0
+   "movement": -1
   },
   {
    "name": "Kristen Nostrand",
@@ -1375,9 +1440,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 21,
+   "rank": 22,
    "previous_rank": 21,
-   "movement": 0
+   "movement": -1
   },
   {
    "name": "Kristina VandenHeuvel",
@@ -1402,9 +1467,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 21,
+   "rank": 22,
    "previous_rank": 21,
-   "movement": 0
+   "movement": -1
   },
   {
    "name": "Matt Davis",
@@ -1413,7 +1478,7 @@
     "Ori Jean-Charles",
     "Rob Antonson"
    ],
-   "total": -0.5,
+   "total": 1.5,
    "episodes": {
     "E1": 0,
     "E2": 0,
@@ -1421,7 +1486,7 @@
     "E4": 0.5,
     "E5": 0.5,
     "E6": 1.5,
-    "E7": 0,
+    "E7": 2,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1429,9 +1494,9 @@
     "E12": 0,
     "E13": 0
    },
-   "rank": 25,
+   "rank": 22,
    "previous_rank": 25,
-   "movement": 0
+   "movement": 3
   },
   {
    "name": "Chris Stockhaus",
@@ -1440,7 +1505,7 @@
     "Rob Antonson",
     "Sharonda Cox"
    ],
-   "total": -2.0,
+   "total": 0.0,
    "episodes": {
     "E1": 0,
     "E2": 0,
@@ -1448,7 +1513,7 @@
     "E4": 0.5,
     "E5": 0,
     "E6": 0.5,
-    "E7": 0,
+    "E7": 2,
     "E8": 0,
     "E9": 0,
     "E10": 0,
@@ -1700,7 +1765,7 @@
      "points": 0.5
     },
     {
-     "castaway": "Danny \"Kilby\" Kilby",
+     "castaway": "Maggie Nestor",
      "label": "Win Advantage",
      "points": 1
     },
@@ -1797,8 +1862,73 @@
    "scored": true,
    "events": [
     {
+     "castaway": "Carter Krull",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Cristian Chavez",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Eric Macksoud",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Kristin Flickinger",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Sharonda Cox",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "An \"Thien An\" Nguyen",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Angelica \"Jelly\" Loblack",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Brady Booker",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Danny \"Kilby\" Kilby",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Devin Way",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Lewis Kelly",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
+     "castaway": "Maggie Nestor",
+     "label": "Make Jury",
+     "points": 2
+    },
+    {
      "castaway": "Mike Pinsky",
      "label": "Individual Immunity Win",
+     "points": 2
+    },
+    {
+     "castaway": "Mike Pinsky",
+     "label": "Make Jury",
      "points": 2
     }
    ]
