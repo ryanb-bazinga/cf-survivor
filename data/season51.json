@@ -17,6 +17,10 @@
   {
    "name": "Dina",
    "color": "#F12650"
+  },
+  {
+   "name": "Merged",
+   "color": "#2F6DB5"
   }
  ],
  "castaways": [
@@ -73,7 +77,7 @@
   },
   {
    "name": "Carter Krull",
-   "tribe": "Toka",
+   "tribe": "Merged",
    "age": 24,
    "hometown": "Rock Rapids, Iowa",
    "residence": "Sioux Falls, S.D.",
@@ -115,7 +119,7 @@
   },
   {
    "name": "Cristian Chavez",
-   "tribe": "Dina",
+   "tribe": "Merged",
    "age": 26,
    "hometown": "Salt Lake City, Utah",
    "residence": "Salt Lake City, Utah",
@@ -155,7 +159,7 @@
   },
   {
    "name": "Eric Macksoud",
-   "tribe": "Dina",
+   "tribe": "Merged",
    "age": 34,
    "hometown": "Lincoln, R.I.",
    "residence": "Windsor Locks, Conn.",
@@ -195,7 +199,7 @@
   },
   {
    "name": "Kristin Flickinger",
-   "tribe": "Toka",
+   "tribe": "Merged",
    "age": 49,
    "hometown": "Ketchum, Idaho",
    "residence": "Santa Barbara, Calif.",
@@ -349,7 +353,7 @@
   },
   {
    "name": "Sharonda Cox",
-   "tribe": "Dina",
+   "tribe": "Merged",
    "age": 34,
    "hometown": "Pompano Beach, Fla.",
    "residence": "Richmond, Ky.",
@@ -410,7 +414,7 @@
   },
   {
    "name": "An \"Thien An\" Nguyen",
-   "tribe": "Toka",
+   "tribe": "Merged",
    "age": 24,
    "hometown": "Fort Worth, Texas",
    "residence": "Fort Worth, Texas",
@@ -458,7 +462,7 @@
   },
   {
    "name": "Angelica \"Jelly\" Loblack",
-   "tribe": "Savu",
+   "tribe": "Merged",
    "age": 29,
    "hometown": "Garland, Texas",
    "residence": "Bloomington, Ind.",
@@ -496,7 +500,7 @@
   },
   {
    "name": "Brady Booker",
-   "tribe": "Toka",
+   "tribe": "Merged",
    "age": 27,
    "hometown": "La Salle, Ill.",
    "residence": "Knoxville, Tenn.",
@@ -539,7 +543,7 @@
   },
   {
    "name": "Danny \"Kilby\" Kilby",
-   "tribe": "Dina",
+   "tribe": "Merged",
    "age": 30,
    "hometown": "Mount Forest, Ontario",
    "residence": "London, Ontario",
@@ -580,7 +584,7 @@
   },
   {
    "name": "Devin Way",
-   "tribe": "Savu",
+   "tribe": "Merged",
    "age": 33,
    "hometown": "Lufkin, Texas",
    "residence": "Los Angeles, Calif.",
@@ -641,7 +645,7 @@
   },
   {
    "name": "Lewis Kelly",
-   "tribe": "Dina",
+   "tribe": "Merged",
    "age": 28,
    "hometown": "Dublin, Ireland",
    "residence": "Puerto Rico",
@@ -682,7 +686,7 @@
   },
   {
    "name": "Maggie Nestor",
-   "tribe": "Toka",
+   "tribe": "Merged",
    "age": 40,
    "hometown": "Middleway, W.Va.",
    "residence": "Charlestown, W.Va.",
@@ -735,7 +739,7 @@
   },
   {
    "name": "Mike Pinsky",
-   "tribe": "Toka",
+   "tribe": "Merged",
    "age": 32,
    "hometown": "New York City, N.Y.",
    "residence": "New York City, N.Y.",

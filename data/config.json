@@ -180,8 +180,16 @@
         {
           "name": "Dina",
           "color": "#F12650"
+        },
+        {
+          "name": "Merged",
+          "color": "#2F6DB5"
         }
       ],
+      "merge": {
+        "episode": 7,
+        "tribe": "Merged"
+      },
       "draft": {
         "closesBeforeEpisode": 2,
         "hoursBefore": 1

@@ -110,6 +110,14 @@ forces them to fetch the new one.
 3. Add the season number to `SEASONS` in `build.py`.
 4. Run `python3 build.py <number>`.
 
+## Merge
+
+When the tribes merge, add a `merge` block to the season in `config.json`
+(`{"episode": 7, "tribe": "Merged"}`) and a matching entry with its buff color
+under `tribes`. `build.py` then shows everyone still in the game on the merged
+tribe, while castaways who left earlier keep the tribe they went home from. The
+Cast tab in the workbook does not need to change.
+
 ## Scoring
 
 The point table is read from the workbook itself, not hardcoded here. Change

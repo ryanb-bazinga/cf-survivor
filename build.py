@@ -335,6 +335,16 @@ def build_season(season, workbook_path, config):
             "events": episode_events,
         })
 
+    # After the merge everyone still in the game wears the same buff. The
+    # Cast tab keeps each castaway's pre-merge tribe; config says which
+    # episode merged and what to call the new tribe.
+    merge = season_cfg.get("merge")
+    if merge:
+        for castaway in roster:
+            out = castaway.get("out_episode")
+            if out is None or out >= merge["episode"]:
+                castaway["tribe"] = merge["tribe"]
+
     players = []
     if "Dashboard" in values:
         ws = values["Dashboard"]
